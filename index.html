@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Torch7 : scientific computing for LuaJIT." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Torch7</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/torch">View on GitHub</a>
+
+          <h1 id="project_title">Torch7</h1>
+          <h2 id="project_tagline">Scientific computing for LuaJIT.</h2>
+
+            <!-- <section id="downloads"> -->
+            <!--   <a class="zip_download_link" href="https://github.com/torch/torch7/zipball/master">Download this project as a .zip file</a> -->
+            <!--   <a class="tar_download_link" href="https://github.com/torch/torch7/tarball/master">Download this project as a tar.gz file</a> -->
+            <!-- </section> -->
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+      
+<h1>
+<a name="about-torch7" class="anchor" href="#about-torch7"><span class="octicon octicon-link"></span></a>About Torch7</h1>
+
+<p>Torch7 is a scientific computing framework with wide support for machine learning. 
+It is easy to use and provides a very efficient
+implementation, thanks to an easy and fast scripting language, LuaJIT,
+and an underlying C implementation.</p>
+
+Among other things, it provides:
+
+<ul>
+<li>
+a powerful N-dimensional array, torch.Tensor
+</li>
+<li>
+lots of routines for indexing, slicing, transposing, ...
+</li>
+<li>
+amazing interface to C, via LuaJIT
+</li>
+<li>
+linear algebra routines
+</li>
+</ul>
+
+<p>If you have questions or need support, check out the <a href="https://groups.google.com/forum/#!forum/torch7">mailing list</a>.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>The easiest way to install Torch is to follow 
+<a href="https://github.com/torch/ezinstall">these instructions</a>. This simple script
+will install LuaJIT, Luarocks and build Torch as well as a few important
+packages for you.</p>
+
+<p>Torch, and all its related packages, are now distributed as simple Luarocks packages. 
+It only requires LuaJIT (&gt;= 2.0) and Luarocks (&gt;= 2.0.12):</p>
+
+<pre><code>$ luajit --version
+Luarocks 2.0.12
+$ luajit -v
+LuaJIT 2.0.2 -- Copyright (C) 2005-2013 Mike Pall. http://luajit.org/
+$ luarocks install torch
+...
+</code></pre>
+
+<p>Other packages can be installed the same way, using Luarocks:</p>
+
+<pre><code>$ luarocks install image
+$ luarocks list
+$ luarocks search --all
+</code></pre>
+
+<h2>
+<a name="packages" class="anchor" href="#packages"><span class="octicon octicon-link"></span></a>Packages</h2>
+
+<p>Torch used to be distributed as a single repo, which provided a few default packages.
+These packages, along with their documentation, are now each hosted on their own
+Github repository. Here is the list of official Torch packages:</p>
+
+<ul>
+<li>
+<a href="https://github.com/torch/torch7">Torch7</a> - <a href="https://github.com/torch/torch7/blob/master/doc/README.md">doc</a>
+</li>
+<li>
+<a href="https://github.com/torch/nn">nn</a> - <a href="https://github.com/torch/nn/blob/master/doc/README.md">doc</a>
+</li>
+<li>
+<a href="https://github.com/torch/paths">paths</a> - <a href="https://github.com/torch/paths/blob/master/README.md">doc</a>
+</li>
+<li>...</li>
+</ul><p>More packages can be found on <a href="https://github.com/torch/">Torch's Github portal</a>.</p>
+
+<p>Even more packages can be found using Luarocks:</p>
+
+<pre><code>$ luarocks search --all
+</code></pre>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Torch7 is developed at Idiap Research Institute, 
+New York University and NEC Laboratories America.</p>
+
+<p>At this time, Torch7 is maintained by Ronan Collobert (the dictator), 
+Clement Farabet (the chemist) and Koray Kavukcuoglu (Dr Jekyll). </p>
+
+<p>We also use the great Qt Lua interface from Leon Bottou: 
+<a href="https://github.com/torch/qttorch">QtTorch</a>
+</p>
+
+<p>If you use Torch7 for your work, please cite the following paper:
+R. Collobert, K. Kavukcuoglu and C. Farabet. Torch7: A Matlab-like 
+Environment for Machine Learning. In BigLearn, NIPS Workshop, 2011.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Torch7 is distributed under a BSD license. It runs on Linux, FreeBSD 
+and MacOS X. With few tweaks, it should also run on Windows (we plan to 
+support it soon).</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+          <p class="copyright">Torch7 maintained by 
+              <a href="https://github.com/andresy">Ronan</a>,
+              <a href="https://github.com/clementfarabet">Clement</a> and
+              <a href="https://github.com/koraykv">Koray</a>.
+          </p>
+      </footer>
+    </div>
+
+  </body>
+</html>
