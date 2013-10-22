@@ -74,15 +74,14 @@ It only requires LuaJIT (&gt;= 2.0) and Luarocks (&gt;= 2.0.12):</p>
 Luarocks 2.0.12
 $ luajit -v
 LuaJIT 2.0.2 -- Copyright (C) 2005-2013 Mike Pall. http://luajit.org/
-$ luarocks install torch
+$ luarocks --server=https://raw.github.com/torch/rocks/master install torch
 ...
 </code></pre>
 
 <p>Other packages can be installed the same way, using Luarocks:</p>
 
-<pre><code>$ luarocks install image
-$ luarocks list
-$ luarocks search --all
+<pre><code>$ luarocks --server=https://raw.github.com/torch/rocks/master install image
+$ luarocks --server=https://raw.github.com/torch/rocks/master list
 </code></pre>
 
 <h2>
@@ -107,7 +106,7 @@ Github repository. Here is the list of official Torch packages:</p>
 
 <p>Even more packages can be found using Luarocks:</p>
 
-<pre><code>$ luarocks search --all
+<pre><code>$ luarocks --server=https://raw.github.com/torch/rocks/master search --all
 </code></pre>
 
 <h2>
