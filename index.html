@@ -32,8 +32,10 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
       
-<h1>
-<a name="about-torch7" class="anchor" href="#about-torch7"><span class="octicon octicon-link"></span></a>About Torch7</h1>
+<h2>
+    <a name="about-torch7" class="anchor" href="#about-torch7"><span class="octicon octicon-link"></span></a>
+About Torch7
+</h2>
 
 <p>Torch7 is a scientific computing framework with wide support for machine learning. 
 It is easy to use and provides a very efficient
@@ -91,18 +93,137 @@ $ luarocks --server=https://raw.github.com/torch/rocks/master list
 These packages, along with their documentation, are now each hosted on their own
 Github repository. Here is the list of official Torch packages:</p>
 
-<ul>
-<li>
-<a href="https://github.com/torch/torch7">Torch7</a> - <a href="https://github.com/torch/torch7/blob/master/doc/README.md">doc</a>
-</li>
-<li>
-<a href="https://github.com/torch/nn">nn</a> - <a href="https://github.com/torch/nn/blob/master/doc/README.md">doc</a>
-</li>
-<li>
-<a href="https://github.com/torch/paths">paths</a> - <a href="https://github.com/torch/paths/blob/master/README.md">doc</a>
-</li>
-<li>...</li>
-</ul><p>More packages can be found on <a href="https://github.com/torch/">Torch's Github portal</a>.</p>
+<table>
+<thead>
+    <tr>
+        <th>Package</th>
+        <th>Doc</th>
+        <th>Description</th>
+    </tr>
+</thead>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/torch7">torch</a>
+    </td>
+    <td>
+        <a href="https://github.com/torch/torch7/blob/master/doc/README.md">doc</a>
+    </td>
+    <td>
+        numeric library, n-dim array, linear algebra routines ...
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/nn">nn</a>
+    </td>
+    <td>
+        <a href="https://github.com/torch/nn/blob/master/doc/README.md">doc</a>
+    </td>
+    <td>
+        modular neural network framework
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/optim">paths</a>
+    </td>
+    <td>
+        N/A
+    </td>
+    <td>
+        numeric optimization routines (SGD, L-BFGS, CG, ...)
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/gnuplot">paths</a>
+    </td>
+    <td>
+        <a href="https://github.com/torch/gnuplot/blob/master/README.md">doc</a>
+    </td>
+    <td>
+        interface to gnuplot, for plots/graphics
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/cutorch">paths</a>
+    </td>
+    <td>
+        N/A
+    </td>
+    <td>
+        Torch for CUDA
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/cunn">paths</a>
+    </td>
+    <td>
+        N/A
+    </td>
+    <td>
+        nn for CUDA
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/paths">paths</a>
+    </td>
+    <td>
+        <a href="https://github.com/torch/paths/blob/master/README.md">doc</a>
+    </td>
+    <td>
+        paths, file system
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/image">paths</a>
+    </td>
+    <td>
+        N/A
+    </td>
+    <td>
+        image transform routines, color spaces, I/O, ...
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/trepl">paths</a>
+    </td>
+    <td>
+        <a href="https://github.com/torch/trepl/blob/master/README.md">doc</a>
+    </td>
+    <td>
+        pure Lua REPL (interpreter)
+    </td>
+</tr>
+
+<tr>
+    <td>
+        <a href="https://github.com/torch/cwrap">paths</a>
+    </td>
+    <td>
+        <a href="https://github.com/torch/cwrap/blob/master/README.md">doc</a>
+    </td>
+    <td>
+        automatic C wrapper for Lua
+    </td>
+</tr>
+</table>
+
+<p>More packages can be found on <a href="https://github.com/torch/">Torch's Github portal</a>.</p>
 
 <p>Even more packages can be found using Luarocks:</p>
 

@@ -75,6 +75,7 @@ h1 {
 }
 
 h2 {
+  padding-top: 20px;
   padding-bottom: 10px;
   font-size: 32px;
   background: url('../images/bg_hr.png') repeat-x bottom;
@@ -228,9 +229,10 @@ hr {
 }
 
 table {
-  border: 1px solid #373737;
   margin-bottom: 20px;
   text-align: left;
+  border: 0px;
+  width: 100%;
  }
 
 th {
@@ -238,11 +240,12 @@ th {
   padding: 10px;
   background: #373737;
   color: #fff;
+  border: 0px;
  }
 
 td {
   padding: 10px;
-  border: 1px solid #373737;
+  border: 0px solid #373737;
  }
 
 form {
