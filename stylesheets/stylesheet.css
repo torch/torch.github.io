@@ -78,7 +78,16 @@ h2 {
   padding-top: 20px;
   padding-bottom: 10px;
   font-size: 32px;
-  background: url('../images/bg_hr.png') repeat-x bottom;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #555;
+    background-image: -webkit-linear-gradient(left, #ccc, #555, #ccc); 
+    background-image:    -moz-linear-gradient(left, #ccc, #555, #ccc); 
+    background-image:     -ms-linear-gradient(left, #ccc, #555, #ccc); 
+    background-image:      -o-linear-gradient(left, #ccc, #555, #ccc); 
 }
 
 h3 {
@@ -221,13 +230,6 @@ dl p {
   font-style: italic;
 }
 
-hr {
-  height: 1px;
-  margin-bottom: 5px;
-  border: none;
-  background: url('../images/bg_hr.png') repeat-x center;
-}
-
 table {
   margin-bottom: 20px;
   text-align: left;
@@ -276,7 +278,7 @@ Full-Width Styles
   z-index: 10;
   padding: 10px 50px 10px 10px;
   color: #fff;
-  background: url('../images/blacktocat.png') #0090ff no-repeat 95% 50%;
+  background: url('../images/blacktocat.png') #000 no-repeat 95% 50%;
   font-weight: 700;
   box-shadow: 0 0 10px rgba(0,0,0,.5);
   border-bottom-left-radius: 2px;
@@ -302,6 +304,12 @@ Full-Width Styles
   font-size: 42px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
+
+  text-shadow: 0 0 10px #000;
+  -webkit-text-shadow: 0 0 10px #000;
+  -moz-text-shadow: 0 0 10px #000;
+  -o-text-shadow: 0 0 10px #000;
+  -ms-text-shadow: 0 0 10px #000;
 }
 
 #project_tagline {
