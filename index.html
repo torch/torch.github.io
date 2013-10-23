@@ -76,10 +76,24 @@ numeric optimization routines
 <a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation
 <hr></h2>
 
-<p>The easiest way to install Torch is to follow 
-<a href="https://github.com/torch/ezinstall">these instructions</a>. This simple script
-will install LuaJIT, Luarocks and build Torch as well as a few important
-packages for you.</p>
+<p>The easiest way to install Torch is to run these two commands:</p>
+
+<pre><code>$ curl -sk https://raw.github.com/torch/ezinstall/master/install-deps | bash
+$ curl -sk https://raw.github.com/torch/ezinstall/master/install-torch-newdistro | bash
+</code></pre>
+
+<p>
+The first script installs basic dependencies / libraries that LuaJIT and Torch
+require.
+The second script installs LuaJIT, Luarocks, and then uses Luarocks to install Torch and 
+a few common/useful packages. These scripts work on Ubuntu &gt;= 12.04 and OSX &gt;= 10.8.
+</p>
+
+<p>
+You can look at them to see exactly what they do:
+<a href="https://raw.github.com/torch/ezinstall/master/install-deps">dependency script</a> 
+and <a href="https://raw.github.com/torch/ezinstall/master/install-torch-newdistro">luajit+torch+extra script</a>.
+</p>
 
 <p>Torch, and all its related packages, are now distributed as simple Luarocks packages. 
 It only requires 
