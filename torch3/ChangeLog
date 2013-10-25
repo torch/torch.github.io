@@ -1,0 +1,149 @@
+===============================================================================
+	Torch 3.1
+===============================================================================
+	
+core
+====
+        * Bagging.cc
+                - Initialize "is_selected_examples" to NULL.
+
+        * ClassFormatDataSet.cc
+                - Convert all the frames of targets, and not only the
+                first one.
+
+        * ClassMeasurer.cc
+                - Scan all the frames of inputs to compute classification
+                error, and not only the first one.
+                - The confusion matrix computation option at the end of
+		the training as been removed. The confusion matrix is still
+		available at each iteration.
+
+        * CmdOption.cc
+                - When calling loadXFile(), a string not always allocated
+                was freed.
+
+        * DiskDataSet.cc
+                - The number of examples was computed using io_inputs, even
+                if it was NULL.
+
+        * KFold.cc
+                - The size of the folds is more balanced for small folds.
+
+	* MemoryDataSet.cc
+                - The number of examples was computed using io_inputs, even
+                if it was NULL.
+
+	* MemoryXFile.cc
+	        - The EOF flag was not updated when reaching the end of file
+		while reading with the scanf method.
+
+        * MultiClassFormat.cc
+                - Serious bug when auto-detecting classes corrected.
+
+        * Random.cc
+                - Using now memmove instead of memcopy (possibility of
+		overlapping source and destination).
+
+matrix
+======
+        * Mat.cc and Mat.h
+                - Initializing a matrix from a "real *" now possible.
+
+gradients
+=========
+
+        * SumMachine.cc
+                - The gradient is now well back-propagated.
+
+kernels
+=======
+        * QCTrainer.cc
+                - Bug when updating alpha corrected. Note: very rare
+                case in practice. Thanks to Stephen Schiller for the
+                report of this tricky bug.
+
+distributions
+=============
+       * DiagonalGMM.cc
+                - log_probabilities are now correctely computed for the viterbi case
+                - frameExpectation becomes frameDecision
+                - keep the best gaussian for the current frame
+
+       * Distribution.cc
+                - resize the output of the machine correctely
+                - added decision and frameDecision method
+
+       * HMM.cc
+                - added states shared parameters
+
+       * MAPDiagonalGMM.cc
+                - adapt the parameters only if the gaussian have "seen" at
+                  least one frame
+
+       * Multinomial.cc
+                - added equal initialization option
+                - added check that the log weights are number
+                - frameExpectation becomes frameDecision
+
+       * NLLCriterion.cc
+                - correct the beta and outputs resize
+
+       * ParzenDistribution.cc
+                - correct the resize of the log_probablities
+                - added frameExpectation method
+
+       * TableLookupDistribution.cc
+                - correction of some bugs to calculate the log probablity
+
+       * ViterbiTrainer.cc ,ViterbiTrainer.h
+                - this class is suppressed, it was already included in EMTrainer
+
+
+datasets
+========
+
+      * IOHTK.cc
+               - correction of some major bugs when reading the HTK files on
+                 disk on unsequential mode
+               - correction of major bug on double mode
+
+      * IOHTKTarget.cc
+               - space followed by tabulation allowed instead of space only
+               - added some check
+
+      * IOHTKTarget.h
+               - make saveSequence static
+
+      * Vocabulary.cc
+               - bound check corrected for the number of words
+
+speech
+======
+
+      * EditDistance.{cc,h} and EditDistanceMeasurer.{cc,h}
+               - Add a constructor option to print a confusion matrix as well
+
+      * WordSeg.{cc,h} and FrameSeg.{cc,h}
+               - Two new class to keep the word and frame segmentations found
+                 by viterbi decoding. These are kept separate so as to be
+                 compatible with any new subclass of SpeechHMM.
+
+      * WordSegMeasurer.{cc,h} and FrameSegMeasurer.{cc,h}
+               - Measurers that outputs information related to the number
+                 of errors in terms of word error rate (WordSegMeasurer) or
+                 frame error rate (FrameSegMeasurer), using the EditDistance
+                 class to compute the error.
+
+      * SimpleDecoderSpeechHMM.{cc,h}
+               - Modifications to take into account the new WordSeg and FrameSeg
+                 classes
+               - added a structure (previous_states[] and n_previous_states)
+                 to speedup the decoding process by only looping on existing
+                 transitions and not all possible transitions
+               - Added an option to be able to decode using "forced alignment",
+                 hence instead of decoding on the whole grammar, decoding on
+                 a given (true) sentence
+
+      * SpeechHMM.cc
+               - bug corrections related to initialization
+

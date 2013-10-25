@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  QCTrainer</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">QCTrainer</A></H2></H2><BLOCKQUOTE>Train a <TT>QCMachine</TT>.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CObject,MObject.html,CTrainer,MTrainer.html,CQCTrainer,MQCTrainer.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.132.1">QCTrainer</A></B>(<!1><A HREF="QCMachine.html">QCMachine</A>* qcmachine_)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.132.2">train</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="SpeechHMM.html#DOC.158.3">data</A>, MeasurerList* measurers)
+<DD><I>Train it.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Trainer.html">Trainer</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>test</B>(MeasurerList* measurers)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>static   <!1><A HREF="Allocator.html">Allocator</A>* <B>extractMeasurers</B>(MeasurerList* measurers, <!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="Trainer.html#DOC.50.2">train</A>, <!1><A HREF="DataSet.html">DataSet</A>*** datas, <!1><A HREF="Measurer.html">Measurer</A>**** meas, int** n_meas, int* n_datas)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Train a <TT>QCMachine</TT>.
+With the conventions of QCMachine.h,
+Q is given by the class QCCache (in <TT>cache</TT>)
+
+<P>Options:
+<TABLE BORDER>
+<TR><TD>
+"unshrink"      </TD><TD> bool  </TD><TD>  unshrink or not unshrink              </TD><TD> [false] </TD></TR><TR><TD>
+"max unshrink"  </TD><TD> int   </TD><TD>  maximal number of unshrinking         </TD><TD> [1] </TD></TR><TR><TD>
+"iter shrink"   </TD><TD> int   </TD><TD>  minimal number of iterations to shrink</TD><TD> [100] </TD></TR><TR><TD>
+"eps shrink"    </TD><TD> real  </TD><TD>  shrinking accuracy                    </TD><TD> [1E-4 (f)  1E-9 (d)] </TD></TR><TR><TD>
+"end accuracy"  </TD><TD> real  </TD><TD>  end accuracy                          </TD><TD> [0.01] </TD></TR><TR><TD>
+"iter message"  </TD><TD> int   </TD><TD>  number of iterations between messages </TD><TD> [1000]
+</TR></TABLE>
+
+<P>
+Note: "iter shrink" must be carefully chosen.
+Read http://www.ai.mit.edu/projects/jmlr/papers/volume1/collobert01a/collobert01a.ps.gz
+for more details.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="QCTrainer"></A>
+<A NAME="DOC.132.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> QCTrainer(<!1><A HREF="QCMachine.html">QCMachine</A>* qcmachine_)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="train"></A>
+<A NAME="DOC.132.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void train(<!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="SpeechHMM.html#DOC.158.3">data</A>, MeasurerList* measurers)</B></TT>
+<DD>Train it.
+Before calling this function, <TT>grad</TT> in <TT>qcmachine</TT>
+must contain the gradient of QP(alpha) with respect
+to alpha = 0.
+
+<P>( = <IMG BORDER=0 SRC=g000054.gif>, with the conventions of QCMachine.h)
+
+<P>Moreover <TT>alpha</TT> in <TT>qcmachine</TT> has to be zero.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+
+<DT><B>See Also:</B><DD><!1><A HREF="QCCache.html">QCCache</A>
+<BR><!1><A HREF="QCMachine.html">QCMachine</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

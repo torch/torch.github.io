@@ -1,0 +1,187 @@
+ <html>
+<body>
+<center><b><font size=+4><i><b>Torch</b></i> Reference Manual</font></b>
+<br><img SRC="logo.gif" ALT="[Torch]" width=78 height=71>
+<br><a href="http://www.torch.ch">http://www.torch.ch</a>
+</center>
+
+<H1>Table of Contents</H1>
+<H2>General stuff</H2>
+<UL>
+<LI><A HREF="List.html">List</A>
+<LI><A HREF="Textoutputsfunctions..html">Text outputs functions.</A>
+</UL>
+<H2>Namespaces</H2>
+<UL>
+<LI><A HREF="Givensmatrixoperationsroutines..html"> Givens matrix operations routines.</A>
+<LI><A HREF="Householdertransformationroutines..html"> Householder transformation routines.</A>
+<LI><A HREF="RoutinesfordeterminingHessenbergfactorisations..html"> Routines for determining Hessenberg factorisations.</A>
+<LI><A HREF="Routinesforsymmetriceigenvalueproblems..html"> Routines for symmetric eigenvalue problems.</A>
+<LI><A HREF="Collectionofmatrixfactorisationoperationfunctions..html">Collection of matrix factorisation operation functions.</A>
+<LI><A HREF="Collectionofmatrixoperationfunctions..html">Collection of matrix operation functions.</A>
+<LI><A HREF="Collectionofpermutationsoperationfunctions..html">Collection of permutations operation functions.</A>
+<LI><A HREF="Somesimplefunctionsforlogoperations..html">Some simple functions for log operations.</A>
+<LI><A HREF="Somesimplefunctionsforstringoperations..html">Some simple functions for string operations.</A>
+</UL>
+<H2>Classes</H2>
+<UL>
+<LI><A HREF="Allocator.html">Allocator</A> <I>Class do easily allocate/deallocate memory in Torch.</I>
+<LI><A HREF="Bagging.html">Bagging</A> <I>This class represents a <TT>Trainer</TT> that implements the well-known Bagging algorithm (Breiman, 1996).</I>
+<LI><A HREF="BayesClassifier.html">BayesClassifier</A> <I>A multi class bayes classifier -- maximizes the likelihood of each class separately using a trainer for distribution.</I>
+<LI><A HREF="BayesClassifierMachine.html">BayesClassifierMachine</A> <I>BayesClassifierMachine is the machine used by the <TT>BayesClassifier</TT> trainer to perform a Bayes Classification using different distributions.</I>
+<LI><A HREF="BeamSearchDecoder.html">BeamSearchDecoder</A> <I>This class implements a Viterbi decoder with beam search capabilities.</I>
+<LI><A HREF="BoolCmdOption.html">BoolCmdOption</A> <I>This class defines a bool command-line option.</I>
+<LI><A HREF="Boosting.html">Boosting</A> <I>Boosting implementation.</I>
+<LI><A HREF="BoostingMeasurer.html">BoostingMeasurer</A> <I>Compute the classification weighted error (in %) for <TT>BoostingMachine</TT> of the <TT>inputs</TT> with respect to the <TT>targets</TT> of <TT>data</TT>.</I>
+<LI><A HREF="ClassFormat.html">ClassFormat</A> <I>Used to define a class code.</I>
+<LI><A HREF="ClassFormatDataSet.html">ClassFormatDataSet</A> <I>Given a DataSet, convert (on-the-fly) targets using a conversion table.</I>
+<LI><A HREF="ClassMeasurer.html">ClassMeasurer</A> <I>Compute the classification error (in %) of the <TT>inputs</TT> with respect to the <TT>targets</TT> of <TT>data</TT>.</I>
+<LI><A HREF="ClassNLLCriterion.html">ClassNLLCriterion</A> <I>This criterion can be used to train *in classification* a <TT>GradientMachine</TT> object using the <TT>StochasticGradient</TT> trainer.</I>
+<LI><A HREF="ClassNLLMeasurer.html">ClassNLLMeasurer</A> <I>This class measures the negative log likelihood.</I>
+<LI><A HREF="CmdLine.html">CmdLine</A> <I>This class provides a useful interface for the user, to easily read some arguments/options from the command-line.</I>
+<LI><A HREF="CmdOption.html">CmdOption</A> <I>This class defines an option for the command line.</I>
+<LI><A HREF="ConnectedMachine.html">ConnectedMachine</A> <I>Easy connections between several <TT>GradientMachine</TT>.</I>
+<LI><A HREF="Criterion.html">Criterion</A> <I><TT>Criterion</TT> class for <TT>StochasticGradient</TT>.</I>
+<LI><A HREF="DataSet.html">DataSet</A> <I>Provides an interface to manipulate all kind of data.</I>
+<LI><A HREF="DecoderBatchTest.html">DecoderBatchTest</A> <I>This class is used to decode a set of test files and display statistics and results for each file (ie.</I>
+<LI><A HREF="DecoderSingleTest.html">DecoderSingleTest</A> <I>This class is used to recognise a single input data file, post-process the recognition result and output the result.</I>
+<LI><A HREF="DecodingHMM.html">DecodingHMM</A> <I>This class contains all HMM information required for decoding.</I>
+<LI><A HREF="DecodingHypothesis.html">DecodingHypothesis</A> <I>This class contains all hypothesis data that needs to be updated and propagated as hypotheses are extended through word models and  across word boundaries.</I>
+<LI><A HREF="DiagonalGMM.html">DiagonalGMM</A> <I>This class can be used to model Diagonal Gaussian Mixture Models.</I>
+<LI><A HREF="DiskDataSet.html">DiskDataSet</A> <I>Provides an interface to manipulate all kind of data which are kept on disk, and not fully loaded in memory.</I>
+<LI><A HREF="DiskHTKDataSet.html">DiskHTKDataSet</A> <I>Provides an interface to manipulate HTK data which are kept on disk, and not fully loaded in memory.</I>
+<LI><A HREF="DiskMatDataSet.html">DiskMatDataSet</A> <I>Matrix DataSet On Disk.</I>
+<LI><A HREF="DiskXFile.html">DiskXFile</A> <I>A file on the disk.</I>
+<LI><A HREF="Distribution.html">Distribution</A> <I>This class is designed to handle generative distribution models such as Gaussian Mixture Models and Hidden Markov Models.</I>
+<LI><A HREF="DotKernel.html">DotKernel</A> <I>DotProduct Kernel.</I>
+<LI><A HREF="EMTrainer.html">EMTrainer</A> <I>This class is used to train any distribution using the EM algorithm.</I>
+<LI><A HREF="EditDistance.html">EditDistance</A> <I>This class can be used to compute the "edit distance" between two sequences.</I>
+<LI><A HREF="EditDistanceMeasurer.html">EditDistanceMeasurer</A> <I>This class can be used to measure and print an <TT>EditDistance</TT> object.</I>
+<LI><A HREF="ExampleFrameSelectorDataSet.html">ExampleFrameSelectorDataSet</A> <I> This dataset is empty at the begining.</I>
+<LI><A HREF="Exp.html">Exp</A> <I>Exponentiel layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="FileListCmdOption.html">FileListCmdOption</A> <I>This class take a file name in the command line, and reads a list of files contained in this file.</I>
+<LI><A HREF="FrameSeg.html">FrameSeg</A> <I>This class keeps track of all information to compute errors at the frame level</I>
+<LI><A HREF="FrameSegMeasurer.html">FrameSegMeasurer</A> <I>This class can be used to save the frame segmentation of a  <TT>SimpleDecoderSpeechHMM</TT> in a file.</I>
+<LI><A HREF="FrameSelectorDataSet.html">FrameSelectorDataSet</A> <I>A dataset used to select some frames of another dataset.</I>
+<LI><A HREF="GaussianKernel.html">GaussianKernel</A> <I>Gaussian Kernel <IMG BORDER=0 SRC=g000042.gif></I>
+<LI><A HREF="GradientMachine.html">GradientMachine</A> <I>Gradient machine: machine which can be trained with a gradient descent.</I>
+<LI><A HREF="Grammar.html">Grammar</A> <I>This class contains the grammar of accepted sentences for a speech recognition experiment such as the one using SimpleDecoderSpeechHMM A grammar is a transition table where each node is a word.</I>
+<LI><A HREF="HMM.html">HMM</A> <I>This class implements a Hidden Markov Model distribution.</I>
+<LI><A HREF="HTKDataSet.html">HTKDataSet</A> <I>This dataset can deal with the HTK format for features and targets.</I>
+<LI><A HREF="IOAscii.html">IOAscii</A> <I>Handles the standard Ascii sequence format in Torch.</I>
+<LI><A HREF="IOBin.html">IOBin</A> <I>Handles the standard binary sequence format in Torch.</I>
+<LI><A HREF="IOBufferize.html">IOBufferize</A> <I>This IO bufferizes the asked sequence of a given IO when calling <TT>getSequence()</TT>.</I>
+<LI><A HREF="IOHTK.html">IOHTK</A> <I>Handles the standard binary sequence format in HTK.</I>
+<LI><A HREF="IOHTKTarget.html">IOHTKTarget</A> <I>Handles the standard Ascii HTK targets/labels format in Torch.</I>
+<LI><A HREF="IOMulti.html">IOMulti</A> <I>This IO takes several IOSequence, and will act as if you had concatened all these IOSequence when calling <TT>getMatrix()</TT>.</I>
+<LI><A HREF="IOSequence.html">IOSequence</A> <I>Class which provides an ensemble of sequences, which have the same frame size, but could have different number of frames.</I>
+<LI><A HREF="IOSequenceArray.html">IOSequenceArray</A> <I>Load and save in an efficiently manner an array of sequences.</I>
+<LI><A HREF="IOSub.html">IOSub</A> <I>IOSequence which does a selection of adjacent columns on another IOSequence, when calling <TT>getMatrix()</TT>.</I>
+<LI><A HREF="InputsSelect.html">InputsSelect</A> <I>Machine which select a block of adjacent inputs, and put them in the outputs.</I>
+<LI><A HREF="IntCmdOption.html">IntCmdOption</A> <I>This class defines a integer command-line option.</I>
+<LI><A HREF="KFold.html">KFold</A> <I>Provides an interface to sample data, for use by methods such as cross-validation</I>
+<LI><A HREF="KMeans.html">KMeans</A> <I>This class can be used to do a "kmeans" on a given set of data.</I>
+<LI><A HREF="KNN.html">KNN</A> <I>This machine implements the K-nearest-neighbors (KNN) algorithm.</I>
+<LI><A HREF="Kernel.html">Kernel</A> <I>General Kernel class.</I>
+<LI><A HREF="LMCache.html">LMCache</A> <I> This class implements a rudimentary caching scheme for language model lookup.</I>
+<LI><A HREF="LMCacheEntry.html">LMCacheEntry</A> <I> This class implements the internal entries within the LMCache class.</I>
+<LI><A HREF="LMInteriorLevelWordEntry.html">LMInteriorLevelWordEntry</A> <I> This class is used internally within the language model n-gram data structures.</I>
+<LI><A HREF="LMInteriorLevelWordList.html">LMInteriorLevelWordList</A>
+<LI><A HREF="LMNGram.html">LMNGram</A> <I> This class is the main class for N-gram language modelling.</I>
+<LI><A HREF="LanguageModel.html">LanguageModel</A> <I> This object implements an n-gram language model.</I>
+<LI><A HREF="LexiconInfo.html">LexiconInfo</A> <I> This class stores information about how phonemes are assembled into pronunciations.</I>
+<LI><A HREF="Linear.html">Linear</A> <I>Linear layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="LinearLexicon.html">LinearLexicon</A> <I> This class is essentially an array of DecodingHMM instances, representing the HMM's for each pronunciation we can recognise.</I>
+<LI><A HREF="LogMixer.html">LogMixer</A> <I>LogMixer useful for experts mixtures.</I>
+<LI><A HREF="LogRBF.html">LogRBF</A> <I>LogRBF layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="LogSigmoid.html">LogSigmoid</A> <I>Log-Sigmoid layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="LogSoftMax.html">LogSoftMax</A> <I>Log-SoftMax layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="MAPDiagonalGMM.html">MAPDiagonalGMM</A> <I>This class is a special case of a DiagonalGMM that implements the MAP algorithm instead of the EM algorithm.</I>
+<LI><A HREF="MAPHMM.html">MAPHMM</A> <I>This class is a special case of a HMM that implements the MAP algorithm for HMM transitions probabilities.</I>
+<LI><A HREF="MLP.html">MLP</A> <I>A Multi-Layer Perceptron.</I>
+<LI><A HREF="MSECriterion.html">MSECriterion</A> <I>Mean Squared Error criterion.</I>
+<LI><A HREF="MSEMeasurer.html">MSEMeasurer</A> <I>Mean Squared Error measurer.</I>
+<LI><A HREF="Machine.html">Machine</A> <I><TT>Object</TT> which can compute some outputs, given some inputs.</I>
+<LI><A HREF="Mat.html">Mat</A> <I>Matrix object.</I>
+<LI><A HREF="MatDataSet.html">MatDataSet</A> <I>Matrix DataSet.</I>
+<LI><A HREF="MeanVarNorm.html">MeanVarNorm</A> <I>In the constructor, it computes the mean and the standard deviation over all the frames in the given DataSet (by default, only for inputs).</I>
+<LI><A HREF="Measurer.html">Measurer</A> <I>Used to measure what you want during training/testing.</I>
+<LI><A HREF="MemoryDataSet.html">MemoryDataSet</A> <I>DataSet where data is fully loaded in memory.</I>
+<LI><A HREF="MemoryXFile.html">MemoryXFile</A> <I>A file in the memory.</I>
+<LI><A HREF="Mixer.html">Mixer</A> <I>Mixer useful for experts mixtures.</I>
+<LI><A HREF="MultiClassFormat.html">MultiClassFormat</A> <I>Define the multi class encoding format.</I>
+<LI><A HREF="MultiCriterion.html">MultiCriterion</A> <I>MultiCriterion can be used to handle multiple criterions.</I>
+<LI><A HREF="Multinomial.html">Multinomial</A> <I>This class can be used to model Multinomial Distributions.</I>
+<LI><A HREF="NLLCriterion.html">NLLCriterion</A> <I>This criterion can be used to train <TT>Distribution</TT> object using the <TT>GMTrainer</TT> trainer.</I>
+<LI><A HREF="NLLMeasurer.html">NLLMeasurer</A> <I>This class measures the negative log likelihood.</I>
+<LI><A HREF="NPTrainer.html">NPTrainer</A> <I>Trainer for Non Parametric Machines.</I>
+<LI><A HREF="NullXFile.html">NullXFile</A> <I>NullXFile.</I>
+<LI><A HREF="Object.html">Object</A> <I>Almost all classes in Torch should be a sub-class of this class.</I>
+<LI><A HREF="OneHotClassFormat.html">OneHotClassFormat</A> <I>Define the one hot class encoding format.</I>
+<LI><A HREF="OutputMeasurer.html">OutputMeasurer</A> <I>Compute the outputification error (in %) of the <TT>inputs</TT> with respect to the <TT>targets</TT> of <TT>data</TT>.</I>
+<LI><A HREF="Parameters.html">Parameters</A> <I>Parameters definition.</I>
+<LI><A HREF="ParzenDistribution.html">ParzenDistribution</A> <I>This class can be used to model a Parzen density estimator with a Gaussian kernel:</I>
+<LI><A HREF="ParzenMachine.html">ParzenMachine</A> <I>This machine implements the Parzen Window estimator.</I>
+<LI><A HREF="Perm.html">Perm</A> <I>Permutation object.</I>
+<LI><A HREF="PhoneInfo.html">PhoneInfo</A> <I> This class contains the names of the phonemes that make up the words in the lexicon.</I>
+<LI><A HREF="PhoneModels.html">PhoneModels</A> <I> </I>
+<LI><A HREF="PipeXFile.html">PipeXFile</A> <I>A file in a pipe.</I>
+<LI><A HREF="PolynomialKernel.html">PolynomialKernel</A> <I>Polynomial Kernel <IMG BORDER=0 SRC=g000041.gif>.</I>
+<LI><A HREF="PreProcessing.html">PreProcessing</A> <I>This class is able to do pre-processing on examples in a <TT>DataSet</TT>.</I>
+<LI><A HREF="QCCache.html">QCCache</A> <I>"Cache" used by the Quadratic Constrained Trainer (<TT>QCTrainer</TT>).</I>
+<LI><A HREF="QCMachine.html">QCMachine</A> <I>"Quadratic Constrained Machine".</I>
+<LI><A HREF="QCTrainer.html">QCTrainer</A> <I>Train a <TT>QCMachine</TT>.</I>
+<LI><A HREF="Random.html">Random</A> <I>Random class which contains several static random methods.</I>
+<LI><A HREF="RealCmdOption.html">RealCmdOption</A> <I>This class defines a real command-line option.</I>
+<LI><A HREF="SVM.html">SVM</A> <I>Support Vector Machine.</I>
+<LI><A HREF="SVMCache.html">SVMCache</A> <I><TT>QCCache</TT> implementation for SVMs.</I>
+<LI><A HREF="SVMCacheClassification.html">SVMCacheClassification</A> <I>Cache for SVM classification.</I>
+<LI><A HREF="SVMCacheRegression.html">SVMCacheRegression</A> <I>Cache for SVM regression.</I>
+<LI><A HREF="SVMClassification.html">SVMClassification</A> <I>SVM in classification.</I>
+<LI><A HREF="SVMRegression.html">SVMRegression</A> <I>SVM in regression.</I>
+<LI><A HREF="SaturationMeasurer.html">SaturationMeasurer</A> <I>Measure the saturation of a <TT>GradientMachine</TT>.</I>
+<LI><A HREF="Sequence.html">Sequence</A> <I>Sequence definition.</I>
+<LI><A HREF="Sigmoid.html">Sigmoid</A> <I>Sigmoid layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="SigmoidKernel.html">SigmoidKernel</A> <I>Sigmoid Kernel <IMG BORDER=0 SRC=g000043.gif></I>
+<LI><A HREF="SimpleDecoderSpeechHMM.html">SimpleDecoderSpeechHMM</A> <I>This class implements a special case of Hidden Markov Models that can be used to do connected word speech recognition for small vocabulary, using embedded training.</I>
+<LI><A HREF="SoftMax.html">SoftMax</A> <I>SoftMax layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="SoftPlus.html">SoftPlus</A> <I>SoftPlus layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="SpatialConvolution.html">SpatialConvolution</A> <I>Class for doing convolution over images.</I>
+<LI><A HREF="SpatialSubSampling.html">SpatialSubSampling</A> <I>Class for doing sub-sampling over images.</I>
+<LI><A HREF="SpeechHMM.html">SpeechHMM</A> <I>This class implements a special case of Hidden Markov Models that can be used to do connected word speech recognition for small vocabulary, using embedded training.</I>
+<LI><A HREF="SpeechMLP.html">SpeechMLP</A> <I> </I>
+<LI><A HREF="SpeechMLPDistr.html">SpeechMLPDistr</A> <I> </I>
+<LI><A HREF="Stack.html">Stack</A> <I>This is an implementation of a "stack".</I>
+<LI><A HREF="StochasticGradient.html">StochasticGradient</A> <I>Trainer for GradientMachine.</I>
+<LI><A HREF="StringCmdOption.html">StringCmdOption</A> <I>This class defines a string command-line option.</I>
+<LI><A HREF="SumMachine.html">SumMachine</A> <I>This machine simply adds up its input vectors.</I>
+<LI><A HREF="TableLookupDistribution.html">TableLookupDistribution</A> <I>This class outputs one of the observations as the logProbability.</I>
+<LI><A HREF="Tanh.html">Tanh</A> <I>Tanh layer for <TT>GradientMachine</TT>.</I>
+<LI><A HREF="TemporalConvolution.html">TemporalConvolution</A> <I>Class for doing a convolution over a sequence.</I>
+<LI><A HREF="TemporalMean.html">TemporalMean</A> <I>Given an input sequence, it does the mean over all input frames.</I>
+<LI><A HREF="TemporalSubSampling.html">TemporalSubSampling</A> <I>Class for doing sub-sampling over a sequence.</I>
+<LI><A HREF="TimeMeasurer.html">TimeMeasurer</A> <I>Measure the time (in seconds) between two  <TT>measureIteration()</TT> calls.</I>
+<LI><A HREF="Timer.html">Timer</A> <I>Timer.</I>
+<LI><A HREF="Trainer.html">Trainer</A> <I>Trainer.</I>
+<LI><A HREF="TwoClassFormat.html">TwoClassFormat</A> <I>Define the two class encoding format.</I>
+<LI><A HREF="Vec.html">Vec</A> <I>Vector object.</I>
+<LI><A HREF="Vocabulary.html">Vocabulary</A> <I> This object contains the list of words we want our recogniser to recognise plus a few "special" words (eg.</I>
+<LI><A HREF="WeightedMSECriterion.html">WeightedMSECriterion</A> <I>Similar to <TT>MSECriterion</TT>, but you can put a weight on each example.</I>
+<LI><A HREF="WeightedSumMachine.html">WeightedSumMachine</A> <I>Weighted-sum machine.</I>
+<LI><A HREF="WordChainElemPool.html">WordChainElemPool</A> <I> This class is a pool of pre-allocated WordChainElem structures.</I>
+<LI><A HREF="WordSeg.html">WordSeg</A> <I>This class keeps track of all information to compute word errors</I>
+<LI><A HREF="WordSegMeasurer.html">WordSegMeasurer</A> <I>This class can be used to save the word segmentation of a  <TT>SimpleDecoderSpeechHMM</TT> in a file.</I>
+<LI><A HREF="XFile.html">XFile</A> <I>XFile.</I>
+</UL>
+<H2>Macros</H2>
+<UL>
+<LI><A HREF="max.html">max</A> <I>The max function</I>
+<LI><A HREF="min.html">min</A> <I>The min function</I>
+</UL>
+ <div align=right><b><i>Torch</i></b>.
+The Ultimate Machine Learning Library.</div>
+<HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

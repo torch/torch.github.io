@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  PipeXFile</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">PipeXFile</A></H2></H2><BLOCKQUOTE>A file in a pipe.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CObject,MObject.html,CXFile,MXFile.html,CDiskXFile,MDiskXFile.html,CPipeXFile,MPipeXFile.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.44.1">PipeXFile</A></B>(const char* command, const char* open_flags)
+<DD><I>Execute command with the flags <TT>open_flags</TT></I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="DiskXFile.html">DiskXFile</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>static   bool <B>isLittleEndianProcessor</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>static   bool <B>isBigEndianProcessor</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>static   bool <B>isNativeMode</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>static   void <B>setNativeMode</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>static   void <B>setLittleEndianMode</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>static   void <B>setBigEndianMode</B>()
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="XFile.html">XFile</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>read</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>write</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>taggedRead</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>taggedWrite</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>eof</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>flush</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>seek</B>(long offset, int whence)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   long <B>tell</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>rewind</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>printf</B>(const char* format, ...)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>scanf</B>(const char* format, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   char* <B>gets</B>(char* dest, int size_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>A file in a pipe.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="PipeXFile"></A>
+<A NAME="DOC.44.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> PipeXFile(const char* command, const char* open_flags)</B></TT>
+<DD>Execute command with the flags <TT>open_flags</TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

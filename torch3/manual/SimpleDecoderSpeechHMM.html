@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  SimpleDecoderSpeechHMM</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">SimpleDecoderSpeechHMM</A></H2></H2><BLOCKQUOTE>This class implements a special case of Hidden Markov Models that can be used to do connected word speech recognition for small vocabulary, using embedded training.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CGradientMachine,MGradientMachine.html,CDistribution,MDistribution.html,CHMM,MHMM.html,CSpeechHMM,MSpeechHMM.html,CSimpleDecoderSpeechHMM,MSimpleDecoderSpeechHMM.html">
+<param name=before value="M,M,M,M,M,M,M">
+<param name=after value="Md_SPSPSPSPSP,Md_SPSPSPSP,Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4,5,6">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="SpeechHMM.html">SpeechHMM</A>* <B><A HREF="#DOC.157.1">model</A></B>
+<DD><I>The trained SpeechHMM model to decode</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Grammar.html">Grammar</A>* <B><A HREF="#DOC.157.2">grammar</A></B>
+<DD><I>the acceptable grammar</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="WordSeg.html">WordSeg</A>* <B><A HREF="#DOC.157.3">wordseg</A></B>
+<DD><I>the object containing target and obtained word sequences</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.157.4">log_word_entrance_penalty</A></B>
+<DD><I>log word entrance penalty: during viterbi, penalizes large sentences</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.157.5">forced_alignment</A></B>
+<DD><I>should we perform forced alignment or real decoding?</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.157.6">n_previous_states</A></B>
+<DD><I>for each state, how many previous states</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int** <B><A HREF="#DOC.157.7">previous_states</A></B>
+<DD><I>for each state, the list of previous states</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.157.8">SimpleDecoderSpeechHMM</A></B>(<!1><A HREF="SpeechHMM.html">SpeechHMM</A>* <!1><A HREF="SimpleDecoderSpeechHMM.html#DOC.157.1">model</A>, <!1><A HREF="Grammar.html">Grammar</A>* grammar_)
+<DD><I>In order to create a SimpleDecoderSpeechHMM, we need to give a vector of <TT>n_models_</TT> <TT>HMM</TT>s as well as their corresponding name, a lexicon and a grammar, an optional log_word_entrance_penalty and an optional trainer that can be used to initialize each model independently</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.157.9">setDataSet</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* data_)
+<DD><I>this method sets the test data set to be used</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.157.10">logViterbi</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>this method redefine the normal logViterbi class with  constraint on word entrance </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.157.11">decode</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* input)
+<DD><I>this method returns the sentence associated to the input</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.157.12">logProbabilities</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>this method computes more efficiently the emission probabilities</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.157.13">setPreviousStates</A></B>()
+<DD><I>prepare structure previous_states and n_previous_states</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.157.14">prepareTestModel</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* input)
+<DD><I>this method prepare the transition graph associated with a given test sentence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.157.15">nStatesInGrammar</A></B>()
+<DD><I>this methods returns the number of states in the grammar</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="SpeechHMM.html">SpeechHMM</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_models</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="HMM.html">HMM</A>** <B>models</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="DataSet.html">DataSet</A>* <B>data</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="EMTrainer.html">EMTrainer</A>** <B>model_trainer</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>MeasurerList* <B>initial_models_trainer_measurers</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="LexiconInfo.html">LexiconInfo</A>* <B>lexicon</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>targets</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>add_to_targets</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>bool** <B>word_transitions</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>max_n_states</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int* <B>states_to_model_states</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int* <B>states_to_model</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int* <B>states_to_word</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>bool <B>phoneme_targets</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>prepareTrainModel</B>(<!1><A HREF="Sequence.html">Sequence</A>* input)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>addWordToModel</B>(int word, int current_state)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>addConnectionsBetweenWordsToModel</B>(int word, int next_word, int current_state, int next_current_state, real log_n_next)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>nStatesInWord</B>(int word)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>nStatesInWordPronunciation</B>(int word, int pronun)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="HMM.html">HMM</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_states</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>prior_transitions</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Distribution.html">Distribution</A>** <B>states</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Distribution.html">Distribution</A>** <B>shared_states</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real** <B>transitions</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real** <B>log_transitions</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real** <B>dlog_transitions</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real** <B>transitions_acc</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_alpha</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_beta</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>arg_viterbi</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>last_arg_viterbi</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>viterbi_sequence</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_probabilities_s</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>bool <B>initialize</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>printTransitions</B>(bool real_values=false, bool transitions_only=false)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>logAlpha</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>logBeta</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Distribution.html">Distribution</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>log_probability</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_probabilities</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>logProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>viterbiLogProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>frameLogProbability</B>(int t, real* f_inputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>viterbiFrameLogProbability</B>(int t, real* f_inputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMIterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>iterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMSequenceInitialize</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>sequenceInitialize</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameEMAccPosteriors</B>(int t, real* f_inputs, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameViterbiAccPosteriors</B>(int t, real* f_inputs, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMUpdate</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>update</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameBackward</B>(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiBackward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameDecision</B>(int t, real* decision)
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif> <B>Returns the decision of the distribution</B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GradientMachine.html">GradientMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_outputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>der_params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>beta</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>backward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setPartialBackprop</B>(bool flag=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameForward</B>(int t, real* f_inputs, real* f_outputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class implements a special case of Hidden Markov Models that
+can be used to do connected word speech recognition for small
+vocabulary, using embedded training.
+
+<P>It contains a <TT>SpeechHMM</TT> and a grammar (which states
+the legal sentences of the langage).
+
+<P>The decoding is done by creating the whole transition matrix
+and hence is not adapted to large vocabulary problems.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="model"></A>
+<A NAME="DOC.157.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="SpeechHMM.html">SpeechHMM</A>* model</B></TT>
+<DD>The trained SpeechHMM model to decode
+<DL><DT><DD></DL><P>
+<A NAME="grammar"></A>
+<A NAME="DOC.157.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Grammar.html">Grammar</A>* grammar</B></TT>
+<DD>the acceptable grammar
+<DL><DT><DD></DL><P>
+<A NAME="wordseg"></A>
+<A NAME="DOC.157.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="WordSeg.html">WordSeg</A>* wordseg</B></TT>
+<DD>the object containing target and obtained word sequences
+<DL><DT><DD></DL><P>
+<A NAME="log_word_entrance_penalty"></A>
+<A NAME="DOC.157.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real log_word_entrance_penalty</B></TT>
+<DD>log word entrance penalty: during viterbi, penalizes large sentences
+<DL><DT><DD></DL><P>
+<A NAME="forced_alignment"></A>
+<A NAME="DOC.157.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool forced_alignment</B></TT>
+<DD>should we perform forced alignment or real decoding?
+<DL><DT><DD></DL><P>
+<A NAME="n_previous_states"></A>
+<A NAME="DOC.157.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* n_previous_states</B></TT>
+<DD>for each state, how many previous states
+<DL><DT><DD></DL><P>
+<A NAME="previous_states"></A>
+<A NAME="DOC.157.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int** previous_states</B></TT>
+<DD>for each state, the list of previous states
+<DL><DT><DD></DL><P>
+<A NAME="SimpleDecoderSpeechHMM"></A>
+<A NAME="DOC.157.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> SimpleDecoderSpeechHMM(<!1><A HREF="SpeechHMM.html">SpeechHMM</A>* <!1><A HREF="SimpleDecoderSpeechHMM.html#DOC.157.1">model</A>, <!1><A HREF="Grammar.html">Grammar</A>* grammar_)</B></TT>
+<DD>In order to create a SimpleDecoderSpeechHMM, we need to give a vector of <TT>n_models_</TT>
+<TT>HMM</TT>s as well as their corresponding name, a lexicon and a grammar,
+an optional log_word_entrance_penalty and an optional trainer that can be
+used to initialize each model independently
+<DL><DT><DD></DL><P>
+<A NAME="setDataSet"></A>
+<A NAME="DOC.157.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void setDataSet(<!1><A HREF="DataSet.html">DataSet</A>* data_)</B></TT>
+<DD>this method sets the test data set to be used
+<DL><DT><DD></DL><P>
+<A NAME="logViterbi"></A>
+<A NAME="DOC.157.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void logViterbi(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>this method redefine the normal logViterbi class with 
+constraint on word entrance 
+<DL><DT><DD></DL><P>
+<A NAME="decode"></A>
+<A NAME="DOC.157.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void decode(<!1><A HREF="Sequence.html">Sequence</A>* input)</B></TT>
+<DD>this method returns the sentence associated to the input
+<DL><DT><DD></DL><P>
+<A NAME="logProbabilities"></A>
+<A NAME="DOC.157.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void logProbabilities(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>this method computes more efficiently the emission probabilities
+<DL><DT><DD></DL><P>
+<A NAME="setPreviousStates"></A>
+<A NAME="DOC.157.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void setPreviousStates()</B></TT>
+<DD>prepare structure previous_states and n_previous_states
+<DL><DT><DD></DL><P>
+<A NAME="prepareTestModel"></A>
+<A NAME="DOC.157.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void prepareTestModel(<!1><A HREF="Sequence.html">Sequence</A>* input)</B></TT>
+<DD>this method prepare the transition graph associated with a
+given test sentence
+<DL><DT><DD></DL><P>
+<A NAME="nStatesInGrammar"></A>
+<A NAME="DOC.157.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int nStatesInGrammar()</B></TT>
+<DD>this methods returns the number of states in the grammar
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

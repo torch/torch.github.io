@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  LinearLexicon</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">LinearLexicon</A></H2></H2><BLOCKQUOTE> This class is essentially an array of DecodingHMM instances, representing the HMM's for each pronunciation we can recognise.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.1">Uses the phoneme DecodingHMM instances in 'phone_models_',</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.2">and the phonetic transcription info for the pronunciations</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.3">as defined in 'lex_info_' and creates a complete DecodingHMM</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.4">Extracts LexiconInfo pointer from 'speech_hmm' then proceeds</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.5">Internal function.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.6">Returns the number of states in a particular model including</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.7">Calculates the emission probability for a state in a particular</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.8">word model using the current input vector.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.9">Returns the number of successor states, the successor states</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.83.10">themselves and the associated log transition probabilities</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This class is essentially an array of DecodingHMM instances,
+representing the HMM's for each pronunciation we can recognise.
+The ordering of this array conforms to the ordering the 
+LexInfo instance that is passed as a parameter to the
+constructor.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Uses the phoneme DecodingHMM instances in 'phone_models_',"></A>
+<A NAME="DOC.83.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Uses the phoneme DecodingHMM instances in 'phone_models_',</B></TT>
+<DD>Uses the phoneme DecodingHMM instances in 'phone_models_',
+<DL><DT><DD></DL><P>
+<A NAME="and the phonetic transcription info for the pronunciations"></A>
+<A NAME="DOC.83.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> and the phonetic transcription info for the pronunciations</B></TT>
+<DD>and the phonetic transcription info for the pronunciations
+<DL><DT><DD></DL><P>
+<A NAME="as defined in 'lex_info_' and creates a complete DecodingHMM"></A>
+<A NAME="DOC.83.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> as defined in 'lex_info_' and creates a complete DecodingHMM</B></TT>
+<DD>as defined in 'lex_info_' and creates a complete DecodingHMM
+<DL><DT><DD></DL><P>
+<A NAME="Extracts LexiconInfo pointer from 'speech_hmm' then proceeds"></A>
+<A NAME="DOC.83.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Extracts LexiconInfo pointer from 'speech_hmm' then proceeds</B></TT>
+<DD>Extracts LexiconInfo pointer from 'speech_hmm' then proceeds
+<DL><DT><DD></DL><P>
+<A NAME="Internal function."></A>
+<A NAME="DOC.83.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Internal function.</B></TT>
+<DD>Internal function. Both constructors call this to create the
+<DL><DT><DD></DL><P>
+<A NAME="Returns the number of states in a particular model including"></A>
+<A NAME="DOC.83.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Returns the number of states in a particular model including</B></TT>
+<DD>Returns the number of states in a particular model including
+<DL><DT><DD></DL><P>
+<A NAME="Calculates the emission probability for a state in a particular"></A>
+<A NAME="DOC.83.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Calculates the emission probability for a state in a particular</B></TT>
+<DD>Calculates the emission probability for a state in a particular
+<DL><DT><DD></DL><P>
+<A NAME="word model using the current input vector."></A>
+<A NAME="DOC.83.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> word model using the current input vector.</B></TT>
+<DD>word model using the current input vector. Only checks for 
+<DL><DT><DD></DL><P>
+<A NAME="Returns the number of successor states, the successor states"></A>
+<A NAME="DOC.83.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Returns the number of successor states, the successor states</B></TT>
+<DD>Returns the number of successor states, the successor states
+<DL><DT><DD></DL><P>
+<A NAME="themselves and the associated log transition probabilities"></A>
+<A NAME="DOC.83.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> themselves and the associated log transition probabilities</B></TT>
+<DD>themselves and the associated log transition probabilities
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

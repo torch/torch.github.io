@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  SVM</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">SVM</A></H2></H2><BLOCKQUOTE>Support Vector Machine.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=185>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CQCMachine,MQCMachine.html,CSVM,MSVM.html,CSVMRegression,MSVMRegression.html,CSVMClassification,MSVMClassification.html">
+<param name=before value="M,M,M,M,M|_,Mr_">
+<param name=after value="Md_SPSP,Md_SP,Md_,M,M,M">
+<param name=indent value="0,1,2,3,3,3">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Allocator.html">Allocator</A>* <B><A HREF="#DOC.133.1">sv_allocator</A></B>
+<DD><I>To allocate all stuff related to support vectors</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="IOSequenceArray.html">IOSequenceArray</A>* <B><A HREF="#DOC.133.2">io_sequence_array</A></B>
+<DD><I>Give the sequence-format</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="DataSet.html">DataSet</A>* <B><A HREF="#DOC.133.3">data</A></B>
+<DD><I>The dataset associated to the SVM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Kernel.html">Kernel</A>* <B><A HREF="#DOC.133.4">kernel</A></B>
+<DD><I>The kernel associated to the SVM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.133.5">b</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.133.6">support_vectors</A></B>
+<DD><I>The support vectors</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.133.7">sv_alpha</A></B>
+<DD><I>sv_alpha[i] is the weight of the SV i</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>** <B><A HREF="#DOC.133.8">sv_sequences</A></B>
+<DD><I>SV sequences</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.133.9">n_support_vectors</A></B>
+<DD><I>The number of support vectors</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.133.10">n_support_vectors_bound</A></B>
+<DD><I>The number of support vectors which are at the bound "C"</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.133.11">SVM</A></B>(<!1><A HREF="Kernel.html">Kernel</A>* kernel_, <!1><A HREF="IOSequenceArray.html">IOSequenceArray</A>* io_sequence_array_=NULL)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.133.12">bCompute</A></B>()
+<DD><I>Computes the <TT>b</TT></I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="QCMachine.html">QCMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>Cup</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>Cdown</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>bound_eps</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_alpha</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>alpha</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>grad</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>y</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="QCCache.html">QCCache</A>* <B>cache</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>checkSupportVectors</B>()
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* sequence)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Support Vector Machine.
+
+<P>The Q matrix of <TT>QCMachine</TT> is in this case
+<IMG BORDER=0 SRC=g000055.gif>, where <IMG BORDER=0 SRC=g000056.gif> is a kernel
+and <IMG BORDER=0 SRC=g000057.gif> is the i-th example of <TT>data</TT>/
+
+<P>The goal is to looking for the <TT>alpha</TT> and <TT>b</TT>
+which are the best in a SVM-sense.
+
+<P>The learning function is
+<IMG BORDER=0 SRC=g000058.gif>
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="sv_allocator"></A>
+<A NAME="DOC.133.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Allocator.html">Allocator</A>* sv_allocator</B></TT>
+<DD>To allocate all stuff related to support vectors
+<DL><DT><DD></DL><P>
+<A NAME="io_sequence_array"></A>
+<A NAME="DOC.133.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="IOSequenceArray.html">IOSequenceArray</A>* io_sequence_array</B></TT>
+<DD>Give the sequence-format
+<DL><DT><DD></DL><P>
+<A NAME="data"></A>
+<A NAME="DOC.133.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="DataSet.html">DataSet</A>* data</B></TT>
+<DD>The dataset associated to the SVM
+<DL><DT><DD></DL><P>
+<A NAME="kernel"></A>
+<A NAME="DOC.133.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Kernel.html">Kernel</A>* kernel</B></TT>
+<DD>The kernel associated to the SVM
+<DL><DT><DD></DL><P>
+<A NAME="b"></A>
+<A NAME="DOC.133.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real b</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="support_vectors"></A>
+<A NAME="DOC.133.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* support_vectors</B></TT>
+<DD>The support vectors
+<DL><DT><DD></DL><P>
+<A NAME="sv_alpha"></A>
+<A NAME="DOC.133.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* sv_alpha</B></TT>
+<DD>sv_alpha[i] is the weight of the SV i
+<DL><DT><DD></DL><P>
+<A NAME="sv_sequences"></A>
+<A NAME="DOC.133.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>** sv_sequences</B></TT>
+<DD>SV sequences
+<DL><DT><DD></DL><P>
+<A NAME="n_support_vectors"></A>
+<A NAME="DOC.133.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_support_vectors</B></TT>
+<DD>The number of support vectors
+<DL><DT><DD></DL><P>
+<A NAME="n_support_vectors_bound"></A>
+<A NAME="DOC.133.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_support_vectors_bound</B></TT>
+<DD>The number of support vectors which are at the bound "C"
+<DL><DT><DD></DL><P>
+<A NAME="SVM"></A>
+<A NAME="DOC.133.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> SVM(<!1><A HREF="Kernel.html">Kernel</A>* kernel_, <!1><A HREF="IOSequenceArray.html">IOSequenceArray</A>* io_sequence_array_=NULL)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="bCompute"></A>
+<A NAME="DOC.133.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool bCompute()</B></TT>
+<DD>Computes the <TT>b</TT>
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="SVMRegression.html">SVMRegression</A><BR>
+<A HREF="SVMClassification.html">SVMClassification</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

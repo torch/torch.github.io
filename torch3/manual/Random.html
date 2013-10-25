@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Random</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Random</A></H2></H2><BLOCKQUOTE>Random class which contains several static random methods.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void <B><A HREF="#DOC.46.1">seed</A></B>()
+<DD><I>Initializes the random number generator with the computer clock</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void <B><A HREF="#DOC.46.2">manualSeed</A></B>(unsigned long the_seed_)
+<DD><I>Initializes the random number generator with the given long "the_seed_"</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   unsigned long <B><A HREF="#DOC.46.3">getInitialSeed</A></B>()
+<DD><I>Returns the starting seed used</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   unsigned long <B><A HREF="#DOC.46.4">random</A></B>()
+<DD><I>Generates a uniform 32 bits integer</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   real <B><A HREF="#DOC.46.5">uniform</A></B>()
+<DD><I>Generates a uniform random number on [0,1[</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void <B><A HREF="#DOC.46.6">getShuffledIndices</A></B>(int* <!1><A HREF="KNN.html#DOC.149.3">indices</A>, int n_indices)
+<DD><I>Returns in <TT>indices</TT> <TT>n_indices</TT> shuffled.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void <B><A HREF="#DOC.46.7">shuffle</A></B>(void* tabular, int size_elem, int n_elems)
+<DD><I>Shuffles tabular, which contains <TT>n_elems</TT> of size <TT>size_elem</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   real <B><A HREF="#DOC.46.8">boundedUniform</A></B>(real a, real <!1><A HREF="SVM.html#DOC.133.5">b</A>)
+<DD><I>Generates a uniform random number on [a,b[ (b&gt;a)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   real <B><A HREF="#DOC.46.9">normal</A></B>(real mean=0, real stdv=1)
+<DD><I>Generates a random number from a normal distribution.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   real <B><A HREF="#DOC.46.10">exponential</A></B>(real lambda)
+<DD><I>Generates a random number from an exponential distribution.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   real <B><A HREF="#DOC.46.11">cauchy</A></B>(real median=0, real sigma=1)
+<DD><I>Returns a random number from a Cauchy distribution.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   real <B><A HREF="#DOC.46.12">logNormal</A></B>(real mean, real stdv)
+<DD><I>Generates a random number from a log-normal distribution.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   int <B><A HREF="#DOC.46.13">geometric</A></B>(real p)
+<DD><I>Generates a random number from a geometric distribution.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   bool <B><A HREF="#DOC.46.14">bernouilli</A></B>(real p=0.5)
+<DD><I>Returns true with probability <IMG BORDER=0 SRC=g000006.gif> and false with probability <IMG BORDER=0 SRC=g000007.gif> (p &gt; 0)</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Random class which contains several static random methods.
+
+<P>These methods are based on a uniform random generator,
+named "Mersenne Twister", available at:
+http://www.math.keio.ac.jp/matumoto/emt.html.
+Copyright Makoto Matsumoto and Takuji Nishimura.
+(Have a look inside the implementation file for details).
+
+<P>The random generator can be initialized with the manualSeed() method.
+Otherwise, it will be automatically initialized with a seed based
+on the current computer clock.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="seed"></A>
+<A NAME="DOC.46.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void seed()</B></TT>
+<DD>Initializes the random number generator with the computer clock
+<DL><DT><DD></DL><P>
+<A NAME="manualSeed"></A>
+<A NAME="DOC.46.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void manualSeed(unsigned long the_seed_)</B></TT>
+<DD>Initializes the random number generator with the given long "the_seed_"
+<DL><DT><DD></DL><P>
+<A NAME="getInitialSeed"></A>
+<A NAME="DOC.46.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   unsigned long getInitialSeed()</B></TT>
+<DD>Returns the starting seed used
+<DL><DT><DD></DL><P>
+<A NAME="random"></A>
+<A NAME="DOC.46.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   unsigned long random()</B></TT>
+<DD>Generates a uniform 32 bits integer
+<DL><DT><DD></DL><P>
+<A NAME="uniform"></A>
+<A NAME="DOC.46.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   real uniform()</B></TT>
+<DD>Generates a uniform random number on [0,1[
+<DL><DT><DD></DL><P>
+<A NAME="getShuffledIndices"></A>
+<A NAME="DOC.46.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void getShuffledIndices(int* <!1><A HREF="KNN.html#DOC.149.3">indices</A>, int n_indices)</B></TT>
+<DD>Returns in <TT>indices</TT> <TT>n_indices</TT> shuffled. (between 0 and <TT>n_indices-1</TT>).
+<DL><DT><DD></DL><P>
+<A NAME="shuffle"></A>
+<A NAME="DOC.46.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void shuffle(void* tabular, int size_elem, int n_elems)</B></TT>
+<DD>Shuffles tabular, which contains <TT>n_elems</TT> of size <TT>size_elem</TT>
+<DL><DT><DD></DL><P>
+<A NAME="boundedUniform"></A>
+<A NAME="DOC.46.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   real boundedUniform(real a, real <!1><A HREF="SVM.html#DOC.133.5">b</A>)</B></TT>
+<DD>Generates a uniform random number on [a,b[ (b&gt;a)
+<DL><DT><DD></DL><P>
+<A NAME="normal"></A>
+<A NAME="DOC.46.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   real normal(real mean=0, real stdv=1)</B></TT>
+<DD>Generates a random number from a normal distribution.
+(With mean <TT>mean</TT> and standard deviation <TT>stdv&nbsp;&gt;=&nbsp;0</TT>).
+<DL><DT><DD></DL><P>
+<A NAME="exponential"></A>
+<A NAME="DOC.46.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   real exponential(real lambda)</B></TT>
+<DD>Generates a random number from an exponential distribution.
+The density is <IMG BORDER=0 SRC=g000002.gif>, where
+lambda is a positive number.
+<DL><DT><DD></DL><P>
+<A NAME="cauchy"></A>
+<A NAME="DOC.46.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   real cauchy(real median=0, real sigma=1)</B></TT>
+<DD>Returns a random number from a Cauchy distribution.
+The Cauchy density is <IMG BORDER=0 SRC=g000003.gif>
+<DL><DT><DD></DL><P>
+<A NAME="logNormal"></A>
+<A NAME="DOC.46.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   real logNormal(real mean, real stdv)</B></TT>
+<DD>Generates a random number from a log-normal distribution.
+(<TT>mean&nbsp;&gt;&nbsp;0</TT> is the mean of the log-normal distribution
+and <TT>stdv</TT> is its standard deviation).
+<DL><DT><DD></DL><P>
+<A NAME="geometric"></A>
+<A NAME="DOC.46.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   int geometric(real p)</B></TT>
+<DD>Generates a random number from a geometric distribution.
+It returns an integer <TT>i</TT>, where <IMG BORDER=0 SRC=g000004.gif>.
+p must satisfy <IMG BORDER=0 SRC=g000005.gif>.
+<DL><DT><DD></DL><P>
+<A NAME="bernouilli"></A>
+<A NAME="DOC.46.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   bool bernouilli(real p=0.5)</B></TT>
+<DD>Returns true with probability <IMG BORDER=0 SRC=g000006.gif> and false with probability <IMG BORDER=0 SRC=g000007.gif> (p &gt; 0)
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

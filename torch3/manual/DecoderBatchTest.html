@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  DecoderBatchTest</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DecoderBatchTest</A></H2></H2><BLOCKQUOTE>This class is used to decode a set of test files and display statistics and results for each file (ie.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.73.21">run</A></B>()
+<DD><I>Runs the batch test according to the options set by the call to 'configure'</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.1">Configures the batch test</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.2">'datafiles_filename' is the file containing a list of the input data files</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.3">that need to be decoded.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.4">will occur in the order the files are listed in this file</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.5">'expected_results_file' is the file containing the correct transcriptions</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.6">for all input data files.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.7">the same as the order in 'datafiles_filename'</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.8">'decoder_' is a pointer to the decoder to be used to perform the recognition</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.9">'remove_sil' indicates whether the silence word is to be removed from the</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.10">recognition results before statistics are calculated</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.11">'output_res' indicates whether the result of each recognition is to be output</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.12">immediately after it is obtained</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.13">'preload_data' indicates whether all of the input data in all files is to be</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.14">preloaded into memory before any decoding occurs (takes lots of memory and lots</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.15">of time before any results are obtained if the number of input data files</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.16">is large</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.17">'pre_calc_emission_probs' indicates whether emission probabilities for</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.18">all input files are to be calculated before the decoder is invoked.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.19">Intended to be called after the 'run' method has returned.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.73.20">recognition results for all input data files and compiles insertions, </A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class is used to decode a set of test files and display statistics and results
+for each file (ie. expected and actual words recognised) and also for the entire 
+test set (ie. insertions, deletions, substitutions, accuracy, total time).
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Configures the batch test"></A>
+<A NAME="DOC.73.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Configures the batch test</B></TT>
+<DD>Configures the batch test
+<DL><DT><DD></DL><P>
+<A NAME="'datafiles_filename' is the file containing a list of the input data files"></A>
+<A NAME="DOC.73.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'datafiles_filename' is the file containing a list of the input data files</B></TT>
+<DD>'datafiles_filename' is the file containing a list of the input data files
+<DL><DT><DD></DL><P>
+<A NAME="that need to be decoded."></A>
+<A NAME="DOC.73.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> that need to be decoded.</B></TT>
+<DD>that need to be decoded.  Absolute pathnames are required.  The decoding 
+<DL><DT><DD></DL><P>
+<A NAME="will occur in the order the files are listed in this file"></A>
+<A NAME="DOC.73.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> will occur in the order the files are listed in this file</B></TT>
+<DD>will occur in the order the files are listed in this file
+<DL><DT><DD></DL><P>
+<A NAME="'expected_results_file' is the file containing the correct transcriptions"></A>
+<A NAME="DOC.73.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'expected_results_file' is the file containing the correct transcriptions</B></TT>
+<DD>'expected_results_file' is the file containing the correct transcriptions
+<DL><DT><DD></DL><P>
+<A NAME="for all input data files."></A>
+<A NAME="DOC.73.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> for all input data files.</B></TT>
+<DD>for all input data files.  The ordering of the files does not have to be
+<DL><DT><DD></DL><P>
+<A NAME="the same as the order in 'datafiles_filename'"></A>
+<A NAME="DOC.73.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> the same as the order in 'datafiles_filename'</B></TT>
+<DD>the same as the order in 'datafiles_filename'
+<DL><DT><DD></DL><P>
+<A NAME="'decoder_' is a pointer to the decoder to be used to perform the recognition"></A>
+<A NAME="DOC.73.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'decoder_' is a pointer to the decoder to be used to perform the recognition</B></TT>
+<DD>'decoder_' is a pointer to the decoder to be used to perform the recognition
+<DL><DT><DD></DL><P>
+<A NAME="'remove_sil' indicates whether the silence word is to be removed from the"></A>
+<A NAME="DOC.73.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'remove_sil' indicates whether the silence word is to be removed from the</B></TT>
+<DD>'remove_sil' indicates whether the silence word is to be removed from the
+<DL><DT><DD></DL><P>
+<A NAME="recognition results before statistics are calculated"></A>
+<A NAME="DOC.73.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> recognition results before statistics are calculated</B></TT>
+<DD>recognition results before statistics are calculated
+<DL><DT><DD></DL><P>
+<A NAME="'output_res' indicates whether the result of each recognition is to be output"></A>
+<A NAME="DOC.73.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'output_res' indicates whether the result of each recognition is to be output</B></TT>
+<DD>'output_res' indicates whether the result of each recognition is to be output
+<DL><DT><DD></DL><P>
+<A NAME="immediately after it is obtained"></A>
+<A NAME="DOC.73.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> immediately after it is obtained</B></TT>
+<DD>immediately after it is obtained
+<DL><DT><DD></DL><P>
+<A NAME="'preload_data' indicates whether all of the input data in all files is to be"></A>
+<A NAME="DOC.73.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'preload_data' indicates whether all of the input data in all files is to be</B></TT>
+<DD>'preload_data' indicates whether all of the input data in all files is to be
+<DL><DT><DD></DL><P>
+<A NAME="preloaded into memory before any decoding occurs (takes lots of memory and lots"></A>
+<A NAME="DOC.73.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> preloaded into memory before any decoding occurs (takes lots of memory and lots</B></TT>
+<DD>preloaded into memory before any decoding occurs (takes lots of memory and lots
+<DL><DT><DD></DL><P>
+<A NAME="of time before any results are obtained if the number of input data files"></A>
+<A NAME="DOC.73.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> of time before any results are obtained if the number of input data files</B></TT>
+<DD>of time before any results are obtained if the number of input data files
+<DL><DT><DD></DL><P>
+<A NAME="is large"></A>
+<A NAME="DOC.73.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> is large</B></TT>
+<DD>is large
+<DL><DT><DD></DL><P>
+<A NAME="'pre_calc_emission_probs' indicates whether emission probabilities for"></A>
+<A NAME="DOC.73.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'pre_calc_emission_probs' indicates whether emission probabilities for</B></TT>
+<DD>'pre_calc_emission_probs' indicates whether emission probabilities for
+<DL><DT><DD></DL><P>
+<A NAME="all input files are to be calculated before the decoder is invoked."></A>
+<A NAME="DOC.73.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> all input files are to be calculated before the decoder is invoked.</B></TT>
+<DD>all input files are to be calculated before the decoder is invoked.  This
+<DL><DT><DD></DL><P>
+<A NAME="Intended to be called after the 'run' method has returned."></A>
+<A NAME="DOC.73.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Intended to be called after the 'run' method has returned.</B></TT>
+<DD>Intended to be called after the 'run' method has returned.  Processes the
+<DL><DT><DD></DL><P>
+<A NAME="recognition results for all input data files and compiles insertions, "></A>
+<A NAME="DOC.73.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> recognition results for all input data files and compiles insertions, </B></TT>
+<DD>recognition results for all input data files and compiles insertions, 
+<DL><DT><DD></DL><P>
+<A NAME="run"></A>
+<A NAME="DOC.73.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void run()</B></TT>
+<DD>Runs the batch test according to the options set by the call to 'configure'
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

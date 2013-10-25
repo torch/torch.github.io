@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  KMeans</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">KMeans</A></H2></H2><BLOCKQUOTE>This class can be used to do a "kmeans" on a given set of data.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=185>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CGradientMachine,MGradientMachine.html,CDistribution,MDistribution.html,CDiagonalGMM,MDiagonalGMM.html,CKMeans,MKMeans.html">
+<param name=before value="M,M,M,M,M,M">
+<param name=after value="Md_SPSPSPSP,Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4,5">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.94.1">min_cluster</A></B>
+<DD><I>for each example, keep the index of the neirest cluster</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.94.3">KMeans</A></B>(int <!1><A HREF="GradientMachine.html#DOC.107.1">n_inputs</A>, int n_gaussians_)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.94.4">frameLogProbability</A></B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>note that this method returns in fact the euclidean distance between  the observation and the neirest cluster</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.94.5">frameLogProbabilityOneGaussian</A></B>(int g, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>similarly to frameLogProbability, this method returns the euclidean distance between cluster g and the given observation</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.94.2">initialize the parameters from the data set to false if you</A></B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="DiagonalGMM.html">DiagonalGMM</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_gaussians</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>prior_weights</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="EMTrainer.html">EMTrainer</A>* <B>initial_kmeans_trainer</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>MeasurerList* <B>initial_kmeans_trainer_measurers</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>log_weights</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>dlog_weights</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>var_threshold</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_probabilities_g</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>best_gauss</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>best_gauss_per_frame</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>sum_log_var_plus_n_obs_log_2_pi</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real** <B>minus_half_over_var</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real** <B>means_acc</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* data_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setVarThreshold</B>(real* var_threshold_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMIterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>iterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>viterbiFrameLogProbability</B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>sequenceInitialize</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMSequenceInitialize</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameEMAccPosteriors</B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameViterbiAccPosteriors</B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMUpdate</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>update</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameBackward</B>(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameDecision</B>(int t, real* decision)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Distribution.html">Distribution</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>log_probability</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_probabilities</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>logProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>viterbiLogProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>decode</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiBackward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif> <B>Returns the decision of the distribution</B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GradientMachine.html">GradientMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_outputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>der_params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>beta</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>backward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setPartialBackprop</B>(bool flag=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameForward</B>(int t, real* f_inputs, real* f_outputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class can be used to do a "kmeans" on a given set of data.
+It has been implemented in the framework of a Distribution that can
+be trained with EM. This means that the kmeans distance is in fact
+returned by the method logProbability.
+
+<P>Note that as KMeans is a subclass of DiagonalGMM, they share the same
+parameter structure. Hence, a DiagonalGMM can be easily initialized by
+a KMeans.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="min_cluster"></A>
+<A NAME="DOC.94.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* min_cluster</B></TT>
+<DD>for each example, keep the index of the neirest cluster
+<DL><DT><DD></DL><P>
+<A NAME="initialize the parameters from the data set to false if you"></A>
+<A NAME="DOC.94.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> initialize the parameters from the data set to false if you</B></TT>
+<DD>initialize the parameters from the data set to false if you
+<DL><DT><DD></DL><P>
+<A NAME="KMeans"></A>
+<A NAME="DOC.94.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> KMeans(int <!1><A HREF="GradientMachine.html#DOC.107.1">n_inputs</A>, int n_gaussians_)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="frameLogProbability"></A>
+<A NAME="DOC.94.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real frameLogProbability(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>note that this method returns in fact the euclidean distance between 
+the observation and the neirest cluster
+<DL><DT><DD></DL><P>
+<A NAME="frameLogProbabilityOneGaussian"></A>
+<A NAME="DOC.94.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real frameLogProbabilityOneGaussian(int g, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>similarly to frameLogProbability, this method returns the euclidean
+distance between cluster g and the given observation
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

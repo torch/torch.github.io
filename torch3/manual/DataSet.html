@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  DataSet</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DataSet</A></H2></H2><BLOCKQUOTE>Provides an interface to manipulate all kind of data.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CObject,MObject.html,CDataSet,MDataSet.html,CMemoryDataSet,MMemoryDataSet.html,CFrameSelectorDataSet,MFrameSelectorDataSet.html,CExampleFrameSelectorDataSet,MExampleFrameSelectorDataSet.html,CDiskDataSet,MDiskDataSet.html,CClassFormatDataSet,MClassFormatDataSet.html">
+<param name=before value="M,M,M|_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_,M,M,M,M,M,M">
+<param name=indent value="0,1,1,1,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.16.1">selected_examples</A></B>
+<DD><I>The indices of all selected examples.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.16.2">n_inputs</A></B>
+<DD><I>Frame size of <TT>inputs</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.16.3">n_targets</A></B>
+<DD><I>Frame size of <TT>targets</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.16.4">real_current_example_index</A></B>
+<DD><I>Index of the current example.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.16.5">inputs</A></B>
+<DD><I>Pointer on the inputs of the current example</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.16.6">targets</A></B>
+<DD><I>Pointer to the targets of the current example</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.16.7">n_examples</A></B>
+<DD><I>Number of examples in the dataset.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.16.8">n_real_examples</A></B>
+<DD><I>Real number of examples in the dataset.</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.16.9">DataSet</A></B>()
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.16.10">init</A></B>(int n_examples_, int n_inputs_, int n_targets_)
+<DD><I>Method which initializes some fields of the datasets.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.16.11">setExample</A></B>(int t, bool set_inputs=true, bool set_targets=true)
+<DD><I>Set <TT>targets</TT> and <TT>inputs</TT> to the targets and inputs of the example with the index <TT>selected_examples[t]</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.16.12">setRealExample</A></B>(int t, bool set_inputs=true, bool set_targets=true) = 0
+<DD><I>Set <TT>targets</TT> and <TT>inputs</TT> to the targets and inputs of the example with the index <TT>t</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.16.13">pushSubset</A></B>(int* subset_, int n_examples_)
+<DD><I>Set a new subset.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.16.14">popSubset</A></B>()
+<DD><I>Remove the last subset.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.16.15">pushExample</A></B>() = 0
+<DD><I>Tells that the current example must be kept in memory after next calls of <TT>setExample()</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.16.16">popExample</A></B>() = 0
+<DD><I>Tells that the last pushed example will be now the current example, and therefore, will be forgeted after the next call of <TT>setExample()</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.16.17">getNumberOfFrames</A></B>(int t, int* n_input_frames, int* n_target_frames) = 0
+<DD><I>Put in <TT>n_input_frames</TT> and <TT>n_target_frames</TT> the number of input frames and target frames for example <TT>t</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.16.18">preProcess</A></B>(<!1><A HREF="PreProcessing.html">PreProcessing</A>* pre_processing) = 0
+<DD><I>Perform some pre-processing on data</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Provides an interface to manipulate all kind of data.
+A dataset contains two kind of things: inputs sequences
+and targets sequences.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="selected_examples"></A>
+<A NAME="DOC.16.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* selected_examples</B></TT>
+<DD>The indices of all selected examples.
+When <TT>select_examples</TT> is false, it contains
+the indices of all examples.
+<DL><DT><DD></DL><P>
+<A NAME="n_inputs"></A>
+<A NAME="DOC.16.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_inputs</B></TT>
+<DD>Frame size of <TT>inputs</TT>.    
+<DL><DT><DD></DL><P>
+<A NAME="n_targets"></A>
+<A NAME="DOC.16.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_targets</B></TT>
+<DD>Frame size of <TT>targets</TT>.    
+<DL><DT><DD></DL><P>
+<A NAME="real_current_example_index"></A>
+<A NAME="DOC.16.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int real_current_example_index</B></TT>
+<DD>Index of the current example.
+Warning: it's the <EM>real</EM> index and not the index
+in the <TT>selected_examples</TT> table.
+<DL><DT><DD></DL><P>
+<A NAME="inputs"></A>
+<A NAME="DOC.16.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* inputs</B></TT>
+<DD>Pointer on the inputs of the current example
+<DL><DT><DD></DL><P>
+<A NAME="targets"></A>
+<A NAME="DOC.16.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* targets</B></TT>
+<DD>Pointer to the targets of the current example
+<DL><DT><DD></DL><P>
+<A NAME="n_examples"></A>
+<A NAME="DOC.16.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_examples</B></TT>
+<DD>Number of examples in the dataset.
+If you're using <TT>select_examples</TT>, it's
+the number of selected examples.
+<DL><DT><DD></DL><P>
+<A NAME="n_real_examples"></A>
+<A NAME="DOC.16.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_real_examples</B></TT>
+<DD>Real number of examples in the dataset.
+It's the number of examples in memory.
+(= <TT>n_examples</TT> if <TT>select_examples</TT> is false)
+<DL><DT><DD></DL><P>
+<A NAME="DataSet"></A>
+<A NAME="DOC.16.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DataSet()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="init"></A>
+<A NAME="DOC.16.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void init(int n_examples_, int n_inputs_, int n_targets_)</B></TT>
+<DD>Method which initializes some fields of the datasets.
+It has to be called only in the constructor of your subclasses.
+Just for developpers of new datasets.
+<DL><DT><DD></DL><P>
+<A NAME="setExample"></A>
+<A NAME="DOC.16.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setExample(int t, bool set_inputs=true, bool set_targets=true)</B></TT>
+<DD>Set <TT>targets</TT> and <TT>inputs</TT> to the targets and inputs
+of the example with the index <TT>selected_examples[t]</TT>.
+Warning: after a <TT>setExample()</TT> the previous selected example
+is <EM>not</EM> supposed to exist... for that, use <TT>pushExample()</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="setRealExample"></A>
+<A NAME="DOC.16.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void setRealExample(int t, bool set_inputs=true, bool set_targets=true) = 0</B></TT>
+<DD>Set <TT>targets</TT> and <TT>inputs</TT> to the targets and inputs
+of the example with the index <TT>t</TT>. If you create a new
+dataset, you <EM>must</EM> update inside <TT>current_example_index</TT>.
+Warning: after a <TT>setExample()</TT> the previous selected example
+is <EM>not</EM> supposed to exist... for that, use <TT>pushExample()</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="pushSubset"></A>
+<A NAME="DOC.16.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void pushSubset(int* subset_, int n_examples_)</B></TT>
+<DD>Set a new subset.
+<UL>
+<LI> <TT>subset_</TT> (of size <TT>n_examples_</TT>) is a set
+of indices which define a subset of <TT>data</TT>.
+<LI> if a <TT>pushSubset()</TT> has been already called,
+the next <TT>pushSubset()</TT> defines a subset of the
+previous subset, and so on...
+<LI> this function set <TT>select_examples</TT> to <TT>true</TT>
+and set the read indices of the examples in
+<TT>selected_examples</TT>.
+</UL>
+<DL><DT><DD></DL><P>
+<A NAME="popSubset"></A>
+<A NAME="DOC.16.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void popSubset()</B></TT>
+<DD>Remove the last subset.
+<UL>
+<LI> recomputes "selected_examples".
+<LI> if it was the last subset, set <TT>select_examples</TT>
+to <TT>false</TT>.
+</UL>
+<DL><DT><DD></DL><P>
+<A NAME="pushExample"></A>
+<A NAME="DOC.16.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void pushExample() = 0</B></TT>
+<DD>Tells that the current example must be kept in memory
+after next calls of <TT>setExample()</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="popExample"></A>
+<A NAME="DOC.16.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void popExample() = 0</B></TT>
+<DD>Tells that the last pushed example will be now the current
+example, and therefore, will be forgeted after the next
+call of <TT>setExample()</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="getNumberOfFrames"></A>
+<A NAME="DOC.16.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void getNumberOfFrames(int t, int* n_input_frames, int* n_target_frames) = 0</B></TT>
+<DD>Put in <TT>n_input_frames</TT> and <TT>n_target_frames</TT> the number
+of input frames and target frames for example <TT>t</TT>.
+This take subsets in account.
+If one field is <TT>NULL</TT>, it will not be returned.
+<DL><DT><DD></DL><P>
+<A NAME="preProcess"></A>
+<A NAME="DOC.16.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void preProcess(<!1><A HREF="PreProcessing.html">PreProcessing</A>* pre_processing) = 0</B></TT>
+<DD>Perform some pre-processing on data
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="MemoryDataSet.html">MemoryDataSet</A><BR>
+<A HREF="FrameSelectorDataSet.html">FrameSelectorDataSet</A><BR>
+<A HREF="ExampleFrameSelectorDataSet.html">ExampleFrameSelectorDataSet</A><BR>
+<A HREF="DiskDataSet.html">DiskDataSet</A><BR>
+<A HREF="ClassFormatDataSet.html">ClassFormatDataSet</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

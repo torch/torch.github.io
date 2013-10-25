@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  DecoderSingleTest</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DecoderSingleTest</A></H2></H2><BLOCKQUOTE>This class is used to recognise a single input data file, post-process the recognition result and output the result.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.74.30">removeSentMarksFromActual</A></B>( <!1><A HREF="Vocabulary.html">Vocabulary</A>* vocabulary )
+<DD><I>Internal functions</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.1">Configures the test</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.2">'test_id_' is an ID assigned to this particular test</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.3">'test_filename_' is the absolute pathname of the input data file</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.4">'n_expected_words_' and 'expected_words_' contain information about </A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.5">the expected result of the test (ie.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.6">'data_format_' indicates the type of data contained in the input</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.7">data file.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.8">'phone_models_' is a pointer to the PhoneModels instance that contains</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.9">the phone HMM's.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.10">data (eg.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.11">'remove_sent_marks_' indicates whether the sentence start and end</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.12">words in the recognition result are to be removed</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.13">'output_result_' indicates whether the recognition result is to be</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.14">output after the decoding has occurred</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.15">'out_fd' is the file where output will be written (if NULL then</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.16">stdout assumed)</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.17">'output_ctm_' indicates if the output is to be in CTM format</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.18">'frame_msec_step_size' is the frame step size in milliseconds and is</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.19">Configures the test.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.20">in a big archive file</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.21">Parameters are same as other 'configure' method except 'test_filename_'</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.22">has been replaced by 'archive_offset_'</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.23">'archive_offset' is the offset into an archive input file where the</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.24">Runs the tests using the recogniser pointed to by 'decoder'</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.25">'archive_fd' is the big file containing the input data.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.26">this is not NULL, the archive_offset member variable is used</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.27">Outputs the recognition result.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.28">recognition result (ie.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.74.29">strings and displayed.</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class is used to recognise a single input data file, post-process the
+recognition result and output the result.  The DecoderBatchTest class
+contains of an array of these objects.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Configures the test"></A>
+<A NAME="DOC.74.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Configures the test</B></TT>
+<DD>Configures the test
+<DL><DT><DD></DL><P>
+<A NAME="'test_id_' is an ID assigned to this particular test"></A>
+<A NAME="DOC.74.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'test_id_' is an ID assigned to this particular test</B></TT>
+<DD>'test_id_' is an ID assigned to this particular test
+<DL><DT><DD></DL><P>
+<A NAME="'test_filename_' is the absolute pathname of the input data file"></A>
+<A NAME="DOC.74.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'test_filename_' is the absolute pathname of the input data file</B></TT>
+<DD>'test_filename_' is the absolute pathname of the input data file
+<DL><DT><DD></DL><P>
+<A NAME="'n_expected_words_' and 'expected_words_' contain information about "></A>
+<A NAME="DOC.74.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'n_expected_words_' and 'expected_words_' contain information about </B></TT>
+<DD>'n_expected_words_' and 'expected_words_' contain information about 
+<DL><DT><DD></DL><P>
+<A NAME="the expected result of the test (ie."></A>
+<A NAME="DOC.74.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> the expected result of the test (ie.</B></TT>
+<DD>the expected result of the test (ie. the correct transcription).
+<DL><DT><DD></DL><P>
+<A NAME="'data_format_' indicates the type of data contained in the input"></A>
+<A NAME="DOC.74.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'data_format_' indicates the type of data contained in the input</B></TT>
+<DD>'data_format_' indicates the type of data contained in the input
+<DL><DT><DD></DL><P>
+<A NAME="data file."></A>
+<A NAME="DOC.74.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> data file.</B></TT>
+<DD>data file.  Only 1 input data format has been implemented so far.
+<DL><DT><DD></DL><P>
+<A NAME="'phone_models_' is a pointer to the PhoneModels instance that contains"></A>
+<A NAME="DOC.74.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'phone_models_' is a pointer to the PhoneModels instance that contains</B></TT>
+<DD>'phone_models_' is a pointer to the PhoneModels instance that contains
+<DL><DT><DD></DL><P>
+<A NAME="the phone HMM's."></A>
+<A NAME="DOC.74.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> the phone HMM's.</B></TT>
+<DD>the phone HMM's. This used to verify that datafiles contain expected
+<DL><DT><DD></DL><P>
+<A NAME="data (eg."></A>
+<A NAME="DOC.74.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> data (eg.</B></TT>
+<DD>data (eg. emission probs or features, correct vector sizes)
+<DL><DT><DD></DL><P>
+<A NAME="'remove_sent_marks_' indicates whether the sentence start and end"></A>
+<A NAME="DOC.74.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'remove_sent_marks_' indicates whether the sentence start and end</B></TT>
+<DD>'remove_sent_marks_' indicates whether the sentence start and end
+<DL><DT><DD></DL><P>
+<A NAME="words in the recognition result are to be removed"></A>
+<A NAME="DOC.74.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> words in the recognition result are to be removed</B></TT>
+<DD>words in the recognition result are to be removed
+<DL><DT><DD></DL><P>
+<A NAME="'output_result_' indicates whether the recognition result is to be"></A>
+<A NAME="DOC.74.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'output_result_' indicates whether the recognition result is to be</B></TT>
+<DD>'output_result_' indicates whether the recognition result is to be
+<DL><DT><DD></DL><P>
+<A NAME="output after the decoding has occurred"></A>
+<A NAME="DOC.74.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> output after the decoding has occurred</B></TT>
+<DD>output after the decoding has occurred
+<DL><DT><DD></DL><P>
+<A NAME="'out_fd' is the file where output will be written (if NULL then"></A>
+<A NAME="DOC.74.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'out_fd' is the file where output will be written (if NULL then</B></TT>
+<DD>'out_fd' is the file where output will be written (if NULL then
+<DL><DT><DD></DL><P>
+<A NAME="stdout assumed)"></A>
+<A NAME="DOC.74.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> stdout assumed)</B></TT>
+<DD>stdout assumed)
+<DL><DT><DD></DL><P>
+<A NAME="'output_ctm_' indicates if the output is to be in CTM format"></A>
+<A NAME="DOC.74.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'output_ctm_' indicates if the output is to be in CTM format</B></TT>
+<DD>'output_ctm_' indicates if the output is to be in CTM format
+<DL><DT><DD></DL><P>
+<A NAME="'frame_msec_step_size' is the frame step size in milliseconds and is"></A>
+<A NAME="DOC.74.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'frame_msec_step_size' is the frame step size in milliseconds and is</B></TT>
+<DD>'frame_msec_step_size' is the frame step size in milliseconds and is
+<DL><DT><DD></DL><P>
+<A NAME="Configures the test."></A>
+<A NAME="DOC.74.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Configures the test.</B></TT>
+<DD>Configures the test. This version is used when we have input data
+<DL><DT><DD></DL><P>
+<A NAME="in a big archive file"></A>
+<A NAME="DOC.74.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> in a big archive file</B></TT>
+<DD>in a big archive file
+<DL><DT><DD></DL><P>
+<A NAME="Parameters are same as other 'configure' method except 'test_filename_'"></A>
+<A NAME="DOC.74.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Parameters are same as other 'configure' method except 'test_filename_'</B></TT>
+<DD>Parameters are same as other 'configure' method except 'test_filename_'
+<DL><DT><DD></DL><P>
+<A NAME="has been replaced by 'archive_offset_'"></A>
+<A NAME="DOC.74.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> has been replaced by 'archive_offset_'</B></TT>
+<DD>has been replaced by 'archive_offset_'
+<DL><DT><DD></DL><P>
+<A NAME="'archive_offset' is the offset into an archive input file where the"></A>
+<A NAME="DOC.74.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'archive_offset' is the offset into an archive input file where the</B></TT>
+<DD>'archive_offset' is the offset into an archive input file where the
+<DL><DT><DD></DL><P>
+<A NAME="Runs the tests using the recogniser pointed to by 'decoder'"></A>
+<A NAME="DOC.74.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Runs the tests using the recogniser pointed to by 'decoder'</B></TT>
+<DD>Runs the tests using the recogniser pointed to by 'decoder'
+<DL><DT><DD></DL><P>
+<A NAME="'archive_fd' is the big file containing the input data."></A>
+<A NAME="DOC.74.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'archive_fd' is the big file containing the input data.</B></TT>
+<DD>'archive_fd' is the big file containing the input data. When
+<DL><DT><DD></DL><P>
+<A NAME="this is not NULL, the archive_offset member variable is used"></A>
+<A NAME="DOC.74.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> this is not NULL, the archive_offset member variable is used</B></TT>
+<DD>this is not NULL, the archive_offset member variable is used
+<DL><DT><DD></DL><P>
+<A NAME="Outputs the recognition result."></A>
+<A NAME="DOC.74.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Outputs the recognition result.</B></TT>
+<DD>Outputs the recognition result. If 'vocab' is defined, then the
+<DL><DT><DD></DL><P>
+<A NAME="recognition result (ie."></A>
+<A NAME="DOC.74.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> recognition result (ie.</B></TT>
+<DD>recognition result (ie. vocab entry indices) are converted to
+<DL><DT><DD></DL><P>
+<A NAME="strings and displayed."></A>
+<A NAME="DOC.74.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> strings and displayed.</B></TT>
+<DD>strings and displayed.  If 'vocab' is NULL then the indices are
+<DL><DT><DD></DL><P>
+<A NAME="removeSentMarksFromActual"></A>
+<A NAME="DOC.74.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void removeSentMarksFromActual( <!1><A HREF="Vocabulary.html">Vocabulary</A>* vocabulary )</B></TT>
+<DD>Internal functions
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

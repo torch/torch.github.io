@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  DiskMatDataSet</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DiskMatDataSet</A></H2></H2><BLOCKQUOTE>Matrix DataSet On Disk.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CObject,MObject.html,CDataSet,MDataSet.html,CDiskDataSet,MDiskDataSet.html,CDiskMatDataSet,MDiskMatDataSet.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.18.1">DiskMatDataSet</A></B>(const char* filename, int n_inputs_, int n_targets_, bool one_file_is_one_sequence=false, int max_load=-1, bool <!1><A HREF="Measurer.html#DOC.35.3">binary_mode</A>=false)
+<DD><I>Create a new dataset from the file <TT>filename</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.18.2">DiskMatDataSet</A></B>(char** filenames, int n_files_, int n_inputs_, int n_targets_, bool one_file_is_one_sequence=false, int max_load=-1, bool <!1><A HREF="Measurer.html#DOC.35.3">binary_mode</A>=false)
+<DD><I>Same as the previous constructor, but for several files.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.18.3">DiskMatDataSet</A></B>(char** input_filenames, char** target_filenames, int n_files_, int max_load=-1, bool <!1><A HREF="Measurer.html#DOC.35.3">binary_mode</A>=false)
+<DD><I>Here the inputs and the targets are in separated files.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="DiskDataSet.html">DiskDataSet</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>PreProcessingList* <B>pre_processes</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="IOSequence.html">IOSequence</A>* <B>io_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="IOSequence.html">IOSequence</A>* <B>io_targets</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>init</B>(<!1><A HREF="IOSequence.html">IOSequence</A>* io_inputs_, <!1><A HREF="IOSequence.html">IOSequence</A>* io_targets_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="DataSet.html">DataSet</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int* <B>selected_examples</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_targets</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>real_current_example_index</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>targets</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_examples</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_real_examples</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setExample</B>(int t, bool set_inputs=true, bool set_targets=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setRealExample</B>(int t, bool set_inputs=true, bool set_targets=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>pushSubset</B>(int* subset_, int n_examples_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>popSubset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>pushExample</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>popExample</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>getNumberOfFrames</B>(int t, int* n_input_frames, int* n_target_frames)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>preProcess</B>(<!1><A HREF="PreProcessing.html">PreProcessing</A>* pre_processing)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Matrix DataSet On Disk.
+The standard dataset, with data not fully loaded in memory.
+Usefull for large databases.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="DiskMatDataSet"></A>
+<A NAME="DOC.18.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DiskMatDataSet(const char* filename, int n_inputs_, int n_targets_, bool one_file_is_one_sequence=false, int max_load=-1, bool <!1><A HREF="Measurer.html#DOC.35.3">binary_mode</A>=false)</B></TT>
+<DD>Create a new dataset from the file <TT>filename</TT>. If the file contains only one sequence, set <TT>one_file_is_one_sequence</TT>
+to true. If there is several sequences, and you want only to load the first <TT>n</TT> ones, set <TT>max_load</TT> to <TT>n</TT> (else <TT>max_load</TT>
+should be a negative number). If <TT>binary_mode</TT> is true, the IOBin format will be used, else it will be the IOAscii format.
+
+<P>Input and target sequence will have the same number of frames. For <EM>each</EM> frame given by the dataset, the first <TT>n_inputs_</TT>
+real are for the inputs and then the next <TT>n_targets_</TT> real are for the targets. (<TT>n_inputs_</TT> is the input frame size and
+<TT>n_targets_</TT> is the target frame size).
+<DL><DT><DD></DL><P>
+<A NAME="DiskMatDataSet"></A>
+<A NAME="DOC.18.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DiskMatDataSet(char** filenames, int n_files_, int n_inputs_, int n_targets_, bool one_file_is_one_sequence=false, int max_load=-1, bool <!1><A HREF="Measurer.html#DOC.35.3">binary_mode</A>=false)</B></TT>
+<DD>Same as the previous constructor, but for several files. If <TT>one_file_is_one_sequence</TT> is true, each files will be considered as they
+had only one sequence.
+<DL><DT><DD></DL><P>
+<A NAME="DiskMatDataSet"></A>
+<A NAME="DOC.18.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DiskMatDataSet(char** input_filenames, char** target_filenames, int n_files_, int max_load=-1, bool <!1><A HREF="Measurer.html#DOC.35.3">binary_mode</A>=false)</B></TT>
+<DD>Here the inputs and the targets are in separated files.
+Input and target frame sizes are therefore auto-detected.
+One file must correspond to one sequence.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DT><B>See Also:</B><DD><!1><A HREF="IOAscii.html">IOAscii</A>
+<BR><!1><A HREF="IOBin.html">IOBin</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

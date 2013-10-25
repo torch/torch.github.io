@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  WordSeg</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">WordSeg</A></H2></H2><BLOCKQUOTE>This class keeps track of all information to compute word errors</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CWordSeg,MWordSeg.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="LexiconInfo.html">LexiconInfo</A>* <B><A HREF="#DOC.159.1">lexicon</A></B>
+<DD><I>the corresponding lexicon</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.159.2">target_word_sequence</A></B>
+<DD><I>the target word sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.159.3">target_word_sequence_size</A></B>
+<DD><I>the length of the target word sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.159.4">target_word_sequence_max_size</A></B>
+<DD><I>the length of the longest target word sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.159.5">word_sequence</A></B>
+<DD><I>the word sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.159.6">word_sequence_size</A></B>
+<DD><I>the length of the word sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.159.7">word_sequence_max_size</A></B>
+<DD><I>the length of the longest word sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.159.8">word_sequence_time</A></B>
+<DD><I>the starting time of each word of the word sequence</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.159.9">WordSeg</A></B>(<!1><A HREF="LexiconInfo.html">LexiconInfo</A>* lexicon_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class keeps track of all information to compute word errors
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="lexicon"></A>
+<A NAME="DOC.159.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="LexiconInfo.html">LexiconInfo</A>* lexicon</B></TT>
+<DD>the corresponding lexicon
+<DL><DT><DD></DL><P>
+<A NAME="target_word_sequence"></A>
+<A NAME="DOC.159.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* target_word_sequence</B></TT>
+<DD>the target word sequence
+<DL><DT><DD></DL><P>
+<A NAME="target_word_sequence_size"></A>
+<A NAME="DOC.159.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int target_word_sequence_size</B></TT>
+<DD>the length of the target word sequence
+<DL><DT><DD></DL><P>
+<A NAME="target_word_sequence_max_size"></A>
+<A NAME="DOC.159.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int target_word_sequence_max_size</B></TT>
+<DD>the length of the longest target word sequence
+<DL><DT><DD></DL><P>
+<A NAME="word_sequence"></A>
+<A NAME="DOC.159.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* word_sequence</B></TT>
+<DD>the word sequence
+<DL><DT><DD></DL><P>
+<A NAME="word_sequence_size"></A>
+<A NAME="DOC.159.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int word_sequence_size</B></TT>
+<DD>the length of the word sequence
+<DL><DT><DD></DL><P>
+<A NAME="word_sequence_max_size"></A>
+<A NAME="DOC.159.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int word_sequence_max_size</B></TT>
+<DD>the length of the longest word sequence
+<DL><DT><DD></DL><P>
+<A NAME="word_sequence_time"></A>
+<A NAME="DOC.159.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* word_sequence_time</B></TT>
+<DD>the starting time of each word of the word sequence
+<DL><DT><DD></DL><P>
+<A NAME="WordSeg"></A>
+<A NAME="DOC.159.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> WordSeg(<!1><A HREF="LexiconInfo.html">LexiconInfo</A>* lexicon_)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

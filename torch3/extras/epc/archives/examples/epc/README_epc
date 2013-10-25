@@ -1,0 +1,93 @@
+REQUIREMENTS
+------------
+- Torch3 (http://www.torch.ch)
+
+INSTALL
+------
+1) decompress the archive in the Torch3 directory
+- cd Torch3;tar zxvf epc.tar.gz
+2) add the epc package in the torch packages
+- edit Makefile_options_Linux, add epc to packages = 
+3) compile again
+- make depend;make
+4) go to epc examples directory
+- cd examples/epc
+5) compile the programs
+- make measure_verif
+- make measure_tc
+
+USAGE
+-----
+#
+# usage: ./Linux_OPT_FLOAT/measure_verif [options] <training score file> <test score file>
+#
+
+Arguments:
+  <training score file> -> ascii training matrix file (<string>)
+  <test score file>     -> ascii test matrix file (<string>)
+
+Options:
+  -c <int>              -> column where the score is [0]
+  -s <real>             -> step between points for the curves [0.001]
+
+Curves:
+  -det_file <string>    -> compute FAR/FRR DET curves []
+  -roc                  -> ROC instead of DET 
+  -epc_file <string>    -> use the FAR/FRR DCF criterion []
+  -criterion <string>   -> frr, far, dcf values [dcf]
+  -bound <real>         -> bound for the criterion values [1]
+
+Points:
+  -eer_file <string>    -> compute EER points []
+  -hter_file <string>   -> compute HTER points []
+
+Stats:
+  -no_stats             -> compute far/frr statistics 
+
+
+
+  The output files (roc, det, epc) for verification is a simple ascii file of
+  six columns: 
+    <train-far> <train-frr> <train-hter> <test-far> <test-frr> <test-hter> <criterion>
+
+  Install  the examples package and run try_it scripts.
+
+
+#
+# usage: ./Linux_OPT_FLOAT/measure_tc [options] <training score file> <test score file>
+#
+
+Arguments:
+  <training score file> -> ascii training matrix file (<string>)
+  <test score file>     -> ascii test matrix file (<string>)
+
+Options:
+  -c <int>              -> column where the score is [0]
+  -s <real>             -> step between points for the curves [0.001]
+
+Curves:
+  -F1                   -> compute the F1 measure instead of (P+R)/2 
+  -roc_file <string>    -> compute PRECISION/RECALL ROC curves []
+  -epc_file <string>    -> use the PRECISION/RECALL DCF criterion []
+  -criterion <string>   -> recall, precision, dcf values [dcf]
+  -bound <real>         -> bound for the criterion values [1]
+
+Points:
+  -bep_file <string>    -> compute BEP points []
+
+Stats:
+  -no_stats             -> compute precision/recall statistics 
+
+  
+  The output files (roc, epc) for text categorization is a simple ascii file of
+  six columns: 
+    <train-precision> <train-recall> <1/2(train-precision + train-recall)> 
+    <test-precision> <test-recall> <1/2(test-precision + test-recall)> <criterion>
+
+	with "-F1" option:
+    <train-precision> <train-recall> <2(train-precision * train-recall)/(train-precision+train-recall> 
+    <test-precision> <test-recall> <2(test-precision * test-recall)/(test-precision+test-recall> 
+
+  Install the examples package and run try_it scripts.
+
+

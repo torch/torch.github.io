@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  EMTrainer</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">EMTrainer</A></H2></H2><BLOCKQUOTE>This class is used to train any distribution using the EM algorithm.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CObject,MObject.html,CTrainer,MTrainer.html,CEMTrainer,MEMTrainer.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Distribution.html">Distribution</A>* <B><A HREF="#DOC.92.1">distribution</A></B>
+<DD><I>the distribution to train</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.92.2">end_accuracy</A></B>
+<DD><I>the stopping criterion regarding the accuracy for EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.92.3">max_iter</A></B>
+<DD><I>the stopping criterion regarding the number of iterations for EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.92.4">viterbi</A></B>
+<DD><I>when viterbi is true, use Viterbi training instead of EM training</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.92.5">EMTrainer</A></B>(<!1><A HREF="Distribution.html">Distribution</A>* distribution_)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.92.6">decode</A></B>(MeasurerList* measurers)
+<DD><I>this method computes the most likely path into the distribution.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Trainer.html">Trainer</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>train</B>(<!1><A HREF="DataSet.html">DataSet</A>* data_, MeasurerList* measurers)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>test</B>(MeasurerList* measurers)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>static   <!1><A HREF="Allocator.html">Allocator</A>* <B>extractMeasurers</B>(MeasurerList* measurers, <!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="Trainer.html#DOC.50.2">train</A>, <!1><A HREF="DataSet.html">DataSet</A>*** datas, <!1><A HREF="Measurer.html">Measurer</A>**** meas, int** n_meas, int* n_datas)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class is used to train any distribution using the EM algorithm.
+It can also train using the Viterbi training algorithm.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="distribution"></A>
+<A NAME="DOC.92.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Distribution.html">Distribution</A>* distribution</B></TT>
+<DD>the distribution to train
+<DL><DT><DD></DL><P>
+<A NAME="end_accuracy"></A>
+<A NAME="DOC.92.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real end_accuracy</B></TT>
+<DD>the stopping criterion regarding the accuracy for EM
+<DL><DT><DD></DL><P>
+<A NAME="max_iter"></A>
+<A NAME="DOC.92.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int max_iter</B></TT>
+<DD>the stopping criterion regarding the number of iterations for EM
+<DL><DT><DD></DL><P>
+<A NAME="viterbi"></A>
+<A NAME="DOC.92.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool viterbi</B></TT>
+<DD>when viterbi is true, use Viterbi training instead of EM training
+<DL><DT><DD></DL><P>
+<A NAME="EMTrainer"></A>
+<A NAME="DOC.92.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> EMTrainer(<!1><A HREF="Distribution.html">Distribution</A>* distribution_)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="decode"></A>
+<A NAME="DOC.92.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void decode(MeasurerList* measurers)</B></TT>
+<DD>this method computes the most likely path into the distribution.
+mainly used for sequential distribution such as HMMs.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

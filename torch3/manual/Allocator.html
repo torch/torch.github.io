@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Allocator</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Allocator</A></H2></H2><BLOCKQUOTE>Class do easily allocate/deallocate memory in Torch.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.3.1">Allocator</A></B>()
+<DD><I>Create a new allocator</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void* <B><A HREF="#DOC.3.2">alloc</A></B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, int object_style=0)
+<DD><I>Returns <TT>size</TT> bytes of allocated memory.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void* <B><A HREF="#DOC.3.3">realloc</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>)
+<DD><I>Reallocate a part of the memory which has been already allocated with alloc (and <TT>object_style</TT>=0).</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.3.4">free</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DD><I>Force given pointer to memory to be freed now.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.3.5">retain</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int object_style=0)
+<DD><I>Tells to the allocator that it should handle the memory given by <TT>ptr</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.3.6">release</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DD><I>Tells to the allocator to stop taking in account the memory given by <TT>ptr</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.3.7">steal</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Allocator.html">Allocator</A>* <!1><A HREF="Object.html#DOC.41.1">allocator</A>)
+<DD><I>Handles the memory given by <TT>ptr</TT> which was previouly handled by <TT>allocator</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.3.8">steal</A></B>(<!1><A HREF="Allocator.html">Allocator</A>* <!1><A HREF="Object.html#DOC.41.1">allocator</A>)
+<DD><I>Steals all pointers contained in <TT>allocator</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>AllocatorNode* <B><A HREF="#DOC.3.9">isMine</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DD><I>Returns true iff ptr is handled by the allocator</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.3.10">freeAll</A></B>()
+<DD><I>Force all pointers contained in the allocator to be freed now.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void* <B><A HREF="#DOC.3.11">sysAlloc</A></B>(int <!1><A HREF="Parameters.html#DOC.43.3">size</A>)
+<DD><I>System allocation.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void* <B><A HREF="#DOC.3.12">sysRealloc</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>)
+<DD><I>System reallocation.</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Class do easily allocate/deallocate memory in Torch.
+The memory allocated by an allocator will be destroyed
+when the allocator will be destroyed.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Allocator"></A>
+<A NAME="DOC.3.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Allocator()</B></TT>
+<DD>Create a new allocator
+<DL><DT><DD></DL><P>
+<A NAME="alloc"></A>
+<A NAME="DOC.3.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void* alloc(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, int object_style=0)</B></TT>
+<DD>Returns <TT>size</TT> bytes of allocated memory.
+<UL>
+<LI> If <TT>object_style</TT> is 0, the allocated memory is
+considered as if it wasn't for an object. At the destruction
+of the allocator the memory will be freed, and that's all.
+<LI> If 1, the <TT>Object</TT> destructor will be called
+at the destruction and the memory will be freed.
+<LI> If 2, the destructor will be called, but the memory
+won't be freed.
+</UL>
+<DL><DT><DD></DL><P>
+<A NAME="realloc"></A>
+<A NAME="DOC.3.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void* realloc(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>)</B></TT>
+<DD>Reallocate a part of the memory which has been already
+allocated with alloc (and <TT>object_style</TT>=0).
+Same behaviour as the <TT>realloc()</TT> system function.
+<DL><DT><DD></DL><P>
+<A NAME="free"></A>
+<A NAME="DOC.3.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void free(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)</B></TT>
+<DD>Force given pointer to memory to be freed now.
+It considers the <TT>object_style</TT> given by <TT>alloc()</TT>
+and calls the Object destructor, if needed.
+<DL><DT><DD></DL><P>
+<A NAME="retain"></A>
+<A NAME="DOC.3.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void retain(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int object_style=0)</B></TT>
+<DD>Tells to the allocator that it should handle the memory
+given by <TT>ptr</TT>. Take in account the <TT>object_style</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="release"></A>
+<A NAME="DOC.3.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int release(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)</B></TT>
+<DD>Tells to the allocator to stop taking in account the
+memory given by <TT>ptr</TT>. The memory will not be released.
+<DL><DT><DD></DL><P>
+<A NAME="steal"></A>
+<A NAME="DOC.3.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void steal(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Allocator.html">Allocator</A>* <!1><A HREF="Object.html#DOC.41.1">allocator</A>)</B></TT>
+<DD>Handles the memory given by <TT>ptr</TT> which was previouly
+handled by <TT>allocator</TT>. <TT>allocator</TT> looses the control
+of this memory 
+<DL><DT><DD></DL><P>
+<A NAME="steal"></A>
+<A NAME="DOC.3.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void steal(<!1><A HREF="Allocator.html">Allocator</A>* <!1><A HREF="Object.html#DOC.41.1">allocator</A>)</B></TT>
+<DD>Steals all pointers contained in <TT>allocator</TT>
+<DL><DT><DD></DL><P>
+<A NAME="isMine"></A>
+<A NAME="DOC.3.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>AllocatorNode* isMine(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)</B></TT>
+<DD>Returns true iff ptr is handled by the allocator
+<DL><DT><DD></DL><P>
+<A NAME="freeAll"></A>
+<A NAME="DOC.3.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void freeAll()</B></TT>
+<DD>Force all pointers contained in the allocator to be freed now.
+It considers the <TT>object_style</TT> given by <TT>alloc()</TT>
+and calls the Object destructor, if needed.
+<DL><DT><DD></DL><P>
+<A NAME="sysAlloc"></A>
+<A NAME="DOC.3.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void* sysAlloc(int <!1><A HREF="Parameters.html#DOC.43.3">size</A>)</B></TT>
+<DD>System allocation.
+As system malloc function, but do an error if there is no more memory.
+<DL><DT><DD></DL><P>
+<A NAME="sysRealloc"></A>
+<A NAME="DOC.3.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void* sysRealloc(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>)</B></TT>
+<DD>System reallocation.
+As system realloc function, but do an error if there is no more memory.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DT><B>See Also:</B><DD><!1><A HREF="Object.html">Object</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  BeamSearchDecoder</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">BeamSearchDecoder</A></H2></H2><BLOCKQUOTE>This class implements a Viterbi decoder with beam search capabilities.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.72.1">Decodes using the input data vectors in 'input_data'</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.72.2">'n_frames_' is the number of vectors of input data</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.72.3">'vec_size' is the number of elements in each vector.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.72.4">features or emission probabilities and 'vec_size' must reflect this</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.72.5">After this function returns, 'num_result_words' contains the number of words </A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.72.6">recognised and 'result_words' contains the vocabulary indices of the recognised</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class implements a Viterbi decoder with beam search
+capabilities.  A Lexicon and LanguageModel are required at
+creation time (the LanguageModel is optional).  By default, 
+no pruning occurs.  Two levels of pruning can be configured - 
+word interior hypothesis pruning and word end hypothesis pruning.
+The application of language model probabilities can be
+delayed or performed normally.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Decodes using the input data vectors in 'input_data'"></A>
+<A NAME="DOC.72.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Decodes using the input data vectors in 'input_data'</B></TT>
+<DD>Decodes using the input data vectors in 'input_data'
+<DL><DT><DD></DL><P>
+<A NAME="'n_frames_' is the number of vectors of input data"></A>
+<A NAME="DOC.72.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'n_frames_' is the number of vectors of input data</B></TT>
+<DD>'n_frames_' is the number of vectors of input data
+<DL><DT><DD></DL><P>
+<A NAME="'vec_size' is the number of elements in each vector."></A>
+<A NAME="DOC.72.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'vec_size' is the number of elements in each vector.</B></TT>
+<DD>'vec_size' is the number of elements in each vector.  The input data can be either
+<DL><DT><DD></DL><P>
+<A NAME="features or emission probabilities and 'vec_size' must reflect this"></A>
+<A NAME="DOC.72.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> features or emission probabilities and 'vec_size' must reflect this</B></TT>
+<DD>features or emission probabilities and 'vec_size' must reflect this
+<DL><DT><DD></DL><P>
+<A NAME="After this function returns, 'num_result_words' contains the number of words "></A>
+<A NAME="DOC.72.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> After this function returns, 'num_result_words' contains the number of words </B></TT>
+<DD>After this function returns, 'num_result_words' contains the number of words 
+<DL><DT><DD></DL><P>
+<A NAME="recognised and 'result_words' contains the vocabulary indices of the recognised"></A>
+<A NAME="DOC.72.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> recognised and 'result_words' contains the vocabulary indices of the recognised</B></TT>
+<DD>recognised and 'result_words' contains the vocabulary indices of the recognised
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

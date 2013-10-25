@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  KFold</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">KFold</A></H2></H2><BLOCKQUOTE>Provides an interface to sample data, for use by methods such as cross-validation</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CKFold,MKFold.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int** <B><A HREF="#DOC.29.1">train_subsets</A></B>
+<DD><I>Training examples for each fold</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int** <B><A HREF="#DOC.29.2">test_subsets</A></B>
+<DD><I>Test examples for each fold</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.29.3">n_train_subsets</A></B>
+<DD><I>Number of training examples for each fold</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.29.4">n_test_subsets</A></B>
+<DD><I>Number of test examples for each fold</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.29.5">KFold</A></B>(<!1><A HREF="Trainer.html">Trainer</A>* trainer_, int kfold_)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.29.6">crossValidate</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="SpeechHMM.html#DOC.158.3">data</A>, MeasurerList* train_measurers=NULL, MeasurerList* test_measurers=NULL, MeasurerList* cross_valid_measurers=NULL)
+<DD><I>Do a cross-validation over <TT>data</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.29.7">sample</A></B>(int <!1><A HREF="DataSet.html#DOC.16.7">n_examples</A>)
+<DD><I>Prepare the sample.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Provides an interface to sample data, for use by methods such
+as cross-validation
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="train_subsets"></A>
+<A NAME="DOC.29.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int** train_subsets</B></TT>
+<DD>Training examples for each fold
+<DL><DT><DD></DL><P>
+<A NAME="test_subsets"></A>
+<A NAME="DOC.29.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int** test_subsets</B></TT>
+<DD>Test examples for each fold
+<DL><DT><DD></DL><P>
+<A NAME="n_train_subsets"></A>
+<A NAME="DOC.29.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* n_train_subsets</B></TT>
+<DD>Number of training examples for each fold
+<DL><DT><DD></DL><P>
+<A NAME="n_test_subsets"></A>
+<A NAME="DOC.29.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* n_test_subsets</B></TT>
+<DD>Number of test examples for each fold
+<DL><DT><DD></DL><P>
+<A NAME="KFold"></A>
+<A NAME="DOC.29.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> KFold(<!1><A HREF="Trainer.html">Trainer</A>* trainer_, int kfold_)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="crossValidate"></A>
+<A NAME="DOC.29.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void crossValidate(<!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="SpeechHMM.html#DOC.158.3">data</A>, MeasurerList* train_measurers=NULL, MeasurerList* test_measurers=NULL, MeasurerList* cross_valid_measurers=NULL)</B></TT>
+<DD>Do a cross-validation over <TT>data</TT>.
+<TT>train_measurers</TT> are called in each "train pass" for each fold.
+<TT>test_measurers</TT> are called in each "test pass" for each fold.
+<TT>cross_valid_measurers</TT> are called during the cross-validation loop.
+<DL><DT><DD></DL><P>
+<A NAME="sample"></A>
+<A NAME="DOC.29.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void sample(int <!1><A HREF="DataSet.html#DOC.16.7">n_examples</A>)</B></TT>
+<DD>Prepare the sample.
+Given <TT>n_examples</TT>, puts the right examples-indices in <TT>train_subsets</TT>
+and <TT>test_subsets</TT>, and updates <TT>n_train_subsets</TT> and <TT>n_test_subsets</TT>.
+(You don't have to allocate these arrays).
+The provided sample function is a standard sample for cross-validation,
+but you could imagine what you want!
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

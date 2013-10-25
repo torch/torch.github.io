@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  CmdLine</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">CmdLine</A></H2></H2><BLOCKQUOTE>This class provides a useful interface for the user, to easily read some arguments/options from the command-line.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CCmdLine,MCmdLine.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.15.1">CmdLine</A></B>()
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.15.2">read</A></B>(int argc_, char** argv_)
+<DD><I>Read the command-line.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.3">help</A></B>()
+<DD><I>Print the help.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.5">addBCmdOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.6">addRCmdOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.7">addSCmdOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, char** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* init_value, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.9">addBCmdArg</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.10">addRCmdArg</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.11">addSCmdArg</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, char** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.12">addText</A></B>(const char* text)
+<DD><I>Add a text line in the help message</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.13">info</A></B>(const char* text)
+<DD><I>Add a text at the beginnig of the help</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.14">addMasterSwitch</A></B>(const char* text)
+<DD><I>Add a master switch.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.15">setWorkingDirectory</A></B>(const char* dirname)
+<DD><I>Set the working directory.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>char* <B><A HREF="#DOC.15.16">getPath</A></B>(const char* filename)
+<DD><I>Get a full path.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="DiskXFile.html">DiskXFile</A>* <B><A HREF="#DOC.15.17">getXFile</A></B>(const char* filename)
+<DD><I>Get a DiskXFile.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.15.18">loadXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Load the object from a file pointer (<EM>not the options</EM>)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.15.19">saveXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Save the object to a file pointer (<EM>not the options</EM>)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.20">addCmdOption</A></B>(<!1><A HREF="CmdOption.html">CmdOption</A>* option)
+<DD><I>Add an option to the command line.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.15.21">writeLog</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>, bool write_associated_files)
+<DD><I>Write a log in <TT>file</TT>.</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.15.4">Functions for adding options.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.15.8">Functions for adding an argument.</A></B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class provides a useful interface for the user,
+to easily read some arguments/options from the command-line.
+
+<P>Note that here, we make a difference between:
+<UL>
+<LI> <B>options</B> which are not required.
+<LI> <B>arguments</B> which are required.
+</UL>
+
+<P>Options:
+<TABLE BORDER>
+<TR><TD>
+"write log"  </TD><TD>  bool  </TD><TD>  Should I output the cmd.log file ? </TD><TD> [true]
+</TR></TABLE>
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="CmdLine"></A>
+<A NAME="DOC.15.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CmdLine()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="read"></A>
+<A NAME="DOC.15.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int read(int argc_, char** argv_)</B></TT>
+<DD>Read the command-line.
+Call this function <B>after</B> adding options/arguments
+that you need, with the help of the following functions.
+<DL><DT><DD></DL><P>
+<A NAME="help"></A>
+<A NAME="DOC.15.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void help()</B></TT>
+<DD>Print the help.
+Call this function <B>after</B> adding options/arguments
+that you need, with the help of the following functions.
+<DL><DT><DD></DL><P>
+<A NAME="Functions for adding options."></A>
+<A NAME="DOC.15.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Functions for adding options.</B></TT>
+<DD>Functions for adding options.
+The calling order of the following functions will
+define the text order associated when you will call <TT>help()</TT>.
+
+<P>Add an option (Int, Bool, Real, String).
+<UL>
+<LI> <TT>name</TT> the name of the option (must be unique).
+<LI> <TT>ptr</TT> is the pointer on the optional variable.
+<LI> <TT>init_value</TT> is the initialization value.
+<LI> <TT>help</TT> is the help text for this option.
+</UL>
+
+<P>The option will be setted to <TT>value</TT> in the command-line
+by printing "<TT>name</TT> <TT>value</TT>"
+<DL><DT><DD></DL><P>
+<A NAME="addBCmdOption"></A>
+<A NAME="DOC.15.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addBCmdOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addRCmdOption"></A>
+<A NAME="DOC.15.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addRCmdOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addSCmdOption"></A>
+<A NAME="DOC.15.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addSCmdOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, char** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* init_value, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="Functions for adding an argument."></A>
+<A NAME="DOC.15.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Functions for adding an argument.</B></TT>
+<DD>Functions for adding an argument.
+The argument will be setted to <TT>value</TT> in the command-line
+by writting "<TT>value</TT>" <B>after</B> all the options.
+If there are N arguments, you have to write
+"<TT>value1</TT> <TT>value2</TT> <TT>value3</TT> ... <TT>valueN</TT>" to set them in the
+command-line.
+<DL><DT><DD></DL><P>
+<A NAME="addBCmdArg"></A>
+<A NAME="DOC.15.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addBCmdArg(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addRCmdArg"></A>
+<A NAME="DOC.15.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addRCmdArg(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addSCmdArg"></A>
+<A NAME="DOC.15.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addSCmdArg(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, char** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdLine.html#DOC.15.3">help</A>="", bool save_it=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addText"></A>
+<A NAME="DOC.15.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addText(const char* text)</B></TT>
+<DD>Add a text line in the help message
+<DL><DT><DD></DL><P>
+<A NAME="info"></A>
+<A NAME="DOC.15.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void info(const char* text)</B></TT>
+<DD>Add a text at the beginnig of the help
+<DL><DT><DD></DL><P>
+<A NAME="addMasterSwitch"></A>
+<A NAME="DOC.15.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addMasterSwitch(const char* text)</B></TT>
+<DD>Add a master switch.
+It creates an another type of command line.
+If the <TT>text</TT> is the first argument of the user command line,
+only the options corresponding to this new command line will be considered.
+<DL><DT><DD></DL><P>
+<A NAME="setWorkingDirectory"></A>
+<A NAME="DOC.15.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setWorkingDirectory(const char* dirname)</B></TT>
+<DD>Set the working directory.
+Use it with <TT>getPath()</TT> and <TT>getXFile()</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="getPath"></A>
+<A NAME="DOC.15.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>char* getPath(const char* filename)</B></TT>
+<DD>Get a full path.
+It adds the <TT>working_directory</TT> before the <TT>filename</TT>.
+This path will be deleted by CmdLine. 
+<DL><DT><DD></DL><P>
+<A NAME="getXFile"></A>
+<A NAME="DOC.15.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="DiskXFile.html">DiskXFile</A>* getXFile(const char* filename)</B></TT>
+<DD>Get a DiskXFile.
+It adds the <TT>working_directory</TT> before the <TT>filename</TT> and opens the file.
+This XFile will be deleted by CmdLine. 
+<DL><DT><DD></DL><P>
+<A NAME="loadXFile"></A>
+<A NAME="DOC.15.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void loadXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Load the object from a file pointer (<EM>not the options</EM>)
+<DL><DT><DD></DL><P>
+<A NAME="saveXFile"></A>
+<A NAME="DOC.15.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void saveXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Save the object to a file pointer (<EM>not the options</EM>)
+<DL><DT><DD></DL><P>
+<A NAME="addCmdOption"></A>
+<A NAME="DOC.15.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addCmdOption(<!1><A HREF="CmdOption.html">CmdOption</A>* option)</B></TT>
+<DD>Add an option to the command line. Use this method
+if the wrappers that are provided are not sufficient.
+<DL><DT><DD></DL><P>
+<A NAME="writeLog"></A>
+<A NAME="DOC.15.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void writeLog(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>, bool write_associated_files)</B></TT>
+<DD>Write a log in <TT>file</TT>.
+If desired, the associated files can be printed.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+
+<DT><B>See Also:</B><DD><!1><A HREF="CmdOption.html">CmdOption</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

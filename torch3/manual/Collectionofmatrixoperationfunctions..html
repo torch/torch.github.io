@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> Collection of matrix operation functions.</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">Collection of matrix operation functions.</A></H2></H2>
+<HR>
+<P><DL>
+ <DT>
+void <B><A HREF="mxMatAddMat.html">mxMatAddMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat1, <!1><A HREF="Mat.html">Mat</A>*  mat2, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Matrix addition -- may be in-situ</I>
+<DT>
+void <B><A HREF="mxMatSubMat.html">mxMatSubMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat1, <!1><A HREF="Mat.html">Mat</A>*  mat2, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Matrix subtraction -- may be in-situ</I>
+<DT>
+void <B><A HREF="mxMatMulMat.html">mxMatMulMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat1, <!1><A HREF="Mat.html">Mat</A>*  mat2, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Matrix-matrix multiplication</I>
+<DT>
+void <B><A HREF="mxMatMulTrMat.html">mxMatMulTrMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat1, <!1><A HREF="Mat.html">Mat</A>*  mat2, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Matrix-matrix transposed multiplication.</I>
+<DT>
+void <B><A HREF="mxTrMatMulMat.html">mxTrMatMulMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat1, <!1><A HREF="Mat.html">Mat</A>*  mat2, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Matrix transposed-matrix multiplication.</I>
+<DT>
+void <B><A HREF="mxMatMulVec.html">mxMatMulVec</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat, <!1><A HREF="Vec.html">Vec</A>*  <!1><A HREF="SVM.html#DOC.133.5">b</A>, <!1><A HREF="Vec.html">Vec</A>*  out)
+<DD><I>Matrix-vector multiplication.</I>
+<DT>
+void <B><A HREF="mxRealMulMat.html">mxRealMulMat</A></B>(real scalar, <!1><A HREF="Mat.html">Mat</A>*  matrix, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Scalar-matrix multiply -- may be in-situ</I>
+<DT>
+void <B><A HREF="mxVecMulMat.html">mxVecMulMat</A></B>(<!1><A HREF="Vec.html">Vec</A>*  <!1><A HREF="SVM.html#DOC.133.5">b</A>, <!1><A HREF="Mat.html">Mat</A>*  mat, <!1><A HREF="Vec.html">Vec</A>*  out)
+<DD><I>Vector-matrix multiplication.</I>
+<DT>
+void <B><A HREF="mxTrMat.html">mxTrMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  in, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Transpose matrix</I>
+<DT>
+void <B><A HREF="mxSwapRowsMat.html">mxSwapRowsMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat, int i, int j, int lo, int hi)
+<DD><I>Swaps rows i and j of matrix A upto column lim.</I>
+<DT>
+void <B><A HREF="mxSwapColsMat.html">mxSwapColsMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat, int i, int j, int lo, int hi)
+<DD><I>Swap columns i and j of matrix A upto row lim.</I>
+<DT>
+void <B><A HREF="mxMatAddRealMulMat.html">mxMatAddRealMulMat</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat1, <!1><A HREF="Mat.html">Mat</A>*  mat2, real s, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Matrix-scalar multiply and add.</I>
+<DT>
+void <B><A HREF="mxVecAddRealMulMatMulVec.html">mxVecAddRealMulMatMulVec</A></B>(<!1><A HREF="Vec.html">Vec</A>*  v1, real <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>, <!1><A HREF="Mat.html">Mat</A>*  mat, <!1><A HREF="Vec.html">Vec</A>*  v2, <!1><A HREF="Vec.html">Vec</A>*  out)
+<DD><I>Matrix-vector multiply and add.</I>
+<DT>
+void <B><A HREF="mxVecAddRealMulVecMulMat.html">mxVecAddRealMulVecMulMat</A></B>(<!1><A HREF="Vec.html">Vec</A>*  v1, real <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>, <!1><A HREF="Vec.html">Vec</A>*  v2, <!1><A HREF="Mat.html">Mat</A>*  mat, <!1><A HREF="Vec.html">Vec</A>*  out)
+<DD><I>Vector-matrix multiply and add -- may not be in situ -- returns out' == v1' + alpha * v2'*A </I>
+</DL></P>
+
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Collection of matrix operation functions.
+Based on the "Meschach Library", available at the
+anonymous ftp site thrain.anu.edu.au in the directory
+pub/meschach.
+
+<P></BLOCKQUOTE>
+<DL>
+</DL>
+<DL><DT><DT><B>Author:</B><DD>David E. Stewart (david.stewart@anu.edu.au)
+Zbigniew Leyk (zbigniew.leyk@anu.edu.au)
+Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

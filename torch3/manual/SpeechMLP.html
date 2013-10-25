@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  SpeechMLP</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">SpeechMLP</A></H2></H2><HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CGradientMachine,MGradientMachine.html,CConnectedMachine,MConnectedMachine.html,CSpeechMLP,MSpeechMLP.html">
+<param name=before value="M,M,M,M,M">
+<param name=after value="Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Linear.html">Linear</A>* <B><A HREF="#DOC.85.1">hidden_layer_lin</A></B>
+<DD><I>the first <TT>Linear</TT> layer</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GradientMachine.html">GradientMachine</A>* <B><A HREF="#DOC.85.2">hidden_layer_nonlin</A></B>
+<DD><I>the first <TT>Tanh</TT> or <TT>Sigmoid</TT> layer</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Linear.html">Linear</A>* <B><A HREF="#DOC.85.3">output_layer_lin</A></B>
+<DD><I>the second <TT>Linear</TT> layer</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="GradientMachine.html">GradientMachine</A>* <B><A HREF="#DOC.85.4">output_layer_nonlin</A></B>
+<DD><I>the optional second <TT>Softmax</TT>, <TT>Sigmoid</TT> or <TT>Tanh</TT> layer</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.85.5">n_mlp_hidden</A></B>
+<DD><I>the number of hidden units</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.85.6">n_mlp_inputs</A></B>
+<DD><I>the number of inputs</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.85.7">n_mlp_outputs</A></B>
+<DD><I>the number of outputs</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.85.8">SpeechMLP</A></B>( char* quicknet_mlpw_filename, int n_cw_vecs_=9, char* quicknet_norms_filename=NULL, bool online_norm=false, real alpha_m_=0.005, real alpha_v_=0.005, bool lna8_outputs_=false )
+<DD><I>Constructor for the SpeechMLP class - reads a Quicknet MLPW format file</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="ConnectedMachine.html">ConnectedMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addFCL</B>(<!1><A HREF="GradientMachine.html">GradientMachine</A>* machine)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addMachine</B>(<!1><A HREF="GradientMachine.html">GradientMachine</A>* machine)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>connectOn</B>(<!1><A HREF="GradientMachine.html">GradientMachine</A>* machine)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addLayer</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>build</B>()
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GradientMachine.html">GradientMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_outputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>der_params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>beta</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>iterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>backward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setPartialBackprop</B>(bool flag=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameForward</B>(int t, real* f_inputs, real* f_outputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameBackward</B>(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<DL>
+
+<A NAME="hidden_layer_lin"></A>
+<A NAME="DOC.85.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Linear.html">Linear</A>* hidden_layer_lin</B></TT>
+<DD>the first <TT>Linear</TT> layer
+<DL><DT><DD></DL><P>
+<A NAME="hidden_layer_nonlin"></A>
+<A NAME="DOC.85.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GradientMachine.html">GradientMachine</A>* hidden_layer_nonlin</B></TT>
+<DD>the first <TT>Tanh</TT> or <TT>Sigmoid</TT> layer
+<DL><DT><DD></DL><P>
+<A NAME="output_layer_lin"></A>
+<A NAME="DOC.85.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Linear.html">Linear</A>* output_layer_lin</B></TT>
+<DD>the second <TT>Linear</TT> layer
+<DL><DT><DD></DL><P>
+<A NAME="output_layer_nonlin"></A>
+<A NAME="DOC.85.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="GradientMachine.html">GradientMachine</A>* output_layer_nonlin</B></TT>
+<DD>the optional second <TT>Softmax</TT>, <TT>Sigmoid</TT> or <TT>Tanh</TT> layer
+<DL><DT><DD></DL><P>
+<A NAME="n_mlp_hidden"></A>
+<A NAME="DOC.85.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_mlp_hidden</B></TT>
+<DD>the number of hidden units
+<DL><DT><DD></DL><P>
+<A NAME="n_mlp_inputs"></A>
+<A NAME="DOC.85.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_mlp_inputs</B></TT>
+<DD>the number of inputs
+<DL><DT><DD></DL><P>
+<A NAME="n_mlp_outputs"></A>
+<A NAME="DOC.85.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_mlp_outputs</B></TT>
+<DD>the number of outputs
+<DL><DT><DD></DL><P>
+<A NAME="SpeechMLP"></A>
+<A NAME="DOC.85.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> SpeechMLP( char* quicknet_mlpw_filename, int n_cw_vecs_=9, char* quicknet_norms_filename=NULL, bool online_norm=false, real alpha_m_=0.005, real alpha_v_=0.005, bool lna8_outputs_=false )</B></TT>
+<DD>Constructor for the SpeechMLP class - reads a Quicknet MLPW format file
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

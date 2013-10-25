@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Torch3: The Dream Comes True</title>
+  <link rel="stylesheet" type="text/css" href="torch.css">
+  <link rel="icon" href="images/icon_logo.gif" type="image/ico">
+</head>
+
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" cols="7">
+  <tr>
+    <td valign="middle" background="images/title_line2.jpg"><img src="images/logo.gif" width="78" height="71" alt="Torch3"></td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="introduction.html">Introduction</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="documentation.html">Documentation</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="downloads.html">Downloads</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="forum.html">Forum</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="credits.html">Credits</a>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<div align="right">       
+<small><i>
+<a href="http://www.idiap.ch/%7Ecollober">Ronan Collobert</a> 
+(<a href="mailto:collober [at] idiap.ch">collober [at] idiap.ch</a>)<br>
+</i>
+</small>
+</div>
+
+<div align="center">
+<table class="torchTable" width="50%">
+<tr>
+<td class="row1">
+<div align="center">
+<span style="color: rgb(255, 0, 0);">
+<b>Release 3.1</b>
+</span><br>
+<b><small>August 11, 2004</small></b><br><br>
+<b><small>This is a minor update (bug corrections).<br>See the <a href=ChangeLog>ChangeLog</a>.</small></b><br><br>
+</div>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+<table class="torchTable" width="50%">
+<tr>
+<td class="row1">
+<div align="center">
+<span style="color: rgb(255, 0, 0);">
+<b>Torch 3 Vision</b>
+</span><br><br>
+<b><small>A full additional package for machine learning applied to vision applications is now available.<br>
+Have a look <a href=http://www.idiap.ch/~marcel/en/torch3/introduction.html>here</a>.</small></b><br><br>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<h2>Downloads</h2>
+<blockquote>
+Please, read the installation notes in the <a href="documentation.html">documentation</a> section before downloading anything.
+</blockquote>
+<br>
+<div align="center">
+<table class="torchTable" width="50%">
+
+  <tr>
+    <th valign="middle" align="center" colspan="5"> Downloads </th>
+  </tr>
+
+  <tr>
+    <td class="torchArrayTitle" align="middle">&nbsp;&nbsp;&nbsp;&nbsp;Archive&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td class="torchArrayTitle" align="middle">Description</td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><a href="archives/Torch3src.tgz">Torch3 src</a></td>
+    <td class="row2" align="middle"><i><b>Torch3</b></i> for <i>Unix/Linux</i></td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><a href="archives/Torch3doc.tgz">Torch3 doc</a></td>
+    <td class="row2" align="middle"><i><b>Torch3</b></i> documentation</td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><a href="archives/Torch3win.tgz">Torch3 win</a></td>
+    <td class="row2" align="middle">&nbsp;&nbsp;&nbsp;<i><b>Torch3</b></i> for <i>MS Windows</i>&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+
+</table>
+</div>
+<br>
+<div align="center">
+<table class="torchTable" width="50%">
+<tr>
+<td class="row1">
+<div align="center">
+<span style="color: rgb(255, 0, 0);">
+<b>Warning!</b>
+</span><br><br>
+<b><small>
+We strongly encourage you to use from now <a href="matos/install_xmake.pdf">xmake</a> (a <a href="http://www.python.org">python</a> script designed for Torch) instead of the <a href="http://www.gnu.org/software/make">GNU make</a> software for compiling Torch.
+</small></b>
+</div>
+</td>
+</tr>
+</table>
+</div>
+
+<br>
+<blockquote>
+Note that the sources for <i>Unix/Linux</i> and <i>MS Windows</i> are the same... only the packaging method
+is different.<br>
+If for some reasons you want the previous version of <b><i>Torch</i></b>, it is still available <a href="downloads_old.html">here</a>.
+</blockquote>
+
+<hr width="100%">
+
+<h2>Short description of packages</h2>
+<br>
+<div align="center">
+<table class="torchTable">
+
+  <tr>
+    <th valign="middle" align="center" colspan="5"> Packages </th>
+  </tr>
+
+  <tr>
+    <td class="torchArrayTitle" align="middle">Package</td>
+    <td class="torchArrayTitle" align="middle">Description</td>
+    <td class="torchArrayTitle" align="middle">Dependencies</td>
+    <td class="torchArrayTitle" align="middle">Maintainers</td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><b>core</b></td>
+    <td class="row2" align="middle">The core of <i><b>Torch</b></i></td>
+    <td class="row2" align="middle"></td>
+    <td class="row2" align="middle"><a href="mailto:collober [at] idiap.ch">Ronan Collobert</a></td>
+  </tr>
+
+  <tr>
+    <td class="row1" align="middle"><b>gradients</b></td>
+    <td class="row1" align="middle">Gradient machines</td>
+    <td class="row1" align="middle"></td>
+    <td class="row1" align="middle"><a href="mailto:collober [at] idiap.ch">Ronan Collobert</a></td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><b>kernels</b></td>
+    <td class="row2" align="middle">Machine based on kernel methods,<br>such as SVM</td>
+    <td class="row2" align="middle"></td>
+    <td class="row2" align="middle"><a href="mailto:collober [at] idiap.ch">Ronan Collobert</a></td>
+  </tr>
+
+  <tr>
+    <td class="row1" align="middle"><b>distributions</b></td>
+    <td class="row1" align="middle">Stuff related to distributions</td>
+    <td class="row1" align="middle">gradients</td>
+    <td class="row1" align="middle"><a href="mailto:bengio [at] google.com">Samy Bengio</a><br><a href="mailto:marietho [at] idiap.ch">Johnny Mari&eacute;thoz</a></td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><b>convolutions</b></td>
+    <td class="row2" align="middle">Spatial and temporal convolutions</td>
+    <td class="row2" align="middle">gradients</td>
+    <td class="row2" align="middle"><a href="mailto:collober [at] idiap.ch">Ronan Collobert</a></td>
+  </tr>
+
+  <tr>
+    <td class="row1" align="middle"><b>matrix</b></td>
+    <td class="row1" align="middle">Matrix manipulations</td>
+    <td class="row1" align="middle"></td>
+    <td class="row1" align="middle"><a href="mailto:collober [at] idiap.ch">Ronan Collobert</a></td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><b>datasets</b></td>
+    <td class="row2" align="middle">Several classes to handle data<br>such as HTK</td>
+    <td class="row2" align="middle">distributions<br>speech</td>
+    <td class="row2" align="middle"><a href="mailto:marietho [at] idiap.ch">Johnny Mari&eacute;thoz</a></td>
+  </tr>
+
+  <tr>
+    <td class="row1" align="middle"><b>&nbsp;non-parametrics&nbsp;</b></td>
+    <td class="row1" align="middle">Non-parametrics algorithms,<br>such as KNN or Parzen Windows</td>
+    <td class="row1" align="middle"></td>
+    <td class="row1" align="middle"><a href="mailto:bengio [at] google.com">Samy Bengio</a></td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><b>speech</b></td>
+    <td class="row2" align="middle">Tools for speech recognition</td>
+    <td class="row2" align="middle">distributions<br>datasets</td>
+    <td class="row2" align="middle"><a href="mailto:bengio [at] google.com">Samy Bengio</a><br><a href="mailto:marietho [at] idiap.ch">Johnny Mari&eacute;thoz</a></td>
+  </tr>
+
+  <tr>
+    <td class="row1" align="middle"><b>decoder</b></td>
+    <td class="row1" align="middle">Large vocabulary speech decoder</td>
+    <td class="row1" align="middle">distributions<br>datasets<br>speech</td>
+    <td class="row1" align="middle"><a href="mailto:moore [at] idiap.ch">Darren Moore</a></td>
+  </tr>
+
+  <tr>
+    <td class="row2" align="middle"><b>examples</b></td>
+    <td class="row2" align="middle">Some main program examples</td>
+    <td class="row2" align="middle">all packages<br>if you want to run all</td>
+    <td class="row2" align="middle">all coders</td>
+  </tr>
+
+</table>
+</div>
+<br>
+
+
+<br>
+<hr width="100%">
+
+</body>
+</html>

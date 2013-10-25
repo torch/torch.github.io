@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  DecodingHMM</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DecodingHMM</A></H2></H2><BLOCKQUOTE>This class contains all HMM information required for decoding.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.75.5">mergeModels</A></B>( int <!1><A HREF="SpeechHMM.html#DOC.158.1">n_models</A>, <!1><A HREF="DecodingHMM.html">DecodingHMM</A>** <!1><A HREF="SpeechHMM.html#DOC.158.2">models</A> )
+<DD><I>Internal function to merge component models into a big HMM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.75.6">setupSuccessorStates</A></B>( DecodingHMMState* state, short n_successors_, short* sucessor_states_, real* log_trans_probs_ )
+<DD><I>Configures successor state information for the state denoted by 'state'</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.75.1">Converts a Torch HMM instance to a DecodingHMM representation.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.75.2">class contains a lot of member variables used in training that are not</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.75.3">Concatenates all elements in the array of DecodingHMM instances into a single</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.75.4">Creates a DecodingHMM using the distributions in 'states_' and the log</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.75.7">Initialises the state denoted by 'state' with a Distribution and</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class contains all HMM information required for decoding.  Most information
+is embedded in the states themselves (DecodingHMMState structures).  The DecodingHMM
+can be created a number of ways to facilitate compatibility with the Torch HMM class
+and to allow easy concatenation of models (eg. when constructing word models from
+phoneme models).
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Converts a Torch HMM instance to a DecodingHMM representation."></A>
+<A NAME="DOC.75.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Converts a Torch HMM instance to a DecodingHMM representation.</B></TT>
+<DD>Converts a Torch HMM instance to a DecodingHMM representation.  The Torch HMM
+<DL><DT><DD></DL><P>
+<A NAME="class contains a lot of member variables used in training that are not"></A>
+<A NAME="DOC.75.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> class contains a lot of member variables used in training that are not</B></TT>
+<DD>class contains a lot of member variables used in training that are not
+<DL><DT><DD></DL><P>
+<A NAME="Concatenates all elements in the array of DecodingHMM instances into a single"></A>
+<A NAME="DOC.75.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Concatenates all elements in the array of DecodingHMM instances into a single</B></TT>
+<DD>Concatenates all elements in the array of DecodingHMM instances into a single
+<DL><DT><DD></DL><P>
+<A NAME="Creates a DecodingHMM using the distributions in 'states_' and the log"></A>
+<A NAME="DOC.75.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates a DecodingHMM using the distributions in 'states_' and the log</B></TT>
+<DD>Creates a DecodingHMM using the distributions in 'states_' and the log
+<DL><DT><DD></DL><P>
+<A NAME="mergeModels"></A>
+<A NAME="DOC.75.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void mergeModels( int <!1><A HREF="SpeechHMM.html#DOC.158.1">n_models</A>, <!1><A HREF="DecodingHMM.html">DecodingHMM</A>** <!1><A HREF="SpeechHMM.html#DOC.158.2">models</A> )</B></TT>
+<DD>Internal function to merge component models into a big HMM
+<DL><DT><DD></DL><P>
+<A NAME="setupSuccessorStates"></A>
+<A NAME="DOC.75.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setupSuccessorStates( DecodingHMMState* state, short n_successors_, short* sucessor_states_, real* log_trans_probs_ )</B></TT>
+<DD>Configures successor state information for the state denoted by 'state'
+<DL><DT><DD></DL><P>
+<A NAME="Initialises the state denoted by 'state' with a Distribution and"></A>
+<A NAME="DOC.75.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Initialises the state denoted by 'state' with a Distribution and</B></TT>
+<DD>Initialises the state denoted by 'state' with a Distribution and
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

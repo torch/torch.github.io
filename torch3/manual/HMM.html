@@ -1,0 +1,374 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  HMM</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">HMM</A></H2></H2><BLOCKQUOTE>This class implements a Hidden Markov Model distribution.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CGradientMachine,MGradientMachine.html,CDistribution,MDistribution.html,CHMM,MHMM.html,CSpeechHMM,MSpeechHMM.html,CMAPHMM,MMAPHMM.html">
+<param name=before value="M,M,M,M,M,M|_,Mr_">
+<param name=after value="Md_SPSPSP,Md_SPSP,Md_SP,Md_,M,M,M">
+<param name=indent value="0,1,2,3,4,4,4">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.93.1">n_states</A></B>
+<DD><I>The number of states of the HMM.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.93.2">prior_transitions</A></B>
+<DD><I>a prior on the transition probabilities</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Distribution.html">Distribution</A>** <B><A HREF="#DOC.93.3">states</A></B>
+<DD><I>keep the emission distributions</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Distribution.html">Distribution</A>** <B><A HREF="#DOC.93.4">shared_states</A></B>
+<DD><I>if the states are in fact shared in some way or another, the original ones are in shared_states</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.93.5">transitions</A></B>
+<DD><I>the initial transitions between states are kept as a matrix</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.93.6">log_transitions</A></B>
+<DD><I>in fact, we keep the transitions in log</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.93.7">dlog_transitions</A></B>
+<DD><I>the derivative of the log transitions for gradient descent</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.93.8">transitions_acc</A></B>
+<DD><I>the accumulators of the transitions for EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.93.9">log_alpha</A></B>
+<DD><I>accumulator used in the forward phase to compute log likelihood </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.93.10">log_beta</A></B>
+<DD><I>accumulator used in the backward phase to compute log likelihood </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.93.11">arg_viterbi</A></B>
+<DD><I>for each state, for each time step, keep the best predecessor </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.93.12">last_arg_viterbi</A></B>
+<DD><I>arg_viterbi of the finishing state</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.93.13">viterbi_sequence</A></B>
+<DD><I>for each time step, keep the best state </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.93.14">log_probabilities_s</A></B>
+<DD><I>keep for each time step and each model its emission log probability</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.93.15">initialize</A></B>
+<DD><I>do we need to initialize the model?</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.93.16">printTransitions</A></B>(bool real_values=false, bool transitions_only=false)
+<DD><I>this method can be used for debugging purpose to see the transitions</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.93.17">logAlpha</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>computes the log_alpha during forward phase of EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.93.18">logBeta</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>computes the log_beta during backward phase of EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.93.19">logViterbi</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>computes the log_viterbi during forward phase of Viterbi</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.93.20">decode</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* input)
+<DD><I>this method returns the state sequence associated to the input</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.93.21">logProbabilities</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>computes for each state and each time step of the sequence <TT>inputs</TT> its associated emission probability</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Distribution.html">Distribution</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>log_probability</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_probabilities</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>logProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>viterbiLogProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>frameLogProbability</B>(int t, real* f_inputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>viterbiFrameLogProbability</B>(int t, real* f_inputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMIterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>iterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMSequenceInitialize</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>sequenceInitialize</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameEMAccPosteriors</B>(int t, real* f_inputs, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameViterbiAccPosteriors</B>(int t, real* f_inputs, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMUpdate</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>update</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameBackward</B>(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiBackward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameDecision</B>(int t, real* decision)
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif> <B>Returns the decision of the distribution</B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GradientMachine.html">GradientMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_outputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>der_params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>beta</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>backward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setPartialBackprop</B>(bool flag=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameForward</B>(int t, real* f_inputs, real* f_outputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class implements a Hidden Markov Model distribution. It can be trained
+either by EM, Viterbi, or Gradient Descent.
+
+<P>Note that this kind of HMM always contain one initial state and
+one final state. Both are non-emitting.
+
+<P>Note that the log_probabilities is the average over all frames of the 
+log_probability of the example.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="n_states"></A>
+<A NAME="DOC.93.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_states</B></TT>
+<DD>The number of states of the HMM.
+the first model is the initial state,
+the last model is the final (absorbing) state,
+(neither of them are emitting).
+hence, n_states &gt; 2
+<DL><DT><DD></DL><P>
+<A NAME="prior_transitions"></A>
+<A NAME="DOC.93.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real prior_transitions</B></TT>
+<DD>a prior on the transition probabilities
+<DL><DT><DD></DL><P>
+<A NAME="states"></A>
+<A NAME="DOC.93.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Distribution.html">Distribution</A>** states</B></TT>
+<DD>keep the emission distributions
+<DL><DT><DD></DL><P>
+<A NAME="shared_states"></A>
+<A NAME="DOC.93.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Distribution.html">Distribution</A>** shared_states</B></TT>
+<DD>if the states are in fact shared in some way or another, the original ones are in shared_states
+<DL><DT><DD></DL><P>
+<A NAME="transitions"></A>
+<A NAME="DOC.93.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** transitions</B></TT>
+<DD>the initial transitions between states are kept as a matrix
+<DL><DT><DD></DL><P>
+<A NAME="log_transitions"></A>
+<A NAME="DOC.93.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** log_transitions</B></TT>
+<DD>in fact, we keep the transitions in log
+<DL><DT><DD></DL><P>
+<A NAME="dlog_transitions"></A>
+<A NAME="DOC.93.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** dlog_transitions</B></TT>
+<DD>the derivative of the log transitions for gradient descent
+<DL><DT><DD></DL><P>
+<A NAME="transitions_acc"></A>
+<A NAME="DOC.93.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** transitions_acc</B></TT>
+<DD>the accumulators of the transitions for EM
+<DL><DT><DD></DL><P>
+<A NAME="log_alpha"></A>
+<A NAME="DOC.93.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* log_alpha</B></TT>
+<DD>accumulator used in the forward phase to compute log likelihood 
+<DL><DT><DD></DL><P>
+<A NAME="log_beta"></A>
+<A NAME="DOC.93.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* log_beta</B></TT>
+<DD>accumulator used in the backward phase to compute log likelihood 
+<DL><DT><DD></DL><P>
+<A NAME="arg_viterbi"></A>
+<A NAME="DOC.93.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* arg_viterbi</B></TT>
+<DD>for each state, for each time step, keep the best predecessor 
+<DL><DT><DD></DL><P>
+<A NAME="last_arg_viterbi"></A>
+<A NAME="DOC.93.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int last_arg_viterbi</B></TT>
+<DD>arg_viterbi of the finishing state
+<DL><DT><DD></DL><P>
+<A NAME="viterbi_sequence"></A>
+<A NAME="DOC.93.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* viterbi_sequence</B></TT>
+<DD>for each time step, keep the best state 
+<DL><DT><DD></DL><P>
+<A NAME="log_probabilities_s"></A>
+<A NAME="DOC.93.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* log_probabilities_s</B></TT>
+<DD>keep for each time step and each model its emission log probability
+<DL><DT><DD></DL><P>
+<A NAME="initialize"></A>
+<A NAME="DOC.93.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool initialize</B></TT>
+<DD>do we need to initialize the model?
+<DL><DT><DD></DL><P>
+<A NAME="printTransitions"></A>
+<A NAME="DOC.93.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void printTransitions(bool real_values=false, bool transitions_only=false)</B></TT>
+<DD>this method can be used for debugging purpose to see the transitions
+<DL><DT><DD></DL><P>
+<A NAME="logAlpha"></A>
+<A NAME="DOC.93.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void logAlpha(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>computes the log_alpha during forward phase of EM
+<DL><DT><DD></DL><P>
+<A NAME="logBeta"></A>
+<A NAME="DOC.93.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void logBeta(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>computes the log_beta during backward phase of EM
+<DL><DT><DD></DL><P>
+<A NAME="logViterbi"></A>
+<A NAME="DOC.93.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void logViterbi(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>computes the log_viterbi during forward phase of Viterbi
+<DL><DT><DD></DL><P>
+<A NAME="decode"></A>
+<A NAME="DOC.93.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void decode(<!1><A HREF="Sequence.html">Sequence</A>* input)</B></TT>
+<DD>this method returns the state sequence associated to the input
+<DL><DT><DD></DL><P>
+<A NAME="logProbabilities"></A>
+<A NAME="DOC.93.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void logProbabilities(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>computes for each state and each time step of the sequence <TT>inputs</TT>
+its associated emission probability
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="SpeechHMM.html">SpeechHMM</A><BR>
+<A HREF="MAPHMM.html">MAPHMM</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

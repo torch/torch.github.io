@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  BayesClassifierMachine</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">BayesClassifierMachine</A></H2></H2><BLOCKQUOTE>BayesClassifierMachine is the machine used by the <TT>BayesClassifier</TT> trainer to perform a Bayes Classification using different distributions.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CBayesClassifierMachine,MBayesClassifierMachine.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.89.1">n_trainers</A></B>
+<DD><I>the number of classes corresponds to the number of <TT>Trainer</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.89.2">n_outputs</A></B>
+<DD><I>the number of outputs in this machine</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="EMTrainer.html">EMTrainer</A>** <B><A HREF="#DOC.89.3">trainers</A></B>
+<DD><I>the actual trainers (EMTrainer since we are training distributions)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.89.4">log_priors</A></B>
+<DD><I>the log_prior probabilities of each class.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.89.5">log_probabilities</A></B>
+<DD><I>it contains the log posterior probability plus the log prior of the class</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.89.6">allocated_log_priors</A></B>
+<DD><I>used to know if log_priors where given or allocated</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="ClassFormat.html">ClassFormat</A>* <B><A HREF="#DOC.89.7">class_format</A></B>
+<DD><I>the class format of the output</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>MeasurerList** <B><A HREF="#DOC.89.8">trainers_measurers</A></B>
+<DD><I>the measurers for each individual trainer</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.89.9">BayesClassifierMachine</A></B>( <!1><A HREF="EMTrainer.html">EMTrainer</A>**, int n_trainers_, MeasurerList** trainers_measurers_, <!1><A HREF="ClassFormat.html">ClassFormat</A>* class_format_, real* log_priors_=NULL)
+<DD><I>creates a machine for BayesClassifier trainers, given a vector of trainers (one per class), an associate measurer for each trainer, a class_format that explains how the classes are coded, and an eventual vector (of size <TT>n_trainers_</TT>) containing the log of the class priors</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.89.10">forward</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>definition of virtual functions of <TT>Machine</TT> </I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>BayesClassifierMachine is the machine used by the <TT>BayesClassifier</TT>
+trainer to perform a Bayes Classification using different distributions.
+The output corresponds to the class that is the most probable
+(using prior AND posterior information).
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="n_trainers"></A>
+<A NAME="DOC.89.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_trainers</B></TT>
+<DD>the number of classes corresponds to the number of <TT>Trainer</TT>
+<DL><DT><DD></DL><P>
+<A NAME="n_outputs"></A>
+<A NAME="DOC.89.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_outputs</B></TT>
+<DD>the number of outputs in this machine
+<DL><DT><DD></DL><P>
+<A NAME="trainers"></A>
+<A NAME="DOC.89.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="EMTrainer.html">EMTrainer</A>** trainers</B></TT>
+<DD>the actual trainers (EMTrainer since we are training distributions)
+<DL><DT><DD></DL><P>
+<A NAME="log_priors"></A>
+<A NAME="DOC.89.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* log_priors</B></TT>
+<DD>the log_prior probabilities of each class. default: log_priors are
+taken as the log of the proportions in the training set.
+<DL><DT><DD></DL><P>
+<A NAME="log_probabilities"></A>
+<A NAME="DOC.89.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* log_probabilities</B></TT>
+<DD>it contains the log posterior probability plus the log prior of the class
+<DL><DT><DD></DL><P>
+<A NAME="allocated_log_priors"></A>
+<A NAME="DOC.89.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool allocated_log_priors</B></TT>
+<DD>used to know if log_priors where given or allocated
+<DL><DT><DD></DL><P>
+<A NAME="class_format"></A>
+<A NAME="DOC.89.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="ClassFormat.html">ClassFormat</A>* class_format</B></TT>
+<DD>the class format of the output
+<DL><DT><DD></DL><P>
+<A NAME="trainers_measurers"></A>
+<A NAME="DOC.89.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>MeasurerList** trainers_measurers</B></TT>
+<DD>the measurers for each individual trainer
+<DL><DT><DD></DL><P>
+<A NAME="BayesClassifierMachine"></A>
+<A NAME="DOC.89.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> BayesClassifierMachine( <!1><A HREF="EMTrainer.html">EMTrainer</A>**, int n_trainers_, MeasurerList** trainers_measurers_, <!1><A HREF="ClassFormat.html">ClassFormat</A>* class_format_, real* log_priors_=NULL)</B></TT>
+<DD>creates a machine for BayesClassifier trainers, given a vector of
+trainers (one per class), an associate measurer for each trainer,
+a class_format that explains how the classes are coded, and an eventual
+vector (of size <TT>n_trainers_</TT>) containing the log of the class priors
+<DL><DT><DD></DL><P>
+<A NAME="forward"></A>
+<A NAME="DOC.89.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void forward(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>definition of virtual functions of <TT>Machine</TT> 
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+Bison Ravi (francois.belisle@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

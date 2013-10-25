@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Vocabulary</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Vocabulary</A></H2></H2><BLOCKQUOTE> This object contains the list of words we want our recogniser to recognise plus a few "special" words (eg.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CVocabulary,MVocabulary.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>char* <B><A HREF="#DOC.70.7">getWord</A></B>( int index )
+<DD><I>Returns the word given the index into the vocabulary</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.1">Creates the vocabulary</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.2">'lex_fname' is the name of the lexicon file containing the pronunciations to be</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.3">recognised.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.4">where the (prior) is optional</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.5">'sent_start_word' and 'sent_end_word' are the words that will start and</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.6">Adds a word to the vocabulary.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.8">Returns the index of a given word.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.70.9">words at indices of 'guess' and 'guess+1' are checked for a match</A></B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This object contains the list of words we want our recogniser to recognise
+plus a few "special" words (eg. sentence markers, silence word). There are
+no duplicates in the list, and the list is sorted alphabetically.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Creates the vocabulary"></A>
+<A NAME="DOC.70.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates the vocabulary</B></TT>
+<DD>Creates the vocabulary
+<DL><DT><DD></DL><P>
+<A NAME="'lex_fname' is the name of the lexicon file containing the pronunciations to be"></A>
+<A NAME="DOC.70.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'lex_fname' is the name of the lexicon file containing the pronunciations to be</B></TT>
+<DD>'lex_fname' is the name of the lexicon file containing the pronunciations to be
+<DL><DT><DD></DL><P>
+<A NAME="recognised."></A>
+<A NAME="DOC.70.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> recognised.</B></TT>
+<DD>recognised.  The format is the standard "word(prior) ph ph ph" format
+<DL><DT><DD></DL><P>
+<A NAME="where the (prior) is optional"></A>
+<A NAME="DOC.70.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> where the (prior) is optional</B></TT>
+<DD>where the (prior) is optional
+<DL><DT><DD></DL><P>
+<A NAME="'sent_start_word' and 'sent_end_word' are the words that will start and"></A>
+<A NAME="DOC.70.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'sent_start_word' and 'sent_end_word' are the words that will start and</B></TT>
+<DD>'sent_start_word' and 'sent_end_word' are the words that will start and
+<DL><DT><DD></DL><P>
+<A NAME="Adds a word to the vocabulary."></A>
+<A NAME="DOC.70.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Adds a word to the vocabulary.</B></TT>
+<DD>Adds a word to the vocabulary. Maintains alphabetic order. Does not add
+<DL><DT><DD></DL><P>
+<A NAME="getWord"></A>
+<A NAME="DOC.70.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>char* getWord( int index )</B></TT>
+<DD>Returns the word given the index into the vocabulary
+<DL><DT><DD></DL><P>
+<A NAME="Returns the index of a given word."></A>
+<A NAME="DOC.70.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Returns the index of a given word.</B></TT>
+<DD>Returns the index of a given word.  If 'guess' is defined, then the
+<DL><DT><DD></DL><P>
+<A NAME="words at indices of 'guess' and 'guess+1' are checked for a match"></A>
+<A NAME="DOC.70.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> words at indices of 'guess' and 'guess+1' are checked for a match</B></TT>
+<DD>words at indices of 'guess' and 'guess+1' are checked for a match
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

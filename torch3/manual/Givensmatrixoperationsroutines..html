@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>  Givens matrix operations routines.</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU"> Givens matrix operations routines.</A></H2></H2>
+<HR>
+<P><DL>
+ <DT>
+void <B><A HREF="mx_givens.html">mx_givens</A></B>(real x, real <!1><A HREF="QCMachine.html#DOC.131.7">y</A>, real*  c, real*  s)
+<DD><I>Returns <TT>c</TT>, <TT>s</TT> parameters for Givens rotation to eliminate <TT>y</TT> in the vector <TT>[&nbsp;x&nbsp;y&nbsp;]'</TT></I>
+<DT>
+void <B><A HREF="mx_rot_vec.html">mx_rot_vec</A></B>(<!1><A HREF="Vec.html">Vec</A>*  x, int i, int k, real c, real s, <!1><A HREF="Vec.html">Vec</A>*  out)
+<DD><I>Apply Givens rotation to <TT>x</TT>'s <TT>i</TT> and <TT>k</TT> components</I>
+<DT>
+void <B><A HREF="mx_rot_rows.html">mx_rot_rows</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat, int i, int k, real c, real s, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Premultiply <TT>mat</TT> by givens rotation described by <TT>c</TT>,<TT>s</TT></I>
+<DT>
+void <B><A HREF="mx_rot_cols.html">mx_rot_cols</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat, int i, int k, real c, real s, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Postmultiply <TT>mat</TT> by givens rotation described by <TT>c</TT>,<TT>s</TT></I>
+</DL></P>
+
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+Givens matrix operations routines.
+Routines for calculating and applying Givens rotations for/to
+vectors and also to matrices by row and by column.
+
+<P>Based on the "Meschach Library", available at the
+anonymous ftp site thrain.anu.edu.au in the directory
+pub/meschach.
+
+<P></BLOCKQUOTE>
+<DL>
+</DL>
+<DL><DT><DT><B>Author:</B><DD>David E. Stewart (david.stewart@anu.edu.au)
+Zbigniew Leyk (zbigniew.leyk@anu.edu.au)
+Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

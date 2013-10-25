@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  WordChainElemPool</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">WordChainElemPool</A></H2></H2><BLOCKQUOTE> This class is a pool of pre-allocated WordChainElem structures.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.87.7">returnElem</A></B>( WordChainElem* elem )
+<DD><I>Returns a WordChainElem instance that is no longer required to the pool</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.87.1">Creates the pool.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.87.2">'max_size' is the initial size of the pool</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.87.3">'realloc_amount_' is the number of additional WordChainElem instances </A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.87.4">that are to be allocated each time the pool empties</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.87.5">If 'realloc_amount_' is undefined, then 'max_size' elements are</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.87.6">Gets the next free WordChainElem instance from the pool.</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This class is a pool of pre-allocated WordChainElem structures. It's
+purpose is to enable fast access to the WordChainElem instances during
+decoding. If the pool is empty, and something asks for a WordChainElem 
+instance then a block of new instances are allocated before the requested
+instance is returned.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Creates the pool."></A>
+<A NAME="DOC.87.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates the pool.</B></TT>
+<DD>Creates the pool. 
+<DL><DT><DD></DL><P>
+<A NAME="'max_size' is the initial size of the pool"></A>
+<A NAME="DOC.87.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'max_size' is the initial size of the pool</B></TT>
+<DD>'max_size' is the initial size of the pool
+<DL><DT><DD></DL><P>
+<A NAME="'realloc_amount_' is the number of additional WordChainElem instances "></A>
+<A NAME="DOC.87.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'realloc_amount_' is the number of additional WordChainElem instances </B></TT>
+<DD>'realloc_amount_' is the number of additional WordChainElem instances 
+<DL><DT><DD></DL><P>
+<A NAME="that are to be allocated each time the pool empties"></A>
+<A NAME="DOC.87.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> that are to be allocated each time the pool empties</B></TT>
+<DD>that are to be allocated each time the pool empties
+<DL><DT><DD></DL><P>
+<A NAME="If 'realloc_amount_' is undefined, then 'max_size' elements are"></A>
+<A NAME="DOC.87.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> If 'realloc_amount_' is undefined, then 'max_size' elements are</B></TT>
+<DD>If 'realloc_amount_' is undefined, then 'max_size' elements are
+<DL><DT><DD></DL><P>
+<A NAME="Gets the next free WordChainElem instance from the pool."></A>
+<A NAME="DOC.87.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Gets the next free WordChainElem instance from the pool.</B></TT>
+<DD>Gets the next free WordChainElem instance from the pool. Allocates
+<DL><DT><DD></DL><P>
+<A NAME="returnElem"></A>
+<A NAME="DOC.87.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void returnElem( WordChainElem* elem )</B></TT>
+<DD>Returns a WordChainElem instance that is no longer required to the pool
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

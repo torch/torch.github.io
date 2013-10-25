@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  WeightedSumMachine</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">WeightedSumMachine</A></H2></H2><BLOCKQUOTE>Weighted-sum machine.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CWeightedSumMachine,MWeightedSumMachine.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.52.1">n_outputs</A></B>
+<DD><I>Output frame size</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Trainer.html">Trainer</A>** <B><A HREF="#DOC.52.2">trainers</A></B>
+<DD><I>The trainers used in the combination</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>MeasurerList** <B><A HREF="#DOC.52.3">trainers_measurers</A></B>
+<DD><I>The corresponding measurers</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.52.4">n_trainers</A></B>
+<DD><I>The number of trainers in the combination</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.52.5">n_trainers_trained</A></B>
+<DD><I>The number of trainers that have been already trained.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.52.6">weights</A></B>
+<DD><I>The weights of the combination</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.52.7">weights_is_allocated</A></B>
+<DD><I>True if the weights aren't given by the user, false otherwise</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.52.8">WeightedSumMachine</A></B>(<!1><A HREF="Trainer.html">Trainer</A>** trainer_, int n_trainers_, MeasurerList** <!1><A HREF="WeightedSumMachine.html#DOC.52.3">trainers_measurers</A>, real* weights_=NULL)
+<DD><I><TT>trainers_measurers</TT> is an array which possibly specify the measurers which should be given to the corresponding trainer when training.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* sequence)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Weighted-sum machine.
+This class contains a series of <TT>Trainers</TT>, and its forward method
+simply performs the average of the output of each machine associated to
+the trainer on the same input.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="n_outputs"></A>
+<A NAME="DOC.52.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_outputs</B></TT>
+<DD>Output frame size
+<DL><DT><DD></DL><P>
+<A NAME="trainers"></A>
+<A NAME="DOC.52.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Trainer.html">Trainer</A>** trainers</B></TT>
+<DD>The trainers used in the combination
+<DL><DT><DD></DL><P>
+<A NAME="trainers_measurers"></A>
+<A NAME="DOC.52.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>MeasurerList** trainers_measurers</B></TT>
+<DD>The corresponding measurers
+<DL><DT><DD></DL><P>
+<A NAME="n_trainers"></A>
+<A NAME="DOC.52.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_trainers</B></TT>
+<DD>The number of trainers in the combination
+<DL><DT><DD></DL><P>
+<A NAME="n_trainers_trained"></A>
+<A NAME="DOC.52.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_trainers_trained</B></TT>
+<DD>The number of trainers that have been already trained.
+After the initialization, it's zero.
+Note that the forward method depends on this value.
+(only the first <TT>n_trainers_trained</TT> trainers are used)
+<DL><DT><DD></DL><P>
+<A NAME="weights"></A>
+<A NAME="DOC.52.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* weights</B></TT>
+<DD>The weights of the combination
+<DL><DT><DD></DL><P>
+<A NAME="weights_is_allocated"></A>
+<A NAME="DOC.52.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool weights_is_allocated</B></TT>
+<DD>True if the weights aren't given by the user, false otherwise
+<DL><DT><DD></DL><P>
+<A NAME="WeightedSumMachine"></A>
+<A NAME="DOC.52.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> WeightedSumMachine(<!1><A HREF="Trainer.html">Trainer</A>** trainer_, int n_trainers_, MeasurerList** <!1><A HREF="WeightedSumMachine.html#DOC.52.3">trainers_measurers</A>, real* weights_=NULL)</B></TT>
+<DD><TT>trainers_measurers</TT> is an array which possibly specify the measurers which
+should be given to the corresponding trainer when training.
+If <TT>weights_</TT> isn't specified, weights are setted to zero.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DT><B>See Also:</B><DD><!1><A HREF="Bagging.html">Bagging</A>
+<BR><!1><A HREF="Boosting.html">Boosting</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

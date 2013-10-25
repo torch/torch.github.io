@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  MeanVarNorm</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">MeanVarNorm</A></H2></H2><BLOCKQUOTE>In the constructor, it computes the mean and the standard deviation over all the frames in the given DataSet (by default, only for inputs).</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CObject,MObject.html,CPreProcessing,MPreProcessing.html,CMeanVarNorm,MMeanVarNorm.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.34.1">n_inputs</A></B>
+<DD><I>Input frame size</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.34.2">n_targets</A></B>
+<DD><I>Target frame size</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.34.3">inputs_mean</A></B>
+<DD><I>Inputs means array</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.34.4">targets_mean</A></B>
+<DD><I>Targets means array</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.34.5">inputs_stdv</A></B>
+<DD><I>Inputs standard deviations array</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.34.6">targets_stdv</A></B>
+<DD><I>Targets standard deviations array</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.34.7">MeanVarNorm</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="SpeechHMM.html#DOC.158.3">data</A>, bool norm_inputs=true, bool norm_targets=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.34.8">loadXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Load means and standard deviations</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.34.9">saveXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Save means and standard deviations</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="PreProcessing.html">PreProcessing</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>preProcessInputs</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>preProcessTargets</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="SpeechHMM.html#DOC.158.7">targets</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>In the constructor, it computes the mean and the standard deviation
+over all the frames in the given DataSet (by default, only for inputs).
+Then, when calling pre-processing methods, it normalizes each column
+by this computed mean and stdv. (substracts the mean, then divides
+by the standard deviation).
+
+<P>As a result, the mean of the full set of frames given by the concatenation
+of all calls to <TT>setExample()</TT> will be 0, and the variance will be 1.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="n_inputs"></A>
+<A NAME="DOC.34.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_inputs</B></TT>
+<DD>Input frame size
+<DL><DT><DD></DL><P>
+<A NAME="n_targets"></A>
+<A NAME="DOC.34.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_targets</B></TT>
+<DD>Target frame size
+<DL><DT><DD></DL><P>
+<A NAME="inputs_mean"></A>
+<A NAME="DOC.34.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* inputs_mean</B></TT>
+<DD>Inputs means array
+<DL><DT><DD></DL><P>
+<A NAME="targets_mean"></A>
+<A NAME="DOC.34.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* targets_mean</B></TT>
+<DD>Targets means array
+<DL><DT><DD></DL><P>
+<A NAME="inputs_stdv"></A>
+<A NAME="DOC.34.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* inputs_stdv</B></TT>
+<DD>Inputs standard deviations array
+<DL><DT><DD></DL><P>
+<A NAME="targets_stdv"></A>
+<A NAME="DOC.34.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* targets_stdv</B></TT>
+<DD>Targets standard deviations array
+<DL><DT><DD></DL><P>
+<A NAME="MeanVarNorm"></A>
+<A NAME="DOC.34.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> MeanVarNorm(<!1><A HREF="DataSet.html">DataSet</A>* <!1><A HREF="SpeechHMM.html#DOC.158.3">data</A>, bool norm_inputs=true, bool norm_targets=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="loadXFile"></A>
+<A NAME="DOC.34.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void loadXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Load means and standard deviations
+<DL><DT><DD></DL><P>
+<A NAME="saveXFile"></A>
+<A NAME="DOC.34.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void saveXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Save means and standard deviations
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

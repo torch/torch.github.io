@@ -1,0 +1,14 @@
+REQUIREMENTS
+------------
+- torch3 (http://www.torch.ch)
+- torch3 epc package
+
+INSTALL
+-------
+1) uncompress the archive in the Torch3 directory
+  - cd Torch3; tar zxvf epc_examples.tar.gz
+2) go to the directory
+  - cd examples/epc
+3) look at the try_it script and select the ploting program (qtplot or gnuplot)
+4) run the script ./try_it
+

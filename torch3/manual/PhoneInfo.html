@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  PhoneInfo</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">PhoneInfo</A></H2></H2><BLOCKQUOTE> This class contains the names of the phonemes that make up the words in the lexicon.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CPhoneInfo,MPhoneInfo.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.1">PhoneInfo</A></B>()
+<DD><I>Creates an empty PhoneInfo instance</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>char* <B><A HREF="#DOC.67.10">getPhone</A></B>( int index )
+<DD><I>Returns a pointer to the phoneme name at position "index" in the list</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.2">Reads the phone information from 'phones_fname' file.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.3">Looks at the first line of the file.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.4">If it is "PHONE" then the file is assumed to be in Noway phone models format.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.5">If it is "~o" then the file is assumed to be in HTK model definition format</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.6">Otherwise the file is assumed to contain just a straight list of phone names</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.7">If the sil_name and pause_name params are set, then the indices of the</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.8">Adds a phoneme to the end of the list of phonemes</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.9">is_sil and is_pause indicate if the phoneme is one of the special phonemes</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.11">Does a linear search through the list and returns the index of the</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.67.12">phoneme name supplied as a parameter</A></B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This class contains the names of the phonemes that make up
+the words in the lexicon. An empty instance can be created,
+and then phones added manually using the addPhone method,
+or a filename can be specified containing phone information.
+The list of phone names is then extracted automatically
+from the file. 
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="PhoneInfo"></A>
+<A NAME="DOC.67.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> PhoneInfo()</B></TT>
+<DD>Creates an empty PhoneInfo instance
+<DL><DT><DD></DL><P>
+<A NAME="Reads the phone information from 'phones_fname' file."></A>
+<A NAME="DOC.67.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Reads the phone information from 'phones_fname' file.</B></TT>
+<DD>Reads the phone information from 'phones_fname' file. 
+<DL><DT><DD></DL><P>
+<A NAME="Looks at the first line of the file."></A>
+<A NAME="DOC.67.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Looks at the first line of the file.</B></TT>
+<DD>Looks at the first line of the file. 
+<DL><DT><DD></DL><P>
+<A NAME="If it is "PHONE" then the file is assumed to be in Noway phone models format."></A>
+<A NAME="DOC.67.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> If it is "PHONE" then the file is assumed to be in Noway phone models format.</B></TT>
+<DD>If it is "PHONE" then the file is assumed to be in Noway phone models format. 
+<DL><DT><DD></DL><P>
+<A NAME="If it is "~o" then the file is assumed to be in HTK model definition format"></A>
+<A NAME="DOC.67.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> If it is "~o" then the file is assumed to be in HTK model definition format</B></TT>
+<DD>If it is "~o" then the file is assumed to be in HTK model definition format
+<DL><DT><DD></DL><P>
+<A NAME="Otherwise the file is assumed to contain just a straight list of phone names"></A>
+<A NAME="DOC.67.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Otherwise the file is assumed to contain just a straight list of phone names</B></TT>
+<DD>Otherwise the file is assumed to contain just a straight list of phone names
+<DL><DT><DD></DL><P>
+<A NAME="If the sil_name and pause_name params are set, then the indices of the"></A>
+<A NAME="DOC.67.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> If the sil_name and pause_name params are set, then the indices of the</B></TT>
+<DD>If the sil_name and pause_name params are set, then the indices of the
+<DL><DT><DD></DL><P>
+<A NAME="Adds a phoneme to the end of the list of phonemes"></A>
+<A NAME="DOC.67.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Adds a phoneme to the end of the list of phonemes</B></TT>
+<DD>Adds a phoneme to the end of the list of phonemes
+<DL><DT><DD></DL><P>
+<A NAME="is_sil and is_pause indicate if the phoneme is one of the special phonemes"></A>
+<A NAME="DOC.67.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> is_sil and is_pause indicate if the phoneme is one of the special phonemes</B></TT>
+<DD>is_sil and is_pause indicate if the phoneme is one of the special phonemes
+<DL><DT><DD></DL><P>
+<A NAME="getPhone"></A>
+<A NAME="DOC.67.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>char* getPhone( int index )</B></TT>
+<DD>Returns a pointer to the phoneme name at position "index" in the list
+<DL><DT><DD></DL><P>
+<A NAME="Does a linear search through the list and returns the index of the"></A>
+<A NAME="DOC.67.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Does a linear search through the list and returns the index of the</B></TT>
+<DD>Does a linear search through the list and returns the index of the
+<DL><DT><DD></DL><P>
+<A NAME="phoneme name supplied as a parameter"></A>
+<A NAME="DOC.67.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> phoneme name supplied as a parameter</B></TT>
+<DD>phoneme name supplied as a parameter
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

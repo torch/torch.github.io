@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Mat</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Mat</A></H2></H2><BLOCKQUOTE>Matrix object.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CMat,MMat.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.139.1">m</A></B>
+<DD><I>Size of the matrix</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.139.2">ptr</A></B>
+<DD><I>Data of the matrix</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.139.3">base</A></B>
+<DD><I>NULL if not allocated by Mat.</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.139.4">Mat</A></B>(real**  ptr_, int n_rows, int n_cols)
+<DD><I>Create a matrix from values in <TT>ptr_</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.139.5">Mat</A></B>(real*  ptr_, int n_rows, int n_cols)
+<DD><I>Create a matrix from values in <TT>ptr_</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.139.6">Mat</A></B>(int n_rows, int n_cols)
+<DD><I>Create a new matrix</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.139.7">copy</A></B>(<!1><A HREF="Mat.html">Mat</A>*  mat)
+<DD><I>Copy the matrix <TT>mat</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.139.8">zero</A></B>()
+<DD><I>Zero the matrix</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.139.9">norm1</A></B>()
+<DD><I>Compute the norm1</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.139.10">normFrobenius</A></B>()
+<DD><I>Compute the Frobenius norm</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.139.11">normInf</A></B>()
+<DD><I>Compute the norm inf</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Vec.html">Vec</A>* <B><A HREF="#DOC.139.12">getRow</A></B>(int row, <!1><A HREF="Vec.html">Vec</A>*  vec = NULL)
+<DD><I>Return the row <TT>row</TT> of the matrix.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Vec.html">Vec</A>* <B><A HREF="#DOC.139.13">getCol</A></B>(int col, <!1><A HREF="Vec.html">Vec</A>*  vec = NULL)
+<DD><I>Return the column <TT>col</TT> of the matrix.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.139.14">setRow</A></B>(int row, <!1><A HREF="Vec.html">Vec</A>*  vec)
+<DD><I>Set the row <TT>row</TT> to values in <TT>vec</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.139.15">setCol</A></B>(int row, <!1><A HREF="Vec.html">Vec</A>*  vec)
+<DD><I>Set the column <TT>col</TT> to values in <TT>vec</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Mat.html">Mat</A>* <B><A HREF="#DOC.139.16">subMat</A></B>(int row1, int col1, int row2, int col2)
+<DD><I>Return a sub-matrix.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Matrix object.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="m"></A>
+<A NAME="DOC.139.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int m</B></TT>
+<DD>Size of the matrix
+<DL><DT><DD></DL><P>
+<A NAME="ptr"></A>
+<A NAME="DOC.139.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** ptr</B></TT>
+<DD>Data of the matrix
+<DL><DT><DD></DL><P>
+<A NAME="base"></A>
+<A NAME="DOC.139.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* base</B></TT>
+<DD>NULL if not allocated by Mat.
+(when you're using the first constructor of Mat, or for
+the matrix returned by subMat)
+<DL><DT><DD></DL><P>
+<A NAME="Mat"></A>
+<A NAME="DOC.139.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Mat(real**  ptr_, int n_rows, int n_cols)</B></TT>
+<DD>Create a matrix from values in <TT>ptr_</TT>.
+(No memory copy).
+<DL><DT><DD></DL><P>
+<A NAME="Mat"></A>
+<A NAME="DOC.139.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Mat(real*  ptr_, int n_rows, int n_cols)</B></TT>
+<DD>Create a matrix from values in <TT>ptr_</TT>.
+(No memory copy).
+<DL><DT><DD></DL><P>
+<A NAME="Mat"></A>
+<A NAME="DOC.139.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Mat(int n_rows, int n_cols)</B></TT>
+<DD>Create a new matrix
+<DL><DT><DD></DL><P>
+<A NAME="copy"></A>
+<A NAME="DOC.139.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void copy(<!1><A HREF="Mat.html">Mat</A>*  mat)</B></TT>
+<DD>Copy the matrix <TT>mat</TT>
+<DL><DT><DD></DL><P>
+<A NAME="zero"></A>
+<A NAME="DOC.139.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void zero()</B></TT>
+<DD>Zero the matrix
+<DL><DT><DD></DL><P>
+<A NAME="norm1"></A>
+<A NAME="DOC.139.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real norm1()</B></TT>
+<DD>Compute the norm1
+<DL><DT><DD></DL><P>
+<A NAME="normFrobenius"></A>
+<A NAME="DOC.139.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real normFrobenius()</B></TT>
+<DD>Compute the Frobenius norm
+<DL><DT><DD></DL><P>
+<A NAME="normInf"></A>
+<A NAME="DOC.139.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real normInf()</B></TT>
+<DD>Compute the norm inf
+<DL><DT><DD></DL><P>
+<A NAME="getRow"></A>
+<A NAME="DOC.139.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Vec.html">Vec</A>* getRow(int row, <!1><A HREF="Vec.html">Vec</A>*  vec = NULL)</B></TT>
+<DD>Return the row <TT>row</TT> of the matrix.
+If <TT>vec</TT> is NULL, return a new vector.
+Else copy the row in <TT>vec</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="getCol"></A>
+<A NAME="DOC.139.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Vec.html">Vec</A>* getCol(int col, <!1><A HREF="Vec.html">Vec</A>*  vec = NULL)</B></TT>
+<DD>Return the column <TT>col</TT> of the matrix.
+If <TT>vec</TT> is NULL, return a new vector.
+Else copy the column in <TT>vec</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="setRow"></A>
+<A NAME="DOC.139.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setRow(int row, <!1><A HREF="Vec.html">Vec</A>*  vec)</B></TT>
+<DD>Set the row <TT>row</TT> to values in <TT>vec</TT>
+<DL><DT><DD></DL><P>
+<A NAME="setCol"></A>
+<A NAME="DOC.139.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setCol(int row, <!1><A HREF="Vec.html">Vec</A>*  vec)</B></TT>
+<DD>Set the column <TT>col</TT> to values in <TT>vec</TT>
+<DL><DT><DD></DL><P>
+<A NAME="subMat"></A>
+<A NAME="DOC.139.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Mat.html">Mat</A>* subMat(int row1, int col1, int row2, int col2)</B></TT>
+<DD>Return a sub-matrix.
+Note that the memory is shared with the original
+matrix, so *be carefull*.
+You have to destroy the returned matrix.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Sequence</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Sequence</A></H2></H2><BLOCKQUOTE>Sequence definition.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CSequence,MSequence.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.47.1">n_real_frames</A></B>
+<DD><I>Real number of frames</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.47.2">frames</A></B>
+<DD><I>Array of usable frame pointers.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.47.3">n_frames</A></B>
+<DD><I>Number of visible frames</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.47.4">frame_size</A></B>
+<DD><I>Frame size</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.47.5">Sequence</A></B>()
+<DD><I>Create an empty sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.47.6">Sequence</A></B>(real** frames_, int n_frames_, int frame_size_)
+<DD><I>Create a sequences of <TT>n_frames_</TT> frames with size <TT>frame_size_</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.47.7">Sequence</A></B>(int n_frames_, int frame_size_)
+<DD><I>Create a sequence with <TT>n_frames_</TT> <EM>standard</EM> frames of size <TT>frame_size</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.47.8">resize</A></B>(int n_frames_, bool allocate_new_frames=true)
+<DD><I>Resize the sequence to <TT>n_frames_</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.47.9">addFrame</A></B>(real* frame, bool do_copy=false)
+<DD><I>Add a frame at the end of the Sequence.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.47.10">add</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* sequence, bool do_copy=false)
+<DD><I>Add a sequence at the end of the Sequence.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.47.11">copy</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* from)
+<DD><I>Copy the given sequence.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.47.12">copyFrom</A></B>(real* vec)
+<DD><I>Copy a real vector in the full sequence.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.47.13">copyTo</A></B>(real* vec)
+<DD><I>Copy the full sequence in a real vector.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.47.14">getSequenceSpace</A></B>()
+<DD><I>Get the space needed to allocate one Sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.47.15">getFramesSpace</A></B>()
+<DD><I>Get the space needed to allocate frames contained in the sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   <!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.47.16">clone</A></B>(<!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL, void* sequence_memory=NULL, void* frames_memory=NULL)
+<DD><I>Clone the sequence.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.47.17">saveXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Save the <EM>usable</EM> frames.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.47.18">loadXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Load the <EM>usable</EM> frames.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Sequence definition.
+A sequence is a set of frames (that is, a vector) which have the same size.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="n_real_frames"></A>
+<A NAME="DOC.47.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_real_frames</B></TT>
+<DD>Real number of frames
+<DL><DT><DD></DL><P>
+<A NAME="frames"></A>
+<A NAME="DOC.47.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** frames</B></TT>
+<DD>Array of usable frame pointers.
+The actual size of this array is given by <TT>n_real_frames</TT>.
+And the usable size is given by <TT>n_frames</TT>. 
+<DL><DT><DD></DL><P>
+<A NAME="n_frames"></A>
+<A NAME="DOC.47.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_frames</B></TT>
+<DD>Number of visible frames
+<DL><DT><DD></DL><P>
+<A NAME="frame_size"></A>
+<A NAME="DOC.47.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int frame_size</B></TT>
+<DD>Frame size
+<DL><DT><DD></DL><P>
+<A NAME="Sequence"></A>
+<A NAME="DOC.47.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Sequence()</B></TT>
+<DD>Create an empty sequence
+<DL><DT><DD></DL><P>
+<A NAME="Sequence"></A>
+<A NAME="DOC.47.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Sequence(real** frames_, int n_frames_, int frame_size_)</B></TT>
+<DD>Create a sequences of <TT>n_frames_</TT> frames with size <TT>frame_size_</TT>.
+The frames are given by the <TT>frames_</TT> array.
+Nothing (except pointers!) will be copied.
+<DL><DT><DD></DL><P>
+<A NAME="Sequence"></A>
+<A NAME="DOC.47.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Sequence(int n_frames_, int frame_size_)</B></TT>
+<DD>Create a sequence with <TT>n_frames_</TT> <EM>standard</EM> frames
+of size <TT>frame_size</TT>
+<DL><DT><DD></DL><P>
+<A NAME="resize"></A>
+<A NAME="DOC.47.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void resize(int n_frames_, bool allocate_new_frames=true)</B></TT>
+<DD>Resize the sequence to <TT>n_frames_</TT>. Note that if <TT>n_frames_</TT> is lower
+than the previous one, the frames won't be deallocated, and can be retrieved
+by another resize...
+<DL><DT><DD></DL><P>
+<A NAME="addFrame"></A>
+<A NAME="DOC.47.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addFrame(real* frame, bool do_copy=false)</B></TT>
+<DD>Add a frame at the end of the Sequence.
+If <TT>do_copy</TT> is true, copy the sequence.
+Else, just copy the pointer.
+<DL><DT><DD></DL><P>
+<A NAME="add"></A>
+<A NAME="DOC.47.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void add(<!1><A HREF="Sequence.html">Sequence</A>* sequence, bool do_copy=false)</B></TT>
+<DD>Add a sequence at the end of the Sequence.
+If <TT>do_copy</TT> is true, copy the frame contents.
+Else, just copy the frame pointers.
+<DL><DT><DD></DL><P>
+<A NAME="copy"></A>
+<A NAME="DOC.47.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void copy(<!1><A HREF="Sequence.html">Sequence</A>* from)</B></TT>
+<DD>Copy the given sequence.
+The given sequence don't need to have the same structure.
+But it must have the same total length.
+<DL><DT><DD></DL><P>
+<A NAME="copyFrom"></A>
+<A NAME="DOC.47.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void copyFrom(real* vec)</B></TT>
+<DD>Copy a real vector in the full sequence.
+The sequence <EM>must</EM> have the good size!
+<DL><DT><DD></DL><P>
+<A NAME="copyTo"></A>
+<A NAME="DOC.47.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void copyTo(real* vec)</B></TT>
+<DD>Copy the full sequence in a real vector.
+The sequence <EM>must</EM> have the good size!
+<DL><DT><DD></DL><P>
+<A NAME="getSequenceSpace"></A>
+<A NAME="DOC.47.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int getSequenceSpace()</B></TT>
+<DD>Get the space needed to allocate one Sequence
+<DL><DT><DD></DL><P>
+<A NAME="getFramesSpace"></A>
+<A NAME="DOC.47.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int getFramesSpace()</B></TT>
+<DD>Get the space needed to allocate frames contained in the sequence
+<DL><DT><DD></DL><P>
+<A NAME="clone"></A>
+<A NAME="DOC.47.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   <!1><A HREF="Sequence.html">Sequence</A>* clone(<!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL, void* sequence_memory=NULL, void* frames_memory=NULL)</B></TT>
+<DD>Clone the sequence.
+If <TT>allocator_</TT> is non-null, call it for all memory allocation and object initialization.
+Else, the returned sequence will be destroyed when the original sequence will be destroyed.
+If <TT>sequence_memory</TT> is non-null, puts the class memory-space in it; it must contain
+the space given by <TT>getSequenceSpace()</TT>.
+If <TT>frames_memory</TT> is non-null, use the given memory for frames allocation; it must contain
+the space given by <TT>getFramesSpace()</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="saveXFile"></A>
+<A NAME="DOC.47.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void saveXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Save the <EM>usable</EM> frames. (<TT>n_frames</TT> available in <TT>frames</TT>).
+<DL><DT><DD></DL><P>
+<A NAME="loadXFile"></A>
+<A NAME="DOC.47.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void loadXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Load the <EM>usable</EM> frames. (<TT>n_frames</TT> available in <TT>frames</TT>).
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

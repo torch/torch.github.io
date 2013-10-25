@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE> Collection of permutations operation functions.</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2> <A HREF="#DOC.DOCU">Collection of permutations operation functions.</A></H2></H2>
+<HR>
+<P><DL>
+ <DT>
+void <B><A HREF="mxPermInv.html">mxPermInv</A></B>(<!1><A HREF="Perm.html">Perm</A>*  px, <!1><A HREF="Perm.html">Perm</A>*  out)
+<DD><I>Invert permutation -- in situ.</I>
+<DT>
+void <B><A HREF="mxPermMulPerm.html">mxPermMulPerm</A></B>(<!1><A HREF="Perm.html">Perm</A>*  px1, <!1><A HREF="Perm.html">Perm</A>*  px2, <!1><A HREF="Perm.html">Perm</A>*  out)
+<DD><I>Permutation multiplication (composition) -- not in-situ </I>
+<DT>
+void <B><A HREF="mxPermVec.html">mxPermVec</A></B>(<!1><A HREF="Perm.html">Perm</A>*  px, <!1><A HREF="Vec.html">Vec</A>*  vec, <!1><A HREF="Vec.html">Vec</A>*  out)
+<DD><I>Permute vector -- can be in-situ </I>
+<DT>
+void <B><A HREF="mxPermInvVec.html">mxPermInvVec</A></B>(<!1><A HREF="Perm.html">Perm</A>*  px, <!1><A HREF="Vec.html">Vec</A>*  x, <!1><A HREF="Vec.html">Vec</A>*  out)
+<DD><I>Apply the inverse of px to x, returning the result in out.</I>
+<DT>
+void <B><A HREF="mxTrPerm.html">mxTrPerm</A></B>(<!1><A HREF="Perm.html">Perm</A>*  px, int i1, int i2)
+<DD><I>Transpose elements of permutation.</I>
+<DT>
+void <B><A HREF="mxPermColsMat.html">mxPermColsMat</A></B>(<!1><A HREF="Perm.html">Perm</A>*  px, <!1><A HREF="Mat.html">Mat</A>*  mat, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Permute columns of matrix A; out = Apx'.</I>
+<DT>
+void <B><A HREF="mxPermRowsMat.html">mxPermRowsMat</A></B>(<!1><A HREF="Perm.html">Perm</A>*  px, <!1><A HREF="Mat.html">Mat</A>*  mat, <!1><A HREF="Mat.html">Mat</A>*  out)
+<DD><I>Permute rows of matrix A; out = pxA.</I>
+</DL></P>
+
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Collection of permutations operation functions.
+Based on the "Meschach Library", available at the
+anonymous ftp site thrain.anu.edu.au in the directory
+pub/meschach.
+
+<P></BLOCKQUOTE>
+<DL>
+</DL>
+<DL><DT><DT><B>Author:</B><DD>David E. Stewart (david.stewart@anu.edu.au)
+Zbigniew Leyk (zbigniew.leyk@anu.edu.au)
+Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

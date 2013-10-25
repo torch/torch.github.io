@@ -1,0 +1,420 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  DiagonalGMM</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DiagonalGMM</A></H2></H2><BLOCKQUOTE>This class can be used to model Diagonal Gaussian Mixture Models.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CGradientMachine,MGradientMachine.html,CDistribution,MDistribution.html,CDiagonalGMM,MDiagonalGMM.html,CMAPDiagonalGMM,MMAPDiagonalGMM.html,CKMeans,MKMeans.html">
+<param name=before value="M,M,M,M,M,M|_,Mr_">
+<param name=after value="Md_SPSPSP,Md_SPSP,Md_SP,Md_,M,M,M">
+<param name=indent value="0,1,2,3,4,4,4">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.90.1">n_gaussians</A></B>
+<DD><I>number of Gaussians in the mixture</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.90.2">prior_weights</A></B>
+<DD><I>prior weights of the Gaussians, used in EM to give  a small prior on each Gaussian</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="EMTrainer.html">EMTrainer</A>* <B><A HREF="#DOC.90.3">initial_kmeans_trainer</A></B>
+<DD><I>optional initializations if nothing is given, then random calling by reset(),  at your own risks or model loaded by the user.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>MeasurerList* <B><A HREF="#DOC.90.4">initial_kmeans_trainer_measurers</A></B>
+<DD><I>as well as a measurer of this trainer</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.90.5">log_weights</A></B>
+<DD><I>the pointers to the parameters</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.90.6">dlog_weights</A></B>
+<DD><I>the pointers to the derivative of the parameters</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.90.7">var_threshold</A></B>
+<DD><I>this contains the minimal value of each variance</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.90.8">log_probabilities_g</A></B>
+<DD><I>for each frame, for each gaussian, keep its log probability</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.90.9">best_gauss</A></B>
+<DD><I>gaussian that maximize the observed frame</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.90.10">best_gauss_per_frame</A></B>
+<DD><I>gaussian that maximize the observed frame</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.90.11">sum_log_var_plus_n_obs_log_2_pi</A></B>
+<DD><I>in order to faster the computation, we can do some "pre-computation" pre-computed sum_log_var + n_obs * log_2_pi</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.90.12">minus_half_over_var</A></B>
+<DD><I>pre-computed -05 / var</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.90.13">means_acc</A></B>
+<DD><I>accumulators for EM</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.90.14">DiagonalGMM</A></B>(int n_inputs_, int n_gaussians_, <!1><A HREF="EMTrainer.html">EMTrainer</A>* initial_kmeans_trainer_ = NULL)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.15">reset</A></B>()
+<DD><I> This methods have to call by the user to initialized the random parameters</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.16">setDataSet</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* data_)
+<DD><I> If the KmeanTrainer has been given to the constructor, Kmeans algorithm is perform</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.17">setVarThreshold</A></B>(real* var_threshold_)
+<DD><I> Set the minimum value for the variances</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.18">eMIterInitialize</A></B>()
+<DD><I>Methods used to initialize the model at the beginning of each EM iteration</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.19">iterInitialize</A></B>()
+<DD><I>Methods used to initialize the model at the beginning of each gradient descent iteration</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.90.20">frameLogProbability</A></B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Returns the log probability of a frame of a sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.90.21">viterbiFrameLogProbability</A></B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Returns the log probability of a frame of a sequence on viterbi mode</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.90.22">frameLogProbabilityOneGaussian</A></B>(int g, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>this method returns the log probability of the "g" Gaussian</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.23">sequenceInitialize</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Methods used to initialize the model at the beginning of each example during gradient descent training</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.24">eMSequenceInitialize</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Methods used to initialize the model at the beginning of each example during EM training</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.25">frameEMAccPosteriors</A></B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DD><I>The backward step of EM for a frame</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.26">frameViterbiAccPosteriors</A></B>(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DD><I>The backward step of Viterbi for a frame</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.27">eMUpdate</A></B>()
+<DD><I>The update after each iteration for EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.28">update</A></B>()
+<DD><I>The update after each iteration for gradient</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.29">frameBackward</A></B>(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)
+<DD><I>Same as backward, but for one frame only</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.90.30">frameDecision</A></B>(int t, real* decision)
+<DD><I>Returns the expected value in <TT>decision</TT></I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Distribution.html">Distribution</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>log_probability</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>log_probabilities</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>logProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   real <B>viterbiLogProbability</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiAccPosteriors</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>decode</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>eMForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiForward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>viterbiBackward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif> <B>Returns the decision of the distribution</B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GradientMachine.html">GradientMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_outputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>der_params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>beta</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>backward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setPartialBackprop</B>(bool flag=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameForward</B>(int t, real* f_inputs, real* f_outputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class can be used to model Diagonal Gaussian Mixture Models.
+They can be trained using either EM (with EMTrainer) or gradient descent
+(with GMTrainer).
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="n_gaussians"></A>
+<A NAME="DOC.90.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_gaussians</B></TT>
+<DD>number of Gaussians in the mixture
+<DL><DT><DD></DL><P>
+<A NAME="prior_weights"></A>
+<A NAME="DOC.90.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real prior_weights</B></TT>
+<DD>prior weights of the Gaussians, used in EM to give 
+a small prior on each Gaussian
+<DL><DT><DD></DL><P>
+<A NAME="initial_kmeans_trainer"></A>
+<A NAME="DOC.90.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="EMTrainer.html">EMTrainer</A>* initial_kmeans_trainer</B></TT>
+<DD>optional initializations
+if nothing is given, then random calling by reset(), 
+at your own risks or model loaded by the user.
+one can give a initial trainer containing a kmeans
+<DL><DT><DD></DL><P>
+<A NAME="initial_kmeans_trainer_measurers"></A>
+<A NAME="DOC.90.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>MeasurerList* initial_kmeans_trainer_measurers</B></TT>
+<DD>as well as a measurer of this trainer
+<DL><DT><DD></DL><P>
+<A NAME="log_weights"></A>
+<A NAME="DOC.90.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* log_weights</B></TT>
+<DD>the pointers to the parameters
+<DL><DT><DD></DL><P>
+<A NAME="dlog_weights"></A>
+<A NAME="DOC.90.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* dlog_weights</B></TT>
+<DD>the pointers to the derivative of the parameters
+<DL><DT><DD></DL><P>
+<A NAME="var_threshold"></A>
+<A NAME="DOC.90.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* var_threshold</B></TT>
+<DD>this contains the minimal value of each variance
+<DL><DT><DD></DL><P>
+<A NAME="log_probabilities_g"></A>
+<A NAME="DOC.90.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* log_probabilities_g</B></TT>
+<DD>for each frame, for each gaussian, keep its log probability
+<DL><DT><DD></DL><P>
+<A NAME="best_gauss"></A>
+<A NAME="DOC.90.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int best_gauss</B></TT>
+<DD>gaussian that maximize the observed frame
+<DL><DT><DD></DL><P>
+<A NAME="best_gauss_per_frame"></A>
+<A NAME="DOC.90.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* best_gauss_per_frame</B></TT>
+<DD>gaussian that maximize the observed frame
+<DL><DT><DD></DL><P>
+<A NAME="sum_log_var_plus_n_obs_log_2_pi"></A>
+<A NAME="DOC.90.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* sum_log_var_plus_n_obs_log_2_pi</B></TT>
+<DD>in order to faster the computation, we can do some "pre-computation"
+pre-computed sum_log_var + n_obs * log_2_pi
+<DL><DT><DD></DL><P>
+<A NAME="minus_half_over_var"></A>
+<A NAME="DOC.90.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** minus_half_over_var</B></TT>
+<DD>pre-computed -05 / var
+<DL><DT><DD></DL><P>
+<A NAME="means_acc"></A>
+<A NAME="DOC.90.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** means_acc</B></TT>
+<DD>accumulators for EM
+<DL><DT><DD></DL><P>
+<A NAME="DiagonalGMM"></A>
+<A NAME="DOC.90.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DiagonalGMM(int n_inputs_, int n_gaussians_, <!1><A HREF="EMTrainer.html">EMTrainer</A>* initial_kmeans_trainer_ = NULL)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="reset"></A>
+<A NAME="DOC.90.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void reset()</B></TT>
+<DD>
+This methods have to call by the user to initialized the
+random parameters
+<DL><DT><DD></DL><P>
+<A NAME="setDataSet"></A>
+<A NAME="DOC.90.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void setDataSet(<!1><A HREF="DataSet.html">DataSet</A>* data_)</B></TT>
+<DD>
+If the KmeanTrainer has been given to the constructor, Kmeans algorithm
+is perform
+<DL><DT><DD></DL><P>
+<A NAME="setVarThreshold"></A>
+<A NAME="DOC.90.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void setVarThreshold(real* var_threshold_)</B></TT>
+<DD>
+Set the minimum value for the variances
+<DL><DT><DD></DL><P>
+<A NAME="eMIterInitialize"></A>
+<A NAME="DOC.90.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMIterInitialize()</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+EM iteration
+<DL><DT><DD></DL><P>
+<A NAME="iterInitialize"></A>
+<A NAME="DOC.90.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void iterInitialize()</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+gradient descent iteration
+<DL><DT><DD></DL><P>
+<A NAME="frameLogProbability"></A>
+<A NAME="DOC.90.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real frameLogProbability(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Returns the log probability of a frame of a sequence
+<DL><DT><DD></DL><P>
+<A NAME="viterbiFrameLogProbability"></A>
+<A NAME="DOC.90.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real viterbiFrameLogProbability(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Returns the log probability of a frame of a sequence on viterbi mode
+<DL><DT><DD></DL><P>
+<A NAME="frameLogProbabilityOneGaussian"></A>
+<A NAME="DOC.90.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real frameLogProbabilityOneGaussian(int g, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>this method returns the log probability of the "g" Gaussian
+<DL><DT><DD></DL><P>
+<A NAME="sequenceInitialize"></A>
+<A NAME="DOC.90.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void sequenceInitialize(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+example during gradient descent training
+<DL><DT><DD></DL><P>
+<A NAME="eMSequenceInitialize"></A>
+<A NAME="DOC.90.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMSequenceInitialize(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+example during EM training
+<DL><DT><DD></DL><P>
+<A NAME="frameEMAccPosteriors"></A>
+<A NAME="DOC.90.25"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameEMAccPosteriors(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)</B></TT>
+<DD>The backward step of EM for a frame
+<DL><DT><DD></DL><P>
+<A NAME="frameViterbiAccPosteriors"></A>
+<A NAME="DOC.90.26"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameViterbiAccPosteriors(int t, real* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)</B></TT>
+<DD>The backward step of Viterbi for a frame
+<DL><DT><DD></DL><P>
+<A NAME="eMUpdate"></A>
+<A NAME="DOC.90.27"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMUpdate()</B></TT>
+<DD>The update after each iteration for EM
+<DL><DT><DD></DL><P>
+<A NAME="update"></A>
+<A NAME="DOC.90.28"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void update()</B></TT>
+<DD>The update after each iteration for gradient
+<DL><DT><DD></DL><P>
+<A NAME="frameBackward"></A>
+<A NAME="DOC.90.29"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameBackward(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)</B></TT>
+<DD>Same as backward, but for one frame only
+<DL><DT><DD></DL><P>
+<A NAME="frameDecision"></A>
+<A NAME="DOC.90.30"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameDecision(int t, real* decision)</B></TT>
+<DD>Returns the expected value in <TT>decision</TT>
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="MAPDiagonalGMM.html">MAPDiagonalGMM</A><BR>
+<A HREF="KMeans.html">KMeans</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+Johnny Mariethoz (Johnny.Mariethoz@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

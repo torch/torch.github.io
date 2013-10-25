@@ -1,0 +1,213 @@
+ <html>
+<body>
+<center><b><font size=+4><i><b>Torch</b></i> Reference Manual</font></b>
+<br><img SRC="logo.gif" ALT="[Torch]" width=78 height=71>
+<br><a href="http://www.torch.ch">http://www.torch.ch</a>
+</center>
+<H1>Hierarchy of Classes</H1>
+<UL>
+
+<LI><A HREF="Allocator.html">Allocator</A>
+<LI><A HREF="BeamSearchDecoder.html">BeamSearchDecoder</A>
+<LI><A HREF="DecoderBatchTest.html">DecoderBatchTest</A>
+<LI><A HREF="DecoderSingleTest.html">DecoderSingleTest</A>
+<LI><A HREF="DecodingHMM.html">DecodingHMM</A>
+<LI><A HREF="DecodingHypothesis.html">DecodingHypothesis</A>
+<LI><A HREF="LMCache.html">LMCache</A>
+<LI><A HREF="LMCacheEntry.html">LMCacheEntry</A>
+<LI><A HREF="LMInteriorLevelWordEntry.html">LMInteriorLevelWordEntry</A>
+<LI><A HREF="LMInteriorLevelWordList.html">LMInteriorLevelWordList</A>
+<LI><A HREF="LMNGram.html">LMNGram</A>
+<LI><A HREF="LanguageModel.html">LanguageModel</A>
+<LI><A HREF="LinearLexicon.html">LinearLexicon</A>
+<LI><A HREF="Object.html">Object</A><UL>
+
+<LI><A HREF="ClassFormat.html">ClassFormat</A><UL>
+
+<LI><A HREF="MultiClassFormat.html">MultiClassFormat</A>
+<LI><A HREF="OneHotClassFormat.html">OneHotClassFormat</A>
+<LI><A HREF="TwoClassFormat.html">TwoClassFormat</A></UL>
+
+<LI><A HREF="CmdLine.html">CmdLine</A>
+<LI><A HREF="CmdOption.html">CmdOption</A><UL>
+
+<LI><A HREF="BoolCmdOption.html">BoolCmdOption</A>
+<LI><A HREF="FileListCmdOption.html">FileListCmdOption</A>
+<LI><A HREF="IntCmdOption.html">IntCmdOption</A>
+<LI><A HREF="RealCmdOption.html">RealCmdOption</A>
+<LI><A HREF="StringCmdOption.html">StringCmdOption</A></UL>
+
+<LI><A HREF="DataSet.html">DataSet</A><UL>
+
+<LI><A HREF="ClassFormatDataSet.html">ClassFormatDataSet</A>
+<LI><A HREF="DiskDataSet.html">DiskDataSet</A><UL>
+
+<LI><A HREF="DiskHTKDataSet.html">DiskHTKDataSet</A>
+<LI><A HREF="DiskMatDataSet.html">DiskMatDataSet</A></UL>
+
+<LI><A HREF="ExampleFrameSelectorDataSet.html">ExampleFrameSelectorDataSet</A>
+<LI><A HREF="FrameSelectorDataSet.html">FrameSelectorDataSet</A>
+<LI><A HREF="MemoryDataSet.html">MemoryDataSet</A><UL>
+
+<LI><A HREF="HTKDataSet.html">HTKDataSet</A>
+<LI><A HREF="MatDataSet.html">MatDataSet</A></UL>
+</UL>
+
+<LI><A HREF="EditDistance.html">EditDistance</A>
+<LI><A HREF="FrameSeg.html">FrameSeg</A>
+<LI><A HREF="Grammar.html">Grammar</A>
+<LI><A HREF="IOSequence.html">IOSequence</A><UL>
+
+<LI><A HREF="IOAscii.html">IOAscii</A>
+<LI><A HREF="IOBin.html">IOBin</A>
+<LI><A HREF="IOBufferize.html">IOBufferize</A>
+<LI><A HREF="IOHTK.html">IOHTK</A>
+<LI><A HREF="IOHTKTarget.html">IOHTKTarget</A>
+<LI><A HREF="IOMulti.html">IOMulti</A>
+<LI><A HREF="IOSub.html">IOSub</A></UL>
+
+<LI><A HREF="IOSequenceArray.html">IOSequenceArray</A>
+<LI><A HREF="KFold.html">KFold</A>
+<LI><A HREF="Kernel.html">Kernel</A><UL>
+
+<LI><A HREF="DotKernel.html">DotKernel</A>
+<LI><A HREF="GaussianKernel.html">GaussianKernel</A>
+<LI><A HREF="PolynomialKernel.html">PolynomialKernel</A>
+<LI><A HREF="SigmoidKernel.html">SigmoidKernel</A></UL>
+
+<LI><A HREF="LexiconInfo.html">LexiconInfo</A>
+<LI><A HREF="Machine.html">Machine</A><UL>
+
+<LI><A HREF="BayesClassifierMachine.html">BayesClassifierMachine</A>
+<LI><A HREF="GradientMachine.html">GradientMachine</A><UL>
+
+<LI><A HREF="ConnectedMachine.html">ConnectedMachine</A><UL>
+
+<LI><A HREF="MLP.html">MLP</A>
+<LI><A HREF="SpeechMLP.html">SpeechMLP</A></UL>
+
+<LI><A HREF="Criterion.html">Criterion</A><UL>
+
+<LI><A HREF="ClassNLLCriterion.html">ClassNLLCriterion</A>
+<LI><A HREF="MSECriterion.html">MSECriterion</A>
+<LI><A HREF="MultiCriterion.html">MultiCriterion</A>
+<LI><A HREF="NLLCriterion.html">NLLCriterion</A>
+<LI><A HREF="WeightedMSECriterion.html">WeightedMSECriterion</A></UL>
+
+<LI><A HREF="Distribution.html">Distribution</A><UL>
+
+<LI><A HREF="DiagonalGMM.html">DiagonalGMM</A><UL>
+
+<LI><A HREF="KMeans.html">KMeans</A>
+<LI><A HREF="MAPDiagonalGMM.html">MAPDiagonalGMM</A></UL>
+
+<LI><A HREF="HMM.html">HMM</A><UL>
+
+<LI><A HREF="MAPHMM.html">MAPHMM</A>
+<LI><A HREF="SpeechHMM.html">SpeechHMM</A><UL>
+
+<LI><A HREF="SimpleDecoderSpeechHMM.html">SimpleDecoderSpeechHMM</A></UL>
+</UL>
+
+<LI><A HREF="Multinomial.html">Multinomial</A>
+<LI><A HREF="ParzenDistribution.html">ParzenDistribution</A>
+<LI><A HREF="SpeechMLPDistr.html">SpeechMLPDistr</A>
+<LI><A HREF="TableLookupDistribution.html">TableLookupDistribution</A></UL>
+
+<LI><A HREF="Exp.html">Exp</A>
+<LI><A HREF="InputsSelect.html">InputsSelect</A>
+<LI><A HREF="Linear.html">Linear</A>
+<LI><A HREF="LogMixer.html">LogMixer</A>
+<LI><A HREF="LogRBF.html">LogRBF</A>
+<LI><A HREF="LogSigmoid.html">LogSigmoid</A>
+<LI><A HREF="LogSoftMax.html">LogSoftMax</A>
+<LI><A HREF="Mixer.html">Mixer</A>
+<LI><A HREF="Sigmoid.html">Sigmoid</A>
+<LI><A HREF="SoftMax.html">SoftMax</A>
+<LI><A HREF="SoftPlus.html">SoftPlus</A>
+<LI><A HREF="SpatialConvolution.html">SpatialConvolution</A>
+<LI><A HREF="SpatialSubSampling.html">SpatialSubSampling</A>
+<LI><A HREF="SumMachine.html">SumMachine</A>
+<LI><A HREF="Tanh.html">Tanh</A>
+<LI><A HREF="TemporalConvolution.html">TemporalConvolution</A>
+<LI><A HREF="TemporalMean.html">TemporalMean</A>
+<LI><A HREF="TemporalSubSampling.html">TemporalSubSampling</A></UL>
+
+<LI><A HREF="KNN.html">KNN</A>
+<LI><A HREF="ParzenMachine.html">ParzenMachine</A>
+<LI><A HREF="QCMachine.html">QCMachine</A><UL>
+
+<LI><A HREF="SVM.html">SVM</A><UL>
+
+<LI><A HREF="SVMClassification.html">SVMClassification</A>
+<LI><A HREF="SVMRegression.html">SVMRegression</A></UL>
+</UL>
+
+<LI><A HREF="WeightedSumMachine.html">WeightedSumMachine</A></UL>
+
+<LI><A HREF="Mat.html">Mat</A>
+<LI><A HREF="Measurer.html">Measurer</A><UL>
+
+<LI><A HREF="BoostingMeasurer.html">BoostingMeasurer</A>
+<LI><A HREF="ClassMeasurer.html">ClassMeasurer</A>
+<LI><A HREF="ClassNLLMeasurer.html">ClassNLLMeasurer</A>
+<LI><A HREF="EditDistanceMeasurer.html">EditDistanceMeasurer</A>
+<LI><A HREF="FrameSegMeasurer.html">FrameSegMeasurer</A>
+<LI><A HREF="MSEMeasurer.html">MSEMeasurer</A>
+<LI><A HREF="NLLMeasurer.html">NLLMeasurer</A>
+<LI><A HREF="OutputMeasurer.html">OutputMeasurer</A>
+<LI><A HREF="SaturationMeasurer.html">SaturationMeasurer</A>
+<LI><A HREF="TimeMeasurer.html">TimeMeasurer</A>
+<LI><A HREF="WordSegMeasurer.html">WordSegMeasurer</A></UL>
+
+<LI><A HREF="Parameters.html">Parameters</A>
+<LI><A HREF="Perm.html">Perm</A>
+<LI><A HREF="PhoneInfo.html">PhoneInfo</A>
+<LI><A HREF="PreProcessing.html">PreProcessing</A><UL>
+
+<LI><A HREF="MeanVarNorm.html">MeanVarNorm</A></UL>
+
+<LI><A HREF="QCCache.html">QCCache</A><UL>
+
+<LI><A HREF="SVMCache.html">SVMCache</A><UL>
+
+<LI><A HREF="SVMCacheClassification.html">SVMCacheClassification</A>
+<LI><A HREF="SVMCacheRegression.html">SVMCacheRegression</A></UL>
+</UL>
+
+<LI><A HREF="Sequence.html">Sequence</A>
+<LI><A HREF="Stack.html">Stack</A>
+<LI><A HREF="Timer.html">Timer</A>
+<LI><A HREF="Trainer.html">Trainer</A><UL>
+
+<LI><A HREF="Bagging.html">Bagging</A>
+<LI><A HREF="BayesClassifier.html">BayesClassifier</A>
+<LI><A HREF="Boosting.html">Boosting</A>
+<LI><A HREF="EMTrainer.html">EMTrainer</A>
+<LI><A HREF="NPTrainer.html">NPTrainer</A>
+<LI><A HREF="QCTrainer.html">QCTrainer</A>
+<LI><A HREF="StochasticGradient.html">StochasticGradient</A></UL>
+
+<LI><A HREF="Vec.html">Vec</A>
+<LI><A HREF="Vocabulary.html">Vocabulary</A>
+<LI><A HREF="WordSeg.html">WordSeg</A>
+<LI><A HREF="XFile.html">XFile</A><UL>
+
+<LI><A HREF="DiskXFile.html">DiskXFile</A><UL>
+
+<LI><A HREF="PipeXFile.html">PipeXFile</A></UL>
+
+<LI><A HREF="MemoryXFile.html">MemoryXFile</A>
+<LI><A HREF="NullXFile.html">NullXFile</A></UL>
+</UL>
+
+<LI><A HREF="PhoneModels.html">PhoneModels</A>
+<LI><A HREF="Random.html">Random</A>
+<LI><A HREF="WordChainElemPool.html">WordChainElemPool</A></UL>
+ <div align=right><b><i>Torch</i></b>.
+The Ultimate Machine Learning Library.</div>
+<HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

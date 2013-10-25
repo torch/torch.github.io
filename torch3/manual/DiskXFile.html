@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  DiskXFile</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">DiskXFile</A></H2></H2><BLOCKQUOTE>A file on the disk.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CObject,MObject.html,CXFile,MXFile.html,CDiskXFile,MDiskXFile.html,CPipeXFile,MPipeXFile.html">
+<param name=before value="M,M,M,M^_">
+<param name=after value="Md_SP,Md_,M,M">
+<param name=indent value="0,1,2,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.19.1">DiskXFile</A></B>(const char* file_name, const char* open_flags)
+<DD><I>Open "file_name" with the flags <TT>open_flags</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.19.2">DiskXFile</A></B>(FILE* file_)
+<DD><I>Use the given file</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   bool <B><A HREF="#DOC.19.3">isLittleEndianProcessor</A></B>()
+<DD><I>Returns <TT>true</TT> if the processor uses the little endian coding format</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   bool <B><A HREF="#DOC.19.4">isBigEndianProcessor</A></B>()
+<DD><I>Returns <TT>true</TT> if the processor uses the big endian coding format</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   bool <B><A HREF="#DOC.19.5">isNativeMode</A></B>()
+<DD><I>Returns <TT>true</TT> if we'll load/save using the native mode</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void <B><A HREF="#DOC.19.6">setNativeMode</A></B>()
+<DD><I>We'll load/save using native mode.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void <B><A HREF="#DOC.19.7">setLittleEndianMode</A></B>()
+<DD><I>We'll load/save using little endian mode.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>static   void <B><A HREF="#DOC.19.8">setBigEndianMode</A></B>()
+<DD><I>We'll load/save using big endian mode.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="XFile.html">XFile</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>read</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>write</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>taggedRead</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>taggedWrite</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>eof</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>flush</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>seek</B>(long offset, int whence)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   long <B>tell</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>rewind</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>printf</B>(const char* format, ...)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>scanf</B>(const char* format, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   char* <B>gets</B>(char* dest, int size_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>A file on the disk.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="DiskXFile"></A>
+<A NAME="DOC.19.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DiskXFile(const char* file_name, const char* open_flags)</B></TT>
+<DD>Open "file_name" with the flags <TT>open_flags</TT>
+<DL><DT><DD></DL><P>
+<A NAME="DiskXFile"></A>
+<A NAME="DOC.19.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> DiskXFile(FILE* file_)</B></TT>
+<DD>Use the given file
+<DL><DT><DD></DL><P>
+<A NAME="isLittleEndianProcessor"></A>
+<A NAME="DOC.19.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   bool isLittleEndianProcessor()</B></TT>
+<DD>Returns <TT>true</TT> if the processor uses the little endian coding format
+<DL><DT><DD></DL><P>
+<A NAME="isBigEndianProcessor"></A>
+<A NAME="DOC.19.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   bool isBigEndianProcessor()</B></TT>
+<DD>Returns <TT>true</TT> if the processor uses the big endian coding format
+<DL><DT><DD></DL><P>
+<A NAME="isNativeMode"></A>
+<A NAME="DOC.19.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   bool isNativeMode()</B></TT>
+<DD>Returns <TT>true</TT> if we'll load/save using the native mode
+<DL><DT><DD></DL><P>
+<A NAME="setNativeMode"></A>
+<A NAME="DOC.19.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void setNativeMode()</B></TT>
+<DD>We'll load/save using native mode.
+We use little endian iff the computer uses little endian.
+We use big endian iff the computer uses big endian.
+<DL><DT><DD></DL><P>
+<A NAME="setLittleEndianMode"></A>
+<A NAME="DOC.19.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void setLittleEndianMode()</B></TT>
+<DD>We'll load/save using little endian mode.
+It means that if the computer doesn't use Little Endian,
+data will be converted.
+<DL><DT><DD></DL><P>
+<A NAME="setBigEndianMode"></A>
+<A NAME="DOC.19.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>static   void setBigEndianMode()</B></TT>
+<DD>We'll load/save using big endian mode.
+It means that if the computer doesn't use Big Endian,
+data will be converted.
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="PipeXFile.html">PipeXFile</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

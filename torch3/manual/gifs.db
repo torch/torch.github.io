@@ -1,0 +1,70 @@
+20:$w_00... w_0n, b_0, w_10... w_1n, b_1, ...$
+61:$0.5*||w||^2 + \sum_j C_j |1- y_j*(w.x_j+b)|_+$
+19:$b_j$
+35:$ouputs[i] = 1/a * exp(inputs[i]-shift)$
+50:$y_j = +- 1$
+32:${a, inputs_1, inputs_2, ...}$
+46:$Cdown_j <= alpha_j <= Cup_j$
+8:$ouputs[i] = -0.5 \sum_j gamma_ij^2 * (inputs[j] - mu_ij)^2$
+63:$x > 0$
+6:$p$
+62:$|x|_+ = x$
+3:$p(x) = sigma/(pi*(sigma^2 + (x-median)^2))$
+59:$w.x+b = 0$
+44:$QP(alpha) = alpha' * Q * alpha + beta'*alpha$
+52:$Cup_j$
+10:$gamma_ij$
+58:$f(x) = \sum_j y_j alpha_j k(x_i, x) + b$
+49:$Cup$
+11:$mu_00... mu_0n, gamma_00.. gamma_0n,..., $
+56:$k$
+34:$ouputs[i] = 1/(1+ exp(-inputs[i]))$
+14:$exp(o_i)$
+57:$x_i$
+33:$a$
+41:$k(x,y) = (s*xy+r)^d$
+1:$i$
+25:${log_a, LogOutputsExpert_1, LogOutputsExpert_2, ...}$
+7:$1-p$
+45:$\sum_j alpha_j y_j = 1$
+26:$ouputs[i] = log(1/(1+exp(-inputs[i])))$
+42:$k(x,y) = exp(-g * ||x-y||^2)$
+29:$outputs[i] = \sum_j a_j * inputs_j[i]$
+47:$y$
+48:$Cdown$
+18:$w_{ij}$
+51:$alpha_j$
+21:$\sum_i,j w_{ij}^2 + sum_i b_i^2$
+13:$o_i$
+17:$ouputs[i] = \sum_j w_{ij} inputs[i] + b_i$
+60:$(w,b)$
+12:$ p(x) = \frac{1}{N}\sum_i \frac{1}{(2 \Pi var)^{d/2}} \exp(- \frac{||x - x_i||^2}{2 var})$
+70:$ y(x) = \frac{\sum_i t_i \exp(- \frac{||x - x_i||^2}{2 var})}{\sum_i \exp(- \frac{||x - x_i||^2}{2 var})}$
+55:$q_{ij} = k(x_i, x_j)$
+67:$+ \sum_j C_(j+n) |y_j -w.x_j-b -eps|_+$
+24:$LogInputs_j$
+39:$j$
+40:$ouputs[i] = tanh(inputs[i])$
+65:$C_j$
+68:$n$
+37:$ouputs[i] = log(1+exp(inputs[i]))$
+16:$ouputs[i] = exp(inputs[i])$
+31:$inputs_j$
+43:$k(x,y) = tanh(s*xy+r)$
+36:$a = \sum_j exp(inputs[j]-shift)$
+27:$ouputs[i] = log(1/a * exp(inputs[i]))$
+38:$outputs[i] = \sum_j inputs_j[i]$
+53:$Cdown_j$
+69:$C$
+54:$beta$
+23:${log_{a_1},...,log_{a_n}}$
+66:$0.5*||w||^2 + \sum_j C_j |w.x_j+b -y_j -eps|_+$
+2:$p(x) = lambda * exp(-lambda * x)$
+5:$0 < p < 1$
+22:$outputs[i] = log(\sum_j exp(log_{a_j}) + log(LogInputs_j[i]))$
+9:$mu_ij$
+15:$(exp(o_1), exp(o_2), exp(o_3)...)$
+28:$a = \sum_j exp(inputs[j])$
+30:${a_1,...,a_n}$
+64:$0$
+4:$p(i) = (1-p) * p^(i-1)$

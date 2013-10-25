@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  ClassFormatDataSet</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">ClassFormatDataSet</A></H2></H2><BLOCKQUOTE>Given a DataSet, convert (on-the-fly) targets using a conversion table.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CObject,MObject.html,CDataSet,MDataSet.html,CClassFormatDataSet,MClassFormatDataSet.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="DataSet.html">DataSet</A>* <B><A HREF="#DOC.45.1">data</A></B>
+<DD><I>The provided DataSet</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.45.2">class_labels</A></B>
+<DD><I>The class label translation table</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.45.3">ClassFormatDataSet</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* data_, <!1><A HREF="Sequence.html">Sequence</A>* class_labels_)
+<DD><I>Here you provide the translation table in <TT>class_labels_</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.45.4">ClassFormatDataSet</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* data_, int <!1><A HREF="ClassFormat.html#DOC.12.1">n_classes</A>=-1)
+<DD><I>We assume here that you want the one-hot encoding format.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="DataSet.html">DataSet</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int* <B>selected_examples</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_targets</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>real_current_example_index</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>targets</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_examples</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_real_examples</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>init</B>(int n_examples_, int n_inputs_, int n_targets_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setExample</B>(int t, bool set_inputs=true, bool set_targets=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setRealExample</B>(int t, bool set_inputs=true, bool set_targets=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>pushSubset</B>(int* subset_, int n_examples_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>popSubset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>pushExample</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>popExample</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>getNumberOfFrames</B>(int t, int* n_input_frames, int* n_target_frames)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>preProcess</B>(<!1><A HREF="PreProcessing.html">PreProcessing</A>* pre_processing)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Given a DataSet, convert (on-the-fly) targets using a conversion table.
+
+<P>The targets of the given DataSet should be 0,1,2... for the class 0, class 1,
+class 2, and so on. Note that is must START AT 0.
+
+<P>After a setExample(), the inputs of this DataSet will be the same as
+the provided one. The targets will be <TT>class_labels-&gt;frames[i]</TT>, where <TT>i</TT>
+is contained in the targets of the provided DataSet.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="data"></A>
+<A NAME="DOC.45.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="DataSet.html">DataSet</A>* data</B></TT>
+<DD>The provided DataSet
+<DL><DT><DD></DL><P>
+<A NAME="class_labels"></A>
+<A NAME="DOC.45.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* class_labels</B></TT>
+<DD>The class label translation table
+<DL><DT><DD></DL><P>
+<A NAME="ClassFormatDataSet"></A>
+<A NAME="DOC.45.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ClassFormatDataSet(<!1><A HREF="DataSet.html">DataSet</A>* data_, <!1><A HREF="Sequence.html">Sequence</A>* class_labels_)</B></TT>
+<DD>Here you provide the translation table in <TT>class_labels_</TT>
+<DL><DT><DD></DL><P>
+<A NAME="ClassFormatDataSet"></A>
+<A NAME="DOC.45.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ClassFormatDataSet(<!1><A HREF="DataSet.html">DataSet</A>* data_, int <!1><A HREF="ClassFormat.html#DOC.12.1">n_classes</A>=-1)</B></TT>
+<DD>We assume here that you want the one-hot encoding format.
+The number of classes is given by <TT>n_classes</TT>, if positive.
+Otherwise, the number of classes is guessed by taking the
+maximum value of the targets of the provided DataSet.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

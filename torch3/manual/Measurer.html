@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Measurer</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Measurer</A></H2></H2><BLOCKQUOTE>Used to measure what you want during training/testing.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=395>
+<param name=classes value="CObject,MObject.html,CMeasurer,MMeasurer.html,CWordSegMeasurer,MWordSegMeasurer.html,CTimeMeasurer,MTimeMeasurer.html,CSaturationMeasurer,MSaturationMeasurer.html,COutputMeasurer,MOutputMeasurer.html,CNLLMeasurer,MNLLMeasurer.html,CMSEMeasurer,MMSEMeasurer.html,CFrameSegMeasurer,MFrameSegMeasurer.html,CEditDistanceMeasurer,MEditDistanceMeasurer.html,CClassNLLMeasurer,MClassNLLMeasurer.html,CClassMeasurer,MClassMeasurer.html,CBoostingMeasurer,MBoostingMeasurer.html">
+<param name=before value="M,M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_,M,M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,1,1,1,1,1,1,1,1,1,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="XFile.html">XFile</A>* <B><A HREF="#DOC.35.1">file</A></B>
+<DD><I>The measurer save measures in this file</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="DataSet.html">DataSet</A>* <B><A HREF="#DOC.35.2">data</A></B>
+<DD><I>The associated <TT>DataSet</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.35.3">binary_mode</A></B>
+<DD><I>Is the measurer in binary mode ?</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.35.4">Measurer</A></B>(<!1><A HREF="DataSet.html">DataSet</A>* data_, <!1><A HREF="XFile.html">XFile</A>* file_)
+<DD><I>Measurer with the associated <TT>DataSet</TT> <TT>data_</TT>, and put results in the file <TT>file_</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.35.5">measureExample</A></B>()
+<DD><I>Measure something for the current example.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.35.6">measureIteration</A></B>()
+<DD><I>Measure something after the current iteration.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.35.7">measureEnd</A></B>()
+<DD><I>Measure something at the end of the training/testing phase</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.35.8">reset</A></B>()
+<DD><I>Reset the measurer.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Used to measure what you want during training/testing.
+Usually, trainers call measurers.
+The <TT>DataSet</TT> associated to the measurer allow us
+to know when the measurer should be called.
+(if the <TT>DataSet</TT> is the train dataset, the
+measurer will be called during the train phase...)
+
+<P>Options:
+<TABLE BORDER>
+<TR><TD>
+"binary mode"  </TD><TD>  bool  </TD><TD>  binary mode for output </TD><TD> [false]
+</TR></TABLE>
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="file"></A>
+<A NAME="DOC.35.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="XFile.html">XFile</A>* file</B></TT>
+<DD>The measurer save measures in this file
+<DL><DT><DD></DL><P>
+<A NAME="data"></A>
+<A NAME="DOC.35.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="DataSet.html">DataSet</A>* data</B></TT>
+<DD>The associated <TT>DataSet</TT>
+<DL><DT><DD></DL><P>
+<A NAME="binary_mode"></A>
+<A NAME="DOC.35.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool binary_mode</B></TT>
+<DD>Is the measurer in binary mode ?
+<DL><DT><DD></DL><P>
+<A NAME="Measurer"></A>
+<A NAME="DOC.35.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Measurer(<!1><A HREF="DataSet.html">DataSet</A>* data_, <!1><A HREF="XFile.html">XFile</A>* file_)</B></TT>
+<DD>Measurer with the associated <TT>DataSet</TT> <TT>data_</TT>,
+and put results in the file <TT>file_</TT>
+<DL><DT><DD></DL><P>
+<A NAME="measureExample"></A>
+<A NAME="DOC.35.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void measureExample()</B></TT>
+<DD>Measure something for the current example.
+(This example has been selected in <TT>data</TT>
+by the trainer)
+<DL><DT><DD></DL><P>
+<A NAME="measureIteration"></A>
+<A NAME="DOC.35.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void measureIteration()</B></TT>
+<DD>Measure something after the current iteration.
+(After the call of <TT>measureExample()</TT> for each
+example of <TT>data</TT>)
+<DL><DT><DD></DL><P>
+<A NAME="measureEnd"></A>
+<A NAME="DOC.35.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void measureEnd()</B></TT>
+<DD>Measure something at the end of the training/testing phase
+<DL><DT><DD></DL><P>
+<A NAME="reset"></A>
+<A NAME="DOC.35.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void reset()</B></TT>
+<DD>Reset the measurer. (By default, do nothing).
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="WordSegMeasurer.html">WordSegMeasurer</A><BR>
+<A HREF="TimeMeasurer.html">TimeMeasurer</A><BR>
+<A HREF="SaturationMeasurer.html">SaturationMeasurer</A><BR>
+<A HREF="OutputMeasurer.html">OutputMeasurer</A><BR>
+<A HREF="NLLMeasurer.html">NLLMeasurer</A><BR>
+<A HREF="MSEMeasurer.html">MSEMeasurer</A><BR>
+<A HREF="FrameSegMeasurer.html">FrameSegMeasurer</A><BR>
+<A HREF="EditDistanceMeasurer.html">EditDistanceMeasurer</A><BR>
+<A HREF="ClassNLLMeasurer.html">ClassNLLMeasurer</A><BR>
+<A HREF="ClassMeasurer.html">ClassMeasurer</A><BR>
+<A HREF="BoostingMeasurer.html">BoostingMeasurer</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Object</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Object</A></H2></H2><BLOCKQUOTE>Almost all classes in Torch should be a sub-class of this class.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=875>
+<param name=classes value="CObject,MObject.html,CXFile,MXFile.html,CWordSeg,MWordSeg.html,CVocabulary,MVocabulary.html,CVec,MVec.html,CTrainer,MTrainer.html,CTimer,MTimer.html,CStack,MStack.html,CSequence,MSequence.html,CQCCache,MQCCache.html,CPreProcessing,MPreProcessing.html,CPhoneInfo,MPhoneInfo.html,CPerm,MPerm.html,CParameters,MParameters.html,CMeasurer,MMeasurer.html,CMat,MMat.html,CMachine,MMachine.html,CLexiconInfo,MLexiconInfo.html,CKernel,MKernel.html,CKFold,MKFold.html,CIOSequenceArray,MIOSequenceArray.html,CIOSequence,MIOSequence.html,CGrammar,MGrammar.html,CFrameSeg,MFrameSeg.html,CEditDistance,MEditDistance.html,CDataSet,MDataSet.html,CCmdOption,MCmdOption.html,CCmdLine,MCmdLine.html,CClassFormat,MClassFormat.html">
+<param name=before value="M,M|_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M,M">
+<param name=indent value="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Allocator.html">Allocator</A>* <B><A HREF="#DOC.41.1">allocator</A></B>
+<DD><I>Allocator associated to the Object</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.41.2">Object</A></B>()
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.3">addOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DD><I>Add the option <TT>name</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.4">addIOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DD><I>Several wrappers of <TT>addOption()</TT> for Int, Real and Bool options.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.5">addROption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.6">addBOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.7">addOOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.8">setOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DD><I>Set the option <TT>name</TT> to the value contained at <TT>ptr</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.9">setIOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DD><I>Several wrappers of <TT>setOption()</TT> for Int, Real and Bool options.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.10">setROption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.11">setBOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.12">setOOption</A></B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.41.13">loadXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Load the object from a file pointer (<EM>not the options</EM>)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.41.14">saveXFile</A></B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DD><I>Save the object to a file pointer (<EM>not the options</EM>)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.15">load</A></B>(const char* filename)
+<DD><I>Load the machine from a file name (<EM>not the options</EM>)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.16">save</A></B>(const char* filename)
+<DD><I>Save the machine to a file name (<EM>not the options</EM>)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void* <B><A HREF="#DOC.41.17">operator new</A></B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DD><I>Allocate the object using <TT>allocator_</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void* <B><A HREF="#DOC.41.18">operator new</A></B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DD><I>Allocate the object using the memory given by <TT>ptr_</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.41.19">operator delete</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DD><I>Delete an object</I>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Almost all classes in Torch should be a sub-class of this class.
+It provides two interesting things: first a useful interface to
+manage option, and second the "allocator trick".
+
+<P>Indeed, in Torch, a class which allocate memory should desallocate
+this memory when it's destroyed. The idea is the following: in the
+constructor of Object, an Allocator object is created. You can use
+it in your subclasses to allocate memory. This memory will be destroyed
+when the Object is destroyed.
+
+<P>"new" operator have been defined to be used with Allocator.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="allocator"></A>
+<A NAME="DOC.41.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Allocator.html">Allocator</A>* allocator</B></TT>
+<DD>Allocator associated to the Object
+<DL><DT><DD></DL><P>
+<A NAME="Object"></A>
+<A NAME="DOC.41.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Object()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addOption"></A>
+<A NAME="DOC.41.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")</B></TT>
+<DD>Add the option <TT>name</TT>.
+This one has a pointer on <TT>ptr</TT> and has the size <TT>size</TT>.
+You can provide an help in <TT>help</TT>.
+(Note that if <TT>help</TT> is empty, its an empty string and not NULL).
+If the option can be changed at any time, you can set
+<TT>is_allowed_after_init</TT> to <TT>true</TT>.
+<DL><DT><DD></DL><P>
+<A NAME="addIOption"></A>
+<A NAME="DOC.41.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addIOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")</B></TT>
+<DD>Several wrappers of <TT>addOption()</TT> for
+Int, Real and Bool options.
+Be carefull: there is no type checking.
+<DL><DT><DD></DL><P>
+<A NAME="addROption"></A>
+<A NAME="DOC.41.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addROption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addBOption"></A>
+<A NAME="DOC.41.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addBOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="addOOption"></A>
+<A NAME="DOC.41.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addOOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="setOption"></A>
+<A NAME="DOC.41.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)</B></TT>
+<DD>Set the option <TT>name</TT> to the value contained at <TT>ptr</TT>
+<DL><DT><DD></DL><P>
+<A NAME="setIOption"></A>
+<A NAME="DOC.41.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setIOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)</B></TT>
+<DD>Several wrappers of <TT>setOption()</TT> for
+Int, Real and Bool options.
+Be carefull: there is no type checking.
+<DL><DT><DD></DL><P>
+<A NAME="setROption"></A>
+<A NAME="DOC.41.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setROption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="setBOption"></A>
+<A NAME="DOC.41.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setBOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="setOOption"></A>
+<A NAME="DOC.41.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void setOOption(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="loadXFile"></A>
+<A NAME="DOC.41.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void loadXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Load the object from a file pointer (<EM>not the options</EM>)
+<DL><DT><DD></DL><P>
+<A NAME="saveXFile"></A>
+<A NAME="DOC.41.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void saveXFile(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)</B></TT>
+<DD>Save the object to a file pointer (<EM>not the options</EM>)
+<DL><DT><DD></DL><P>
+<A NAME="load"></A>
+<A NAME="DOC.41.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void load(const char* filename)</B></TT>
+<DD>Load the machine from a file name (<EM>not the options</EM>)
+<DL><DT><DD></DL><P>
+<A NAME="save"></A>
+<A NAME="DOC.41.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void save(const char* filename)</B></TT>
+<DD>Save the machine to a file name (<EM>not the options</EM>)
+<DL><DT><DD></DL><P>
+<A NAME="operator new"></A>
+<A NAME="DOC.41.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void* operator new(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)</B></TT>
+<DD>Allocate the object using <TT>allocator_</TT>. The object will be
+destroyed and freed when the allocator will be destroyed.
+If no allocator is provided, the new will be similar than
+the standard new.
+<DL><DT><DD></DL><P>
+<A NAME="operator new"></A>
+<A NAME="DOC.41.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void* operator new(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)</B></TT>
+<DD>Allocate the object using the memory given by <TT>ptr_</TT>.
+The object will be destroyed (but not freed!) when the
+allocator will be destroyed.
+<DL><DT><DD></DL><P>
+<A NAME="operator delete"></A>
+<A NAME="DOC.41.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void operator delete(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)</B></TT>
+<DD>Delete an object
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="XFile.html">XFile</A><BR>
+<A HREF="WordSeg.html">WordSeg</A><BR>
+<A HREF="Vocabulary.html">Vocabulary</A><BR>
+<A HREF="Vec.html">Vec</A><BR>
+<A HREF="Trainer.html">Trainer</A><BR>
+<A HREF="Timer.html">Timer</A><BR>
+<A HREF="Stack.html">Stack</A><BR>
+<A HREF="Sequence.html">Sequence</A><BR>
+<A HREF="QCCache.html">QCCache</A><BR>
+<A HREF="PreProcessing.html">PreProcessing</A><BR>
+<A HREF="PhoneInfo.html">PhoneInfo</A><BR>
+<A HREF="Perm.html">Perm</A><BR>
+<A HREF="Parameters.html">Parameters</A><BR>
+<A HREF="Measurer.html">Measurer</A><BR>
+<A HREF="Mat.html">Mat</A><BR>
+<A HREF="Machine.html">Machine</A><BR>
+<A HREF="LexiconInfo.html">LexiconInfo</A><BR>
+<A HREF="Kernel.html">Kernel</A><BR>
+<A HREF="KFold.html">KFold</A><BR>
+<A HREF="IOSequenceArray.html">IOSequenceArray</A><BR>
+<A HREF="IOSequence.html">IOSequence</A><BR>
+<A HREF="Grammar.html">Grammar</A><BR>
+<A HREF="FrameSeg.html">FrameSeg</A><BR>
+<A HREF="EditDistance.html">EditDistance</A><BR>
+<A HREF="DataSet.html">DataSet</A><BR>
+<A HREF="CmdOption.html">CmdOption</A><BR>
+<A HREF="CmdLine.html">CmdLine</A><BR>
+<A HREF="ClassFormat.html">ClassFormat</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DT><B>See Also:</B><DD><!1><A HREF="Allocator.html">Allocator</A>
+<BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

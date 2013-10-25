@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  LMInteriorLevelWordList</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">LMInteriorLevelWordList</A></H2></H2><HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="LMInteriorLevelWordEntry.html">LMInteriorLevelWordEntry</A>* <B><A HREF="#DOC.80.16">findWord</A></B>( int word )
+<DD><I>Internal function</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.1">Creates the list.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.2">levels in the tree-like n-gram data structures.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.3">Adds a language model probability.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.4">Adds a language model backoff weight.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.5">of the entry that is being added, and 'words' contains the</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.6">vocabulary indices of the words in the n-gram.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.7">of 'words' should be eg.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.8">Calculates a language model probability for a particular word</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.9">sequence with backoff.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.10">in the word sequence, and 'words' contains the vocabulary </A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.11">indices of the words.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.12">eg.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.13">"most-recent" word.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.14">indicating that the value of prob contains only an</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.80.15">accumulated backoff weight.</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<DL>
+
+<A NAME="Creates the list."></A>
+<A NAME="DOC.80.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates the list.</B></TT>
+<DD>Creates the list. Instances of this object are used at different
+<DL><DT><DD></DL><P>
+<A NAME="levels in the tree-like n-gram data structures."></A>
+<A NAME="DOC.80.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> levels in the tree-like n-gram data structures.</B></TT>
+<DD>levels in the tree-like n-gram data structures.  
+<DL><DT><DD></DL><P>
+<A NAME="Adds a language model probability."></A>
+<A NAME="DOC.80.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Adds a language model probability.</B></TT>
+<DD>Adds a language model probability. 'order' denotes the order
+<DL><DT><DD></DL><P>
+<A NAME="Adds a language model backoff weight."></A>
+<A NAME="DOC.80.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Adds a language model backoff weight.</B></TT>
+<DD>Adds a language model backoff weight. 'order' denotes the order
+<DL><DT><DD></DL><P>
+<A NAME="of the entry that is being added, and 'words' contains the"></A>
+<A NAME="DOC.80.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> of the entry that is being added, and 'words' contains the</B></TT>
+<DD>of the entry that is being added, and 'words' contains theof the entry that is being added, and 'words' contains the
+<DL><DT><DD></DL><P>
+<A NAME="vocabulary indices of the words in the n-gram."></A>
+<A NAME="DOC.80.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> vocabulary indices of the words in the n-gram.</B></TT>
+<DD>vocabulary indices of the words in the n-gram. The orderingvocabulary indices of the words in the n-gram. The ordering
+<DL><DT><DD></DL><P>
+<A NAME="of 'words' should be eg."></A>
+<A NAME="DOC.80.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> of 'words' should be eg.</B></TT>
+<DD>of 'words' should be eg. W4,W3,W2,W1 when 'order' is 4 andof 'words' should be eg. W3,W2,W1,W4 when 'order' is 4 and
+<DL><DT><DD></DL><P>
+<A NAME="Calculates a language model probability for a particular word"></A>
+<A NAME="DOC.80.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Calculates a language model probability for a particular word</B></TT>
+<DD>Calculates a language model probability for a particular word
+<DL><DT><DD></DL><P>
+<A NAME="sequence with backoff."></A>
+<A NAME="DOC.80.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> sequence with backoff.</B></TT>
+<DD>sequence with backoff. 'order' denotes the number of words
+<DL><DT><DD></DL><P>
+<A NAME="in the word sequence, and 'words' contains the vocabulary "></A>
+<A NAME="DOC.80.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> in the word sequence, and 'words' contains the vocabulary </B></TT>
+<DD>in the word sequence, and 'words' contains the vocabulary 
+<DL><DT><DD></DL><P>
+<A NAME="indices of the words."></A>
+<A NAME="DOC.80.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> indices of the words.</B></TT>
+<DD>indices of the words. The ordering of 'words' should be 
+<DL><DT><DD></DL><P>
+<A NAME="eg."></A>
+<A NAME="DOC.80.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> eg.</B></TT>
+<DD>eg. W3,W2,W1,W4 when 'order' is 4 and where W4 is the 
+<DL><DT><DD></DL><P>
+<A NAME=""most-recent" word."></A>
+<A NAME="DOC.80.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> "most-recent" word.</B></TT>
+<DD>"most-recent" word. Returns false if no entry was found,
+<DL><DT><DD></DL><P>
+<A NAME="indicating that the value of prob contains only an"></A>
+<A NAME="DOC.80.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> indicating that the value of prob contains only an</B></TT>
+<DD>indicating that the value of prob contains only an
+<DL><DT><DD></DL><P>
+<A NAME="accumulated backoff weight."></A>
+<A NAME="DOC.80.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> accumulated backoff weight.</B></TT>
+<DD>accumulated backoff weight. Returns true if a valid
+<DL><DT><DD></DL><P>
+<A NAME="findWord"></A>
+<A NAME="DOC.80.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="LMInteriorLevelWordEntry.html">LMInteriorLevelWordEntry</A>* findWord( int word )</B></TT>
+<DD>Internal function
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

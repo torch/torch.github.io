@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  SpatialConvolution</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">SpatialConvolution</A></H2></H2><BLOCKQUOTE>Class for doing convolution over images.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=125>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CGradientMachine,MGradientMachine.html,CSpatialConvolution,MSpatialConvolution.html">
+<param name=before value="M,M,M,M">
+<param name=after value="Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.1">k_w</A></B>
+<DD><I>Kernel size (height and width)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.2">d_x</A></B>
+<DD><I>'x' translation <EM>in the input image</EM> after each application of the kernel</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.3">d_y</A></B>
+<DD><I>'y' translation <EM>in the input image</EM> after each application of the kernel</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.4">n_input_planes</A></B>
+<DD><I>Number of input images</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.5">n_output_planes</A></B>
+<DD><I>Number of output images</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.6">input_height</A></B>
+<DD><I>Height of each input image</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.7">input_width</A></B>
+<DD><I>Width of each input image</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.8">output_height</A></B>
+<DD><I>Height of each output image</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.59.9">output_width</A></B>
+<DD><I>Width of each output image</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.59.10">weights</A></B>
+<DD><I><TT>weights[i]</TT> means kernel-weights for output plane <TT>i</TT>.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real** <B><A HREF="#DOC.59.11">der_weights</A></B>
+<DD><I>Derivatives associated to <TT>weights</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.59.12">biases</A></B>
+<DD><I><TT>biases[i]</TT> is the bias for output plane <TT>i</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.59.13">der_biases</A></B>
+<DD><I>Derivatives associated to <TT>biases</TT></I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.59.14">SpatialConvolution</A></B>(int n_input_planes_, int n_output_planes_, int width_, int height_, int k_w_=5, int d_x_=1, int d_y_=1)
+<DD><I>Create a convolution layer</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GradientMachine.html">GradientMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_outputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>der_params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>beta</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>iterInitialize</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>backward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setPartialBackprop</B>(bool flag=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameForward</B>(int t, real* f_inputs, real* f_outputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameBackward</B>(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>Class for doing convolution over images.
+
+<P>Suppose you put <TT>n_input_planes</TT> images in each input frame.
+The images are in one big vector: each input frame has a size of
+<TT>n_input_planes*input_height*input_width</TT>. (image after image).
+Thus, <TT>n_inputs&nbsp;=&nbsp;n_input_planes*input_height*input_width</TT>.
+
+<P>Then, for each output planes, it computes the convolution
+of <EM>all</EM> input image planes with a kernel of size <TT>k_w*k_w*n_input_planes</TT>.
+
+<P>The output image size is computed in the constructor and
+put in <TT>output_height</TT> and <TT>output_width</TT>.
+<TT>n_outputs&nbsp;=&nbsp;n_output_planes*output_height*output_width</TT>.
+
+<P>Note that, depending of the size of your kernel, several (last) columns
+or rows of the input image could be lost.
+
+<P>Note also that <EM>no</EM> non-linearity is applied in this layer.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="k_w"></A>
+<A NAME="DOC.59.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int k_w</B></TT>
+<DD>Kernel size (height and width)
+<DL><DT><DD></DL><P>
+<A NAME="d_x"></A>
+<A NAME="DOC.59.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int d_x</B></TT>
+<DD>'x' translation <EM>in the input image</EM> after each application of the kernel
+<DL><DT><DD></DL><P>
+<A NAME="d_y"></A>
+<A NAME="DOC.59.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int d_y</B></TT>
+<DD>'y' translation <EM>in the input image</EM> after each application of the kernel
+<DL><DT><DD></DL><P>
+<A NAME="n_input_planes"></A>
+<A NAME="DOC.59.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_input_planes</B></TT>
+<DD>Number of input images
+<DL><DT><DD></DL><P>
+<A NAME="n_output_planes"></A>
+<A NAME="DOC.59.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_output_planes</B></TT>
+<DD>Number of output images
+<DL><DT><DD></DL><P>
+<A NAME="input_height"></A>
+<A NAME="DOC.59.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int input_height</B></TT>
+<DD>Height of each input image
+<DL><DT><DD></DL><P>
+<A NAME="input_width"></A>
+<A NAME="DOC.59.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int input_width</B></TT>
+<DD>Width of each input image
+<DL><DT><DD></DL><P>
+<A NAME="output_height"></A>
+<A NAME="DOC.59.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int output_height</B></TT>
+<DD>Height of each output image
+<DL><DT><DD></DL><P>
+<A NAME="output_width"></A>
+<A NAME="DOC.59.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int output_width</B></TT>
+<DD>Width of each output image
+<DL><DT><DD></DL><P>
+<A NAME="weights"></A>
+<A NAME="DOC.59.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** weights</B></TT>
+<DD><TT>weights[i]</TT> means kernel-weights for output plane <TT>i</TT>.
+<TT>weights[i]</TT> contains <TT>n_input_planes</TT> times <TT>k_w*k_w</TT> weights.
+<DL><DT><DD></DL><P>
+<A NAME="der_weights"></A>
+<A NAME="DOC.59.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real** der_weights</B></TT>
+<DD>Derivatives associated to <TT>weights</TT>
+<DL><DT><DD></DL><P>
+<A NAME="biases"></A>
+<A NAME="DOC.59.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* biases</B></TT>
+<DD><TT>biases[i]</TT> is the bias for output plane <TT>i</TT>
+<DL><DT><DD></DL><P>
+<A NAME="der_biases"></A>
+<A NAME="DOC.59.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* der_biases</B></TT>
+<DD>Derivatives associated to <TT>biases</TT>
+<DL><DT><DD></DL><P>
+<A NAME="SpatialConvolution"></A>
+<A NAME="DOC.59.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> SpatialConvolution(int n_input_planes_, int n_output_planes_, int width_, int height_, int k_w_=5, int d_x_=1, int d_y_=1)</B></TT>
+<DD>Create a convolution layer
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class List</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class <A HREF="#DOC.DOCU">List</A></H2></H2><A NAME="DOC.DOCU"></A>
+<BLOCKQUOTE>List Classes.
+
+<P>A list named NAME with node pointer type TYPE has the following aspect:
+
+<P><PRE>
+class&nbsp;NAME
+{
+&nbsp;&nbsp;///&nbsp;Pointer&nbsp;which&nbsp;can&nbsp;be&nbsp;used&nbsp;as&nbsp;you&nbsp;want.
+&nbsp;&nbsp;TYPE&nbsp;*nodes;
+&nbsp;&nbsp;
+&nbsp;&nbsp;///&nbsp;Number&nbsp;of&nbsp;nodes.
+&nbsp;&nbsp;int&nbsp;n_nodes;
+
+&nbsp;&nbsp;///&nbsp;Constructor.
+&nbsp;&nbsp;NAME();
+
+&nbsp;&nbsp;///&nbsp;Add&nbsp;a&nbsp;list&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;current&nbsp;list.
+&nbsp;&nbsp;void&nbsp;add(NAME&nbsp;*list);
+
+&nbsp;&nbsp;///&nbsp;Add&nbsp;a&nbsp;node&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;current&nbsp;list.
+&nbsp;&nbsp;void&nbsp;addNode(TYPE&nbsp;*node_)
+};
+</PRE>
+
+<P>To declare a new list, just use the macro (in ".h" files):
+
+<P><PRE>
+#DEFINE_NEW_LIST(NAME,&nbsp;TYPE);
+</PRE>
+
+<P>and to implement this list, use the macro (in ".cc" files):
+<PRE>
+#define&nbsp;IMPLEMENT_NEW_LIST(NAME,&nbsp;TYPE)
+</PRE>
+
+<P>The name of a list which TYPE nodes should be something like "TYPEList".
+
+<P></BLOCKQUOTE>
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">Hierarchy of classes</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

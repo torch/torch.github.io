@@ -1,0 +1,271 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  EditDistance</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">EditDistance</A></H2></H2><BLOCKQUOTE>This class can be used to compute the "edit distance" between two sequences.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=65>
+<param name=classes value="CObject,MObject.html,CEditDistance,MEditDistance.html">
+<param name=before value="M,M">
+<param name=after value="Md_,M">
+<param name=indent value="0,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.152.1">accuracy</A></B>
+<DD><I>the total edit distance between two sequences</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.2">n_insert</A></B>
+<DD><I>the number of insertions (weighted by their cost)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.3">n_delete</A></B>
+<DD><I>the number of deletions (weighted by their cost)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.4">n_subst</A></B>
+<DD><I>the number of substitutions (weighted by their cost)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.5">n_seq</A></B>
+<DD><I>the number of sequences measured (used to normalize <TT>dist</TT> by <TT>n_seq</TT>)</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.6">insert_cost</A></B>
+<DD><I>the cost of one insertion</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.7">delete_cost</A></B>
+<DD><I>the cost of one deletion</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.8">subst_cost</A></B>
+<DD><I>the cost of one substitution</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.152.9">obtained</A></B>
+<DD><I>the obtained sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.10">obt_size</A></B>
+<DD><I>the size of the obtained sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.152.11">desired</A></B>
+<DD><I>the desired sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.12">des_size</A></B>
+<DD><I>the size of the desired sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int** <B><A HREF="#DOC.152.13">confusion</A></B>
+<DD><I>the confusion matrix itself</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.152.14">n_confusion</A></B>
+<DD><I>the number of symbols</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int* <B><A HREF="#DOC.152.15">conf_ins</A></B>
+<DD><I>insertions and deletions</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.152.16">is_confusion</A></B>
+<DD><I>do we want a confusion matrix?</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.152.17">EditDistance</A></B>(bool is_confusion_=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.152.18">setCosts</A></B>(int i_cost, int d_cost, int s_cost)
+<DD><I>sets the different costs</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.152.19">distance</A></B>(int* <!1><A HREF="EditDistance.html#DOC.152.9">obtained</A>, int <!1><A HREF="EditDistance.html#DOC.152.10">obt_size</A>, int* <!1><A HREF="EditDistance.html#DOC.152.11">desired</A>, int <!1><A HREF="EditDistance.html#DOC.152.12">des_size</A>)
+<DD><I>computes the edit distance between <TT>obtained</TT> and <TT>desired</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.152.20">add</A></B>(<!1><A HREF="EditDistance.html">EditDistance</A>* d)
+<DD><I>accumulates the distances of the current object and the given object</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.152.21">print</A></B>(<!1><A HREF="XFile.html">XFile</A>* f)
+<DD><I>prints the edit distance and optionally the sequences</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.152.22">printRatio</A></B>(<!1><A HREF="XFile.html">XFile</A>* f)
+<DD><I>prints the edit distance ratio (divided by the number of sequnces)  and optionally the obtained and desired sequences</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class can be used to compute the "edit distance" between
+two sequences. It computes the number of insertions, deletions and
+substitutions. The overall distance is the sum of these numbers
+weighted by their cost (which are intergers equal to 1 by default).
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="accuracy"></A>
+<A NAME="DOC.152.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real accuracy</B></TT>
+<DD>the total edit distance between two sequences
+<DL><DT><DD></DL><P>
+<A NAME="n_insert"></A>
+<A NAME="DOC.152.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_insert</B></TT>
+<DD>the number of insertions (weighted by their cost)
+<DL><DT><DD></DL><P>
+<A NAME="n_delete"></A>
+<A NAME="DOC.152.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_delete</B></TT>
+<DD>the number of deletions (weighted by their cost)
+<DL><DT><DD></DL><P>
+<A NAME="n_subst"></A>
+<A NAME="DOC.152.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_subst</B></TT>
+<DD>the number of substitutions (weighted by their cost)
+<DL><DT><DD></DL><P>
+<A NAME="n_seq"></A>
+<A NAME="DOC.152.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_seq</B></TT>
+<DD>the number of sequences measured (used to normalize <TT>dist</TT> by <TT>n_seq</TT>)
+<DL><DT><DD></DL><P>
+<A NAME="insert_cost"></A>
+<A NAME="DOC.152.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int insert_cost</B></TT>
+<DD>the cost of one insertion
+<DL><DT><DD></DL><P>
+<A NAME="delete_cost"></A>
+<A NAME="DOC.152.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int delete_cost</B></TT>
+<DD>the cost of one deletion
+<DL><DT><DD></DL><P>
+<A NAME="subst_cost"></A>
+<A NAME="DOC.152.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int subst_cost</B></TT>
+<DD>the cost of one substitution
+<DL><DT><DD></DL><P>
+<A NAME="obtained"></A>
+<A NAME="DOC.152.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* obtained</B></TT>
+<DD>the obtained sequence
+<DL><DT><DD></DL><P>
+<A NAME="obt_size"></A>
+<A NAME="DOC.152.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int obt_size</B></TT>
+<DD>the size of the obtained sequence
+<DL><DT><DD></DL><P>
+<A NAME="desired"></A>
+<A NAME="DOC.152.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* desired</B></TT>
+<DD>the desired sequence
+<DL><DT><DD></DL><P>
+<A NAME="des_size"></A>
+<A NAME="DOC.152.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int des_size</B></TT>
+<DD>the size of the desired sequence
+<DL><DT><DD></DL><P>
+<A NAME="confusion"></A>
+<A NAME="DOC.152.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int** confusion</B></TT>
+<DD>the confusion matrix itself
+<DL><DT><DD></DL><P>
+<A NAME="n_confusion"></A>
+<A NAME="DOC.152.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n_confusion</B></TT>
+<DD>the number of symbols
+<DL><DT><DD></DL><P>
+<A NAME="conf_ins"></A>
+<A NAME="DOC.152.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int* conf_ins</B></TT>
+<DD>insertions and deletions
+<DL><DT><DD></DL><P>
+<A NAME="is_confusion"></A>
+<A NAME="DOC.152.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool is_confusion</B></TT>
+<DD>do we want a confusion matrix?
+<DL><DT><DD></DL><P>
+<A NAME="EditDistance"></A>
+<A NAME="DOC.152.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> EditDistance(bool is_confusion_=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="setCosts"></A>
+<A NAME="DOC.152.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void setCosts(int i_cost, int d_cost, int s_cost)</B></TT>
+<DD>sets the different costs
+<DL><DT><DD></DL><P>
+<A NAME="distance"></A>
+<A NAME="DOC.152.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void distance(int* <!1><A HREF="EditDistance.html#DOC.152.9">obtained</A>, int <!1><A HREF="EditDistance.html#DOC.152.10">obt_size</A>, int* <!1><A HREF="EditDistance.html#DOC.152.11">desired</A>, int <!1><A HREF="EditDistance.html#DOC.152.12">des_size</A>)</B></TT>
+<DD>computes the edit distance between <TT>obtained</TT> and <TT>desired</TT>
+<DL><DT><DD></DL><P>
+<A NAME="add"></A>
+<A NAME="DOC.152.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void add(<!1><A HREF="EditDistance.html">EditDistance</A>* d)</B></TT>
+<DD>accumulates the distances of the current object and the given object
+<DL><DT><DD></DL><P>
+<A NAME="print"></A>
+<A NAME="DOC.152.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void print(<!1><A HREF="XFile.html">XFile</A>* f)</B></TT>
+<DD>prints the edit distance and optionally the sequences
+<DL><DT><DD></DL><P>
+<A NAME="printRatio"></A>
+<A NAME="DOC.152.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void printRatio(<!1><A HREF="XFile.html">XFile</A>* f)</B></TT>
+<DD>prints the edit distance ratio (divided by the number of sequnces) 
+and optionally the obtained and desired sequences
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

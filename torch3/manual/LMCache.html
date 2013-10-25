@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  LMCache</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">LMCache</A></H2></H2><BLOCKQUOTE> This class implements a rudimentary caching scheme for language model lookup.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.1">Creates an empty cache</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.2">'max_entries_' is the maximum number of entries in the cache</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.3">'lm_order' is the order of the language model n-gram (ie 3</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.4">for a trigram LM)</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.5">Adds an entry to the cache.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.6">entry is not already in the cache, the oldest entry is</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.7">overwritten</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.8">'order' is the order of the entry, which can be &lt;= the lm_order</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.9">used during cache creation</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.10">'words' are the words in the n-gram.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.11">for a 4-gram entry</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.12">'prob' is the log probability of the n-gram as calculated by the</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.77.13">Looks for the n-gram in 'words' within the cache and returns</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This class implements a rudimentary caching scheme for language
+model lookup. It basically consists of a (small) list of the most 
+recently accessed language model entries. A cache lookup entails 
+a linear search of the list of entries. The oldest entry is 
+overwritten when the cache is full and a new entry is added.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Creates an empty cache"></A>
+<A NAME="DOC.77.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates an empty cache</B></TT>
+<DD>Creates an empty cache
+<DL><DT><DD></DL><P>
+<A NAME="'max_entries_' is the maximum number of entries in the cache"></A>
+<A NAME="DOC.77.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'max_entries_' is the maximum number of entries in the cache</B></TT>
+<DD>'max_entries_' is the maximum number of entries in the cache
+<DL><DT><DD></DL><P>
+<A NAME="'lm_order' is the order of the language model n-gram (ie 3"></A>
+<A NAME="DOC.77.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'lm_order' is the order of the language model n-gram (ie 3</B></TT>
+<DD>'lm_order' is the order of the language model n-gram (ie 3
+<DL><DT><DD></DL><P>
+<A NAME="for a trigram LM)"></A>
+<A NAME="DOC.77.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> for a trigram LM)</B></TT>
+<DD>for a trigram LM)
+<DL><DT><DD></DL><P>
+<A NAME="Adds an entry to the cache."></A>
+<A NAME="DOC.77.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Adds an entry to the cache.</B></TT>
+<DD>Adds an entry to the cache. If the cache is full and the new
+<DL><DT><DD></DL><P>
+<A NAME="entry is not already in the cache, the oldest entry is"></A>
+<A NAME="DOC.77.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> entry is not already in the cache, the oldest entry is</B></TT>
+<DD>entry is not already in the cache, the oldest entry is
+<DL><DT><DD></DL><P>
+<A NAME="overwritten"></A>
+<A NAME="DOC.77.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> overwritten</B></TT>
+<DD>overwritten
+<DL><DT><DD></DL><P>
+<A NAME="'order' is the order of the entry, which can be <= the lm_order"></A>
+<A NAME="DOC.77.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'order' is the order of the entry, which can be &lt;= the lm_order</B></TT>
+<DD>'order' is the order of the entry, which can be &lt;= the lm_order
+<DL><DT><DD></DL><P>
+<A NAME="used during cache creation"></A>
+<A NAME="DOC.77.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> used during cache creation</B></TT>
+<DD>used during cache creation
+<DL><DT><DD></DL><P>
+<A NAME="'words' are the words in the n-gram."></A>
+<A NAME="DOC.77.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'words' are the words in the n-gram.</B></TT>
+<DD>'words' are the words in the n-gram. The order is W3 W2 W1 W4
+<DL><DT><DD></DL><P>
+<A NAME="for a 4-gram entry"></A>
+<A NAME="DOC.77.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> for a 4-gram entry</B></TT>
+<DD>for a 4-gram entry
+<DL><DT><DD></DL><P>
+<A NAME="'prob' is the log probability of the n-gram as calculated by the"></A>
+<A NAME="DOC.77.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'prob' is the log probability of the n-gram as calculated by the</B></TT>
+<DD>'prob' is the log probability of the n-gram as calculated by the
+<DL><DT><DD></DL><P>
+<A NAME="Looks for the n-gram in 'words' within the cache and returns"></A>
+<A NAME="DOC.77.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Looks for the n-gram in 'words' within the cache and returns</B></TT>
+<DD>Looks for the n-gram in 'words' within the cache and returns
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

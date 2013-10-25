@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  SVMRegression</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">SVMRegression</A></H2></H2><BLOCKQUOTE>SVM in regression.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CQCMachine,MQCMachine.html,CSVM,MSVM.html,CSVMRegression,MSVMRegression.html">
+<param name=before value="M,M,M,M,M">
+<param name=after value="Md_SPSPSP,Md_SPSP,Md_SP,Md_,M">
+<param name=indent value="0,1,2,3,4">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.138.1">SVMRegression</A></B>(<!1><A HREF="Kernel.html">Kernel</A>* kernel_, real* C_=NULL, <!1><A HREF="IOSequenceArray.html">IOSequenceArray</A>* io_sequence_array_=NULL)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="SVM.html">SVM</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>sv_allocator</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="IOSequenceArray.html">IOSequenceArray</A>* <B>io_sequence_array</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="DataSet.html">DataSet</A>* <B>data</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Kernel.html">Kernel</A>* <B>kernel</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>b</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int* <B>support_vectors</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>sv_alpha</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>** <B>sv_sequences</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_support_vectors</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_support_vectors_bound</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>bool <B>bCompute</B>()
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="QCMachine.html">QCMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>Cup</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>Cdown</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real <B>bound_eps</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_alpha</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>alpha</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>grad</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>real* <B>y</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="QCCache.html">QCCache</A>* <B>cache</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>checkSupportVectors</B>()
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* sequence)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>SVM in regression.
+
+<P>Try to find the hyperplane f(x) = w.x+b
+as
+<IMG BORDER=0 SRC=g000060.gif> minimize <IMG BORDER=0 SRC=g000066.gif>
+<IMG BORDER=0 SRC=g000067.gif>
+
+<P>(where <IMG BORDER=0 SRC=g000062.gif> if <IMG BORDER=0 SRC=g000063.gif>, else <IMG BORDER=0 SRC=g000064.gif>)
+(and <IMG BORDER=0 SRC=g000068.gif> is the number of training examples)
+(the size of <IMG BORDER=0 SRC=g000069.gif> is here 2*<IMG BORDER=0 SRC=g000068.gif>)
+
+<P>("eps" is <TT>eps_regression</TT> in the code)
+
+<P>(in fact, we use a kernel <TT>kernel</TT> instead of
+a dot product)
+
+<P>The <IMG BORDER=0 SRC=g000065.gif> coefficients are given by <TT>C_</TT> when you
+call the constructor. If this one is NULL, all
+<TT>C_j</TT> will have the value given by the "C" option.
+(The size of <TT>C_</TT> <EM>must be</EM> <TT>2*data-&gt;n_real_examples</TT>)
+
+<P>Options:
+<TABLE BORDER>
+<TR><TD>
+"C"               </TD><TD>  real  </TD><TD> trade off between the weight decay and the error </TD><TD> [100] </TD></TR><TR><TD>
+"eps regression"  </TD><TD>  real  </TD><TD> size of the error tube                           </TD><TD> [0.7] </TD></TR><TR><TD>
+"cache size"      </TD><TD> real   </TD><TD>  cache size (in Mo)                              </TD><TD> [50]
+</TR></TABLE>
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="SVMRegression"></A>
+<A NAME="DOC.138.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> SVMRegression(<!1><A HREF="Kernel.html">Kernel</A>* kernel_, real* C_=NULL, <!1><A HREF="IOSequenceArray.html">IOSequenceArray</A>* io_sequence_array_=NULL)</B></TT>
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Torch3: The Dream Comes True</title>
+  <link rel="stylesheet" type="text/css" href="torch.css">
+  <link rel="icon" href="images/icon_logo.gif" type="image/ico">
+</head>
+
+<body>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" cols="7">
+  <tr>
+    <td valign="middle" background="images/title_line2.jpg"><img src="images/logo.gif" width="78" height="71" alt="Torch3"></td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="introduction.html">Introduction</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="documentation.html">Documentation</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="downloads.html">Downloads</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="forum.html">Forum</a>&nbsp;&nbsp;</td>
+    <td align="center" valign="middle" background="images/title_line2.jpg" height="71"><br>&nbsp;&nbsp;<a href="credits.html">Credits</a>&nbsp;&nbsp;</td>
+  </tr>
+</table>
+<div align="right">       
+<small><i>
+<a href="http://www.idiap.ch/%7Ecollober">Ronan Collobert</a> 
+(<a href="mailto:collober [at] idiap.ch">collober [at] idiap.ch</a>)<br>
+</i>
+</small>
+</div>
+
+<h2>What's<i><b> Torch</b></i> ?</h2>
+ 
+<blockquote>
+  It's a <b>machine-learning library</b>, written in <i>simple</i> 
+  <b>C++</b> and distributed <b>now</b> under a <b>BSD</b> <a href="license.html">license</a>.<br>
+  <i><b>Torch</b></i> is currently developed at <a href="http://www.idiap.ch/">Idiap Research Institute</a>, in Switzerland mountains.<br>
+<br>
+<b>Update: You might want to have a look at <a href="http://torch5.sf.net">Torch5</a>. We will update this website soon...<b>
+</blockquote>
+<br>
+<br>
+<div align="center">
+<table class="torchTable">
+  <tr>
+    <th valign="middle" align="center" colspan="3"> The Torch Team </th>
+  </tr>
+
+  <tr>
+    <td align="middle"><img src="images/ronan.jpg" width="200" height="200" alt="Ronan"></td>
+    <td align="middle"><img src="images/samy.jpg" width="200" height="200" alt="Samy"></td>
+    <td align="middle"><img src="images/johnny.jpg" width="200" height="200" alt="Johnny"></td>
+  </tr>
+
+  <tr align="center" valign="middle">
+    <td class="row2"><a href="http://ronan.collobert.com"><b>Ronan Collobert</b></a><br> (<a href="mailto:ronan [at] collobert [dot] com">The Guru</a>)</td>
+    <td class="row2"><a href="http://bengio.abracadoudou.com"><b>Samy Bengio</b></a><br> (<a href="mailto:bengio [at] google.com">Distributions Wizard</a>)</td>
+    <td class="row2"><a href="http://www.idiap.ch/~marietho/"><b>Johnny Mari&eacute;thoz</b></a><br> (<a href="mailto:marietho [at] idiap.ch">Capt'ain Debug</a>)</td>
+  </tr>
+</table>
+</div>
+
+<br>
+<br>
+<div align="center">
+<table class="torchTable" width="50%">
+<tr>
+<td class="row1">
+<div align="center">
+<span style="color: rgb(255, 0, 0);">
+<b>Release 3.1</b>
+</span><br>
+<b><small>August 11, 2004</small></b>
+</div>
+</td>
+</tr>
+</table>
+
+<br>
+<br>
+<table class="torchTable" width="50%">
+<tr>
+<td class="row1">
+<div align="center">
+<span style="color: rgb(255, 0, 0);">
+<b>Torch 3 Vision</b>
+</span><br><br>
+<b><small>A full additional package for machine learning applied to vision applications is now available.<br>
+Have a look <a href=http://torch3vision.idiap.ch/>here</a>.</small></b><br><br>
+</div>
+</td>
+</tr>
+</table>
+
+</div>
+
+<br>
+<hr width="100%">
+<h2>Aknowledgements</h2>
+<blockquote>
+If you are using <i><b>Torch</b></i> for your scientific research, please refer to the following paper:
+<blockquote>
+<i>R. Collobert, S. Bengio, and J. Mari&eacute;thoz. <a href="http://publidiap.idiap.ch/downloads/reports/2002/rr02-46.pdf">Torch: a modular machine learning software library</a>. Technical Report IDIAP-RR 02-46, IDIAP, 2002</i>.
+</blockquote>
+</blockquote>
+
+<hr width="100%">
+<h2>Features</h2>
+ 
+<blockquote>   
+  <ul>
+     <li> A lot of things in gradient machines, that is, machines which could 
+          be learned with a gradient descent. This includes <i>multi-layered perceptrons</i>, 
+          <i>radial basis functions</i>, <i>mixtures of experts</i>, <i>convolutional networks</i>
+          and even <i>time-delay neural networks</i>. In fact a lot of "modules" are available
+          that you can plug as you want to get what you need.
+     </li>
+
+     <li><i>Support vector machines</i>, in classification and regression. 
+         As fast as the old stand-alone program <i>SVMTorch II</i>, but with the powerful 
+         environment of the library.
+     </li>
+
+     <li>Ensemble models such as <i>bagging</i> or <i>adaboost</i>.
+     </li>
+
+     <li> Non-parametric models such as <i>K-nearest-neighbors</i>, <i>Parzen 
+          regression</i>  and <i>Parzen density estimator</i>.
+     </li>
+
+     <li>Distributions stuff, like <i>Kmeans</i>, <i>Gaussian mixture models</i>, 
+         <i>hidden Markov models</i>,<i> input-output hidden Markov models</i>,
+         and <i>Bayes classifier</i>.</li>
+
+     <li>Speech recognition tools (Embedded training and large vocabulary decoding).</li>
+     </li>
+  </ul>
+</blockquote>
+
+<hr width="100%"> 
+<h2>Platforms</h2>
+ 
+<blockquote>
+  <i><b>Torch3</b></i> has been successfully tested on <i>Linux</i>, 
+  <i>SunOS</i>, <i>FreeBSD</i>, <i>OSF1</i>, <i>Mac OS X</i> and even <i>MS Windows</i>.<br>
+</blockquote>
+
+<hr width="100%"> 
+<h2>Motivation</h2>
+ 
+<blockquote>
+  Seven reasons to use <i><b>Torch3</b></i>:<br>
+   
+  <ul>
+     <li>It's free</li>
+     <li>It's modular</li>
+     <li>It's growing</li>
+     <li>It has been though to be efficient</li>
+     <li>It has been designed to be intuitive</li>
+     <li>It contains a lot of state-of-the-art algorithms</li>
+     <li>Even if you don't like coding, it contains nice examples</li>   
+  </ul>
+ You cannot imagine what we are doing for you!<br>
+</blockquote>
+
+<hr width="100%"> 
+<h2>Please...</h2>
+<blockquote>
+<ul>
+  <li>
+  <i><b>Torch3</b></i> is free, distributed under a <b>BSD</b> <a href="license.html">license</a>. That's pretty cool for you,
+        but <b>we need your feedback</b>. Cite <i><b>Torch</b></i> in your papers! Advertise it!
+        Send us a mail, an e-mail, something which says that you're using the library, and may encourage us. A nice postcard,
+        a picture from your country (or of your girlfriends!), or even money. We are reachable at the following address:
+  <blockquote>
+    <i><a href="mailto:collober [at] idiap.ch">Ronan Collobert</a> and <a href="mailto:bengio [at] google.com">Samy Bengio</a> and <a href="mailto:marietho [at] idiap.ch">Johnny Mari&eacute;thoz</a><br></i>
+    Idiap Research Institute<br>
+    Centre du Parc<br>
+    Rue Marconi 19<br>
+    CP 592<br>
+    1920 Martigny<br>
+    Switzerland<br>
+  </blockquote>
+  </li>
+  <li>
+  If you have implemented a new machine algorithm or something wich could be cool to be added to the library, <b>send us your code</b>!
+We need your contribution!
+  </li>
+</ul>
+</blockquote>
+<hr width="100%">
+</body>
+</html>

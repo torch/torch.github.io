@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  Distribution</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">Distribution</A></H2></H2><BLOCKQUOTE>This class is designed to handle generative distribution models such as Gaussian Mixture Models and Hidden Markov Models.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=305>
+<param name=classes value="CObject,MObject.html,CMachine,MMachine.html,CGradientMachine,MGradientMachine.html,CDistribution,MDistribution.html,CTableLookupDistribution,MTableLookupDistribution.html,CSpeechMLPDistr,MSpeechMLPDistr.html,CParzenDistribution,MParzenDistribution.html,CMultinomial,MMultinomial.html,CHMM,MHMM.html,CDiagonalGMM,MDiagonalGMM.html">
+<param name=before value="M,M,M,M,M|_,MR_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_SPSP,Md_SP,Md_,M,M,M,M,M,M,M">
+<param name=indent value="0,1,2,3,3,3,3,3,3,3">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real <B><A HREF="#DOC.91.1">log_probability</A></B>
+<DD><I>the log likelihood</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="Sequence.html">Sequence</A>* <B><A HREF="#DOC.91.2">log_probabilities</A></B>
+<DD><I>the log likelihood for each frame when available</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.91.3">Distribution</A></B>(int n_inputs_, int n_params_=0)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.91.4">logProbability</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Returns the log probability of a sequence represented by <TT>inputs</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.91.5">viterbiLogProbability</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Returns the viterbi score of a sequence represented by <TT>inputs</TT></I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.91.6">frameLogProbability</A></B>(int t, real* f_inputs)
+<DD><I>Returns the log probability of a frame of a sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   real <B><A HREF="#DOC.91.7">viterbiFrameLogProbability</A></B>(int t, real* f_inputs)
+<DD><I>Returns the log probability of a frame of a sequence on viterbi mode</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.8">eMIterInitialize</A></B>()
+<DD><I>Methods used to initialize the model at the beginning of each EM iteration</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.9">iterInitialize</A></B>()
+<DD><I>Methods used to initialize the model at the beginning of each gradient descent iteration</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.10">eMSequenceInitialize</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Methods used to initialize the model at the beginning of each example during EM training</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.11">sequenceInitialize</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Methods used to initialize the model at the beginning of each example during gradient descent training</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.12">eMAccPosteriors</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DD><I>The backward step of EM for a sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.13">frameEMAccPosteriors</A></B>(int t, real* f_inputs, real log_posterior)
+<DD><I>The backward step of EM for a frame</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.14">viterbiAccPosteriors</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)
+<DD><I>The backward step of Viterbi learning for a sequence</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.15">frameViterbiAccPosteriors</A></B>(int t, real* f_inputs, real log_posterior)
+<DD><I>The backward step of Viterbi for a frame</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.16">eMUpdate</A></B>()
+<DD><I>The update after each iteration for EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.17">update</A></B>()
+<DD><I>The update after each gradient iteration</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.18">decode</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>For some distribution like SpeechHMM, decodes the most likely path</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.19">eMForward</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Same as forward, but for EM</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.20">viterbiForward</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DD><I>Same as forward, but for Viterbi</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.21">frameBackward</A></B>(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)
+<DD><I>Same as backward, but for one frame only</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.22">viterbiBackward</A></B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DD><I>Same as backward, but for Viterbi </I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.91.24">frameDecision</A></B>(int t, real* decision)
+<DD><I>Returns the decision of a frame of a sequence</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.91.23">Returns the decision of the distribution</A></B>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="GradientMachine.html">GradientMachine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_inputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>n_outputs</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Parameters.html">Parameters</A>* <B>der_params</B>
+<DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>beta</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>forward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>backward</B>(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setPartialBackprop</B>(bool flag=true)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>frameForward</B>(int t, real* f_inputs, real* f_outputs)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Machine.html">Machine</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Sequence.html">Sequence</A>* <B>outputs</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>reset</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>setDataSet</B>(<!1><A HREF="DataSet.html">DataSet</A>* dataset_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class is designed to handle generative distribution models
+such as Gaussian Mixture Models and Hidden Markov Models. As 
+distribution inherits from GradientMachine, they can be trained 
+by gradient descent or by Expectation Maximization (EM) or even
+Viterbi.
+
+<P>Note that the output of a distribution is the negative log likelihood.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="log_probability"></A>
+<A NAME="DOC.91.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real log_probability</B></TT>
+<DD>the log likelihood
+<DL><DT><DD></DL><P>
+<A NAME="log_probabilities"></A>
+<A NAME="DOC.91.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="Sequence.html">Sequence</A>* log_probabilities</B></TT>
+<DD>the log likelihood for each frame when available
+<DL><DT><DD></DL><P>
+<A NAME="Distribution"></A>
+<A NAME="DOC.91.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Distribution(int n_inputs_, int n_params_=0)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="logProbability"></A>
+<A NAME="DOC.91.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real logProbability(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Returns the log probability of a sequence represented by <TT>inputs</TT>
+<DL><DT><DD></DL><P>
+<A NAME="viterbiLogProbability"></A>
+<A NAME="DOC.91.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real viterbiLogProbability(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Returns the viterbi score of a sequence represented by <TT>inputs</TT>
+<DL><DT><DD></DL><P>
+<A NAME="frameLogProbability"></A>
+<A NAME="DOC.91.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real frameLogProbability(int t, real* f_inputs)</B></TT>
+<DD>Returns the log probability of a frame of a sequence
+<DL><DT><DD></DL><P>
+<A NAME="viterbiFrameLogProbability"></A>
+<A NAME="DOC.91.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   real viterbiFrameLogProbability(int t, real* f_inputs)</B></TT>
+<DD>Returns the log probability of a frame of a sequence on viterbi mode
+<DL><DT><DD></DL><P>
+<A NAME="eMIterInitialize"></A>
+<A NAME="DOC.91.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMIterInitialize()</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+EM iteration
+<DL><DT><DD></DL><P>
+<A NAME="iterInitialize"></A>
+<A NAME="DOC.91.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void iterInitialize()</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+gradient descent iteration
+<DL><DT><DD></DL><P>
+<A NAME="eMSequenceInitialize"></A>
+<A NAME="DOC.91.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMSequenceInitialize(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+example during EM training
+<DL><DT><DD></DL><P>
+<A NAME="sequenceInitialize"></A>
+<A NAME="DOC.91.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void sequenceInitialize(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Methods used to initialize the model at the beginning of each
+example during gradient descent training
+<DL><DT><DD></DL><P>
+<A NAME="eMAccPosteriors"></A>
+<A NAME="DOC.91.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMAccPosteriors(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)</B></TT>
+<DD>The backward step of EM for a sequence
+<DL><DT><DD></DL><P>
+<A NAME="frameEMAccPosteriors"></A>
+<A NAME="DOC.91.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameEMAccPosteriors(int t, real* f_inputs, real log_posterior)</B></TT>
+<DD>The backward step of EM for a frame
+<DL><DT><DD></DL><P>
+<A NAME="viterbiAccPosteriors"></A>
+<A NAME="DOC.91.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void viterbiAccPosteriors(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, real log_posterior)</B></TT>
+<DD>The backward step of Viterbi learning for a sequence
+<DL><DT><DD></DL><P>
+<A NAME="frameViterbiAccPosteriors"></A>
+<A NAME="DOC.91.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameViterbiAccPosteriors(int t, real* f_inputs, real log_posterior)</B></TT>
+<DD>The backward step of Viterbi for a frame
+<DL><DT><DD></DL><P>
+<A NAME="eMUpdate"></A>
+<A NAME="DOC.91.16"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMUpdate()</B></TT>
+<DD>The update after each iteration for EM
+<DL><DT><DD></DL><P>
+<A NAME="update"></A>
+<A NAME="DOC.91.17"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void update()</B></TT>
+<DD>The update after each gradient iteration
+<DL><DT><DD></DL><P>
+<A NAME="decode"></A>
+<A NAME="DOC.91.18"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void decode(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>For some distribution like SpeechHMM, decodes the most likely path
+<DL><DT><DD></DL><P>
+<A NAME="eMForward"></A>
+<A NAME="DOC.91.19"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void eMForward(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Same as forward, but for EM
+<DL><DT><DD></DL><P>
+<A NAME="viterbiForward"></A>
+<A NAME="DOC.91.20"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void viterbiForward(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>)</B></TT>
+<DD>Same as forward, but for Viterbi
+<DL><DT><DD></DL><P>
+<A NAME="frameBackward"></A>
+<A NAME="DOC.91.21"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameBackward(int t, real* f_inputs, real* beta_, real* f_outputs, real* alpha_)</B></TT>
+<DD>Same as backward, but for one frame only
+<DL><DT><DD></DL><P>
+<A NAME="viterbiBackward"></A>
+<A NAME="DOC.91.22"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void viterbiBackward(<!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="NLLMeasurer.html#DOC.98.1">inputs</A>, <!1><A HREF="Sequence.html">Sequence</A>* <!1><A HREF="QCMachine.html#DOC.131.5">alpha</A>)</B></TT>
+<DD>Same as backward, but for Viterbi 
+<DL><DT><DD></DL><P>
+<A NAME="Returns the decision of the distribution"></A>
+<A NAME="DOC.91.23"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Returns the decision of the distribution</B></TT>
+<DD>Returns the decision of the distribution
+<DL><DT><DD></DL><P>
+<A NAME="frameDecision"></A>
+<A NAME="DOC.91.24"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void frameDecision(int t, real* decision)</B></TT>
+<DD>Returns the decision of a frame of a sequence
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="TableLookupDistribution.html">TableLookupDistribution</A><BR>
+<A HREF="SpeechMLPDistr.html">SpeechMLPDistr</A><BR>
+<A HREF="ParzenDistribution.html">ParzenDistribution</A><BR>
+<A HREF="Multinomial.html">Multinomial</A><BR>
+<A HREF="HMM.html">HMM</A><BR>
+<A HREF="DiagonalGMM.html">DiagonalGMM</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Samy Bengio (bengio@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

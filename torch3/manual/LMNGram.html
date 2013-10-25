@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  LMNGram</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">LMNGram</A></H2></H2><BLOCKQUOTE> This class is the main class for N-gram language modelling.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.81.1">n</A></B>
+<DD><I>The order of the N-Gram</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>real* <B><A HREF="#DOC.81.2">unigrams</A></B>
+<DD><I>The unigram probability entries, 1 for every vocab word</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="LMInteriorLevelWordList.html">LMInteriorLevelWordList</A>* <B><A HREF="#DOC.81.3">next_level</A></B>
+<DD><I>Points to the start of the language model tree structure</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif><!1><A HREF="LMCache.html">LMCache</A>* <B><A HREF="#DOC.81.4">cache</A></B>
+<DD><I>The cache used for fast LM lookup</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.5">LMNGram</A></B>( int n_, <!1><A HREF="Vocabulary.html">Vocabulary</A>* vocab_ )
+<DD><I>Creates an empty N-Gram data structure.</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.6">Adds a new entry to the N-gram</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.7">'order' is the order of the entry (ie.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.8">The 'words' array needs to be in oldest-word-first order</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.9">([w1 w2 w3] for trigram entry)</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.10">'prob' is the log probability for the entry</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.11">'bo_wt' is the log back-off weight for the entry.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.12">Finds the N-gram probability of a given word sequence, with full</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.13">backoff</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.14">'order' is the number of words in the 'words' array</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.81.15">The ordering in 'words' is W3,W2,W1,W4 for a 4-gram query</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This class is the main class for N-gram language modelling.
+After language model entries have been added, lookups with full
+backoff can be performed.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="n"></A>
+<A NAME="DOC.81.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int n</B></TT>
+<DD>The order of the N-Gram
+<DL><DT><DD></DL><P>
+<A NAME="unigrams"></A>
+<A NAME="DOC.81.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>real* unigrams</B></TT>
+<DD>The unigram probability entries, 1 for every vocab word
+<DL><DT><DD></DL><P>
+<A NAME="next_level"></A>
+<A NAME="DOC.81.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="LMInteriorLevelWordList.html">LMInteriorLevelWordList</A>* next_level</B></TT>
+<DD>Points to the start of the language model tree structure
+<DL><DT><DD></DL><P>
+<A NAME="cache"></A>
+<A NAME="DOC.81.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B><!1><A HREF="LMCache.html">LMCache</A>* cache</B></TT>
+<DD>The cache used for fast LM lookup
+<DL><DT><DD></DL><P>
+<A NAME="LMNGram"></A>
+<A NAME="DOC.81.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> LMNGram( int n_, <!1><A HREF="Vocabulary.html">Vocabulary</A>* vocab_ )</B></TT>
+<DD>Creates an empty N-Gram data structure. 'n_' is the N-gram order.
+<DL><DT><DD></DL><P>
+<A NAME="Adds a new entry to the N-gram"></A>
+<A NAME="DOC.81.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Adds a new entry to the N-gram</B></TT>
+<DD>Adds a new entry to the N-gram
+<DL><DT><DD></DL><P>
+<A NAME="'order' is the order of the entry (ie."></A>
+<A NAME="DOC.81.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'order' is the order of the entry (ie.</B></TT>
+<DD>'order' is the order of the entry (ie. 2 for a bigram entry).
+<DL><DT><DD></DL><P>
+<A NAME="The 'words' array needs to be in oldest-word-first order"></A>
+<A NAME="DOC.81.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> The 'words' array needs to be in oldest-word-first order</B></TT>
+<DD>The 'words' array needs to be in oldest-word-first order
+<DL><DT><DD></DL><P>
+<A NAME="([w1 w2 w3] for trigram entry)"></A>
+<A NAME="DOC.81.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ([w1 w2 w3] for trigram entry)</B></TT>
+<DD>([w1 w2 w3] for trigram entry)
+<DL><DT><DD></DL><P>
+<A NAME="'prob' is the log probability for the entry"></A>
+<A NAME="DOC.81.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'prob' is the log probability for the entry</B></TT>
+<DD>'prob' is the log probability for the entry
+<DL><DT><DD></DL><P>
+<A NAME="'bo_wt' is the log back-off weight for the entry."></A>
+<A NAME="DOC.81.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'bo_wt' is the log back-off weight for the entry.</B></TT>
+<DD>'bo_wt' is the log back-off weight for the entry. If order is
+<DL><DT><DD></DL><P>
+<A NAME="Finds the N-gram probability of a given word sequence, with full"></A>
+<A NAME="DOC.81.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Finds the N-gram probability of a given word sequence, with full</B></TT>
+<DD>Finds the N-gram probability of a given word sequence, with full
+<DL><DT><DD></DL><P>
+<A NAME="backoff"></A>
+<A NAME="DOC.81.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> backoff</B></TT>
+<DD>backoff
+<DL><DT><DD></DL><P>
+<A NAME="'order' is the number of words in the 'words' array"></A>
+<A NAME="DOC.81.14"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'order' is the number of words in the 'words' array</B></TT>
+<DD>'order' is the number of words in the 'words' array
+<DL><DT><DD></DL><P>
+<A NAME="The ordering in 'words' is W3,W2,W1,W4 for a 4-gram query"></A>
+<A NAME="DOC.81.15"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> The ordering in 'words' is W3,W2,W1,W4 for a 4-gram query</B></TT>
+<DD>The ordering in 'words' is W3,W2,W1,W4 for a 4-gram query
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

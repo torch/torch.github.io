@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  LMCacheEntry</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">LMCacheEntry</A></H2></H2><BLOCKQUOTE> This class implements the internal entries within the LMCache class.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.78.7">addProb</A></B>( int vocab_word, real prob )
+<DD><I>Adds a log probability for the next-word denoted by 'vocab_word'</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.78.1">Creates the cache entry</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.78.2">'max_n_prev_words_' is the maximum number of prev words that will</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.78.3">ever be used with the cache entry (eg.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.78.4">Replaces the current prev words with new ones.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.78.5">a number of prev words that is &lt;= max_n_prev_words (ie.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.78.6">Resets all of the next-word log probs to -LOG_ZERO (to indicate that</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.78.8">Returns the cached log probability for the next-word denoted by</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This class implements the internal entries within the LMCache
+class. Each entry consists of an array of previous words (eg.
+2 previous words in a trigram entry), and a list of probabilities
+of next words given the previous words. There is also an age
+field that is used to keep track of how recently the entry was
+accessed.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Creates the cache entry"></A>
+<A NAME="DOC.78.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates the cache entry</B></TT>
+<DD>Creates the cache entry
+<DL><DT><DD></DL><P>
+<A NAME="'max_n_prev_words_' is the maximum number of prev words that will"></A>
+<A NAME="DOC.78.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> 'max_n_prev_words_' is the maximum number of prev words that will</B></TT>
+<DD>'max_n_prev_words_' is the maximum number of prev words that will
+<DL><DT><DD></DL><P>
+<A NAME="ever be used with the cache entry (eg."></A>
+<A NAME="DOC.78.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> ever be used with the cache entry (eg.</B></TT>
+<DD>ever be used with the cache entry (eg. 2 for trigram LM)
+<DL><DT><DD></DL><P>
+<A NAME="Replaces the current prev words with new ones."></A>
+<A NAME="DOC.78.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Replaces the current prev words with new ones.</B></TT>
+<DD>Replaces the current prev words with new ones. The new entry can
+<DL><DT><DD></DL><P>
+<A NAME="a number of prev words that is <= max_n_prev_words (ie."></A>
+<A NAME="DOC.78.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> a number of prev words that is &lt;= max_n_prev_words (ie.</B></TT>
+<DD>a number of prev words that is &lt;= max_n_prev_words (ie. can 
+<DL><DT><DD></DL><P>
+<A NAME="Resets all of the next-word log probs to -LOG_ZERO (to indicate that"></A>
+<A NAME="DOC.78.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Resets all of the next-word log probs to -LOG_ZERO (to indicate that</B></TT>
+<DD>Resets all of the next-word log probs to -LOG_ZERO (to indicate that
+<DL><DT><DD></DL><P>
+<A NAME="addProb"></A>
+<A NAME="DOC.78.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void addProb( int vocab_word, real prob )</B></TT>
+<DD>Adds a log probability for the next-word denoted by 'vocab_word'
+<DL><DT><DD></DL><P>
+<A NAME="Returns the cached log probability for the next-word denoted by"></A>
+<A NAME="DOC.78.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Returns the cached log probability for the next-word denoted by</B></TT>
+<DD>Returns the cached log probability for the next-word denoted by
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

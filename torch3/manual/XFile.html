@@ -1,0 +1,201 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  XFile</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">XFile</A></H2></H2><BLOCKQUOTE>XFile.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=155>
+<param name=classes value="CObject,MObject.html,CXFile,MXFile.html,CNullXFile,MNullXFile.html,CMemoryXFile,MMemoryXFile.html,CDiskXFile,MDiskXFile.html">
+<param name=before value="M,M,M|_,MR_,Mr_">
+<param name=after value="Md_,M,M,M,M">
+<param name=indent value="0,1,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.53.1">XFile</A></B>()
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.53.2">read</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks) = 0
+<DD><I>Read something</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.53.3">write</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks) = 0
+<DD><I>Write</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.53.4">taggedRead</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DD><I>Read and check the tag/the size.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.53.5">taggedWrite</A></B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DD><I>Write and write the tag/the size</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.53.6">eof</A></B>() = 0
+<DD><I>Are we at the end ?</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.53.7">flush</A></B>() = 0
+<DD><I>Flush the file</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.53.8">seek</A></B>(long offset, int whence) = 0
+<DD><I>Seek</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   long <B><A HREF="#DOC.53.9">tell</A></B>() = 0
+<DD><I>Tell me where am I</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.53.10">rewind</A></B>() = 0
+<DD><I>Rewind</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.53.11">printf</A></B>(const char* format, ...) = 0
+<DD><I>Print some text</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.53.12">scanf</A></B>(const char* format, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>) = 0
+<DD><I>Scan some text</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   char* <B><A HREF="#DOC.53.13">gets</A></B>(char* dest, int size_) = 0
+<DD><I>Get one line (read at most <TT>size_</TT> characters)</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>XFile. A File which could be anything.
+The syntax (and results) for method is very similar
+to C FILE. (Except for the FILE pointer which is not
+given in the parameters!).
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="XFile"></A>
+<A NAME="DOC.53.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> XFile()</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="read"></A>
+<A NAME="DOC.53.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int read(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks) = 0</B></TT>
+<DD>Read something
+<DL><DT><DD></DL><P>
+<A NAME="write"></A>
+<A NAME="DOC.53.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int write(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks) = 0</B></TT>
+<DD>Write
+<DL><DT><DD></DL><P>
+<A NAME="taggedRead"></A>
+<A NAME="DOC.53.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int taggedRead(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)</B></TT>
+<DD>Read and check the tag/the size. To be used with <TT>taggedWrite()</TT>.
+If the tag and the size readed doesn't correspond to the given
+tag and size, an error will occur.
+<DL><DT><DD></DL><P>
+<A NAME="taggedWrite"></A>
+<A NAME="DOC.53.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int taggedWrite(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)</B></TT>
+<DD>Write and write the tag/the size
+<DL><DT><DD></DL><P>
+<A NAME="eof"></A>
+<A NAME="DOC.53.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int eof() = 0</B></TT>
+<DD>Are we at the end ?
+<DL><DT><DD></DL><P>
+<A NAME="flush"></A>
+<A NAME="DOC.53.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int flush() = 0</B></TT>
+<DD>Flush the file
+<DL><DT><DD></DL><P>
+<A NAME="seek"></A>
+<A NAME="DOC.53.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int seek(long offset, int whence) = 0</B></TT>
+<DD>Seek
+<DL><DT><DD></DL><P>
+<A NAME="tell"></A>
+<A NAME="DOC.53.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   long tell() = 0</B></TT>
+<DD>Tell me where am I
+<DL><DT><DD></DL><P>
+<A NAME="rewind"></A>
+<A NAME="DOC.53.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void rewind() = 0</B></TT>
+<DD>Rewind
+<DL><DT><DD></DL><P>
+<A NAME="printf"></A>
+<A NAME="DOC.53.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int printf(const char* format, ...) = 0</B></TT>
+<DD>Print some text
+<DL><DT><DD></DL><P>
+<A NAME="scanf"></A>
+<A NAME="DOC.53.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int scanf(const char* format, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>) = 0</B></TT>
+<DD>Scan some text
+<DL><DT><DD></DL><P>
+<A NAME="gets"></A>
+<A NAME="DOC.53.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   char* gets(char* dest, int size_) = 0</B></TT>
+<DD>Get one line (read at most <TT>size_</TT> characters)
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="NullXFile.html">NullXFile</A><BR>
+<A HREF="MemoryXFile.html">MemoryXFile</A><BR>
+<A HREF="DiskXFile.html">DiskXFile</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  MemoryXFile</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">MemoryXFile</A></H2></H2><BLOCKQUOTE>A file in the memory.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=95>
+<param name=classes value="CObject,MObject.html,CXFile,MXFile.html,CMemoryXFile,MMemoryXFile.html">
+<param name=before value="M,M,M">
+<param name=after value="Md_SP,Md_,M">
+<param name=indent value="0,1,2">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>MemoryXFileList* <B><A HREF="#DOC.37.1">memory</A></B>
+<DD><I>The memory</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.37.2">position</A></B>
+<DD><I>The position in the memory</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.37.3">size</A></B>
+<DD><I>The size of the memory</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.37.4">total_size</A></B>
+<DD><I>The total size of the memory, including allocated buffer</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>int <B><A HREF="#DOC.37.5">buffer_size</A></B>
+<DD><I>Minimal number of bytes that will be allocated when writing</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.37.6">MemoryXFile</A></B>(int buffer_format_size_=256)
+<DD><I>Create a read-write file from nothing</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.37.7">MemoryXFile</A></B>(MemoryXFileList* memory_, int size_=-1, int buffer_format_size_=256)
+<DD><I>Give a MemoryXFileList for the memory.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.37.8">MemoryXFile</A></B>(void* memory_, int size_, int buffer_format_size_=256)
+<DD><I>Give a pointer for the memory.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.37.9">concat</A></B>()
+<DD><I>Concat all the memory in one node.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   int <B><A HREF="#DOC.37.10">scanf</A></B>(const char* format, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DD><I>Warning: this method call the concat function, and therefore could take time if you do intensive read/write.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="XFile.html">XFile</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>read</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>write</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>taggedRead</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>int <B>taggedWrite</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int block_size, int n_blocks, const char* tag)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>eof</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>flush</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>seek</B>(long offset, int whence)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   long <B>tell</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>rewind</B>()
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   int <B>printf</B>(const char* format, ...)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   char* <B>gets</B>(char* dest, int size_)
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>save</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>A file in the memory.
+Note that the MemoryXFile is a read-write file!
+When writing, data is buffered (to avoid reallocating blocks of small sizes!).
+
+<P>Options:
+<TABLE BORDER>
+<TR><TD>
+"buffer size"  </TD><TD>  int  </TD><TD>  buffer size for writing </TD><TD> [65536]
+</TR></TABLE>
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="memory"></A>
+<A NAME="DOC.37.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>MemoryXFileList* memory</B></TT>
+<DD>The memory
+<DL><DT><DD></DL><P>
+<A NAME="position"></A>
+<A NAME="DOC.37.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int position</B></TT>
+<DD>The position in the memory
+<DL><DT><DD></DL><P>
+<A NAME="size"></A>
+<A NAME="DOC.37.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int size</B></TT>
+<DD>The size of the memory
+<DL><DT><DD></DL><P>
+<A NAME="total_size"></A>
+<A NAME="DOC.37.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int total_size</B></TT>
+<DD>The total size of the memory, including allocated buffer
+<DL><DT><DD></DL><P>
+<A NAME="buffer_size"></A>
+<A NAME="DOC.37.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>int buffer_size</B></TT>
+<DD>Minimal number of bytes that will be allocated when writing
+<DL><DT><DD></DL><P>
+<A NAME="MemoryXFile"></A>
+<A NAME="DOC.37.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> MemoryXFile(int buffer_format_size_=256)</B></TT>
+<DD>Create a read-write file from nothing
+<DL><DT><DD></DL><P>
+<A NAME="MemoryXFile"></A>
+<A NAME="DOC.37.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> MemoryXFile(MemoryXFileList* memory_, int size_=-1, int buffer_format_size_=256)</B></TT>
+<DD>Give a MemoryXFileList for the memory. A new list is created, but the memory
+in the nodes are not copied.
+If the <TT>size</TT> that you want to be readable is <EM>less</EM> than the
+sum of the <TT>n</TT> in the field of the <TT>MemoryXFileList</TT>, you can provide it in <TT>size_</TT> 
+<DL><DT><DD></DL><P>
+<A NAME="MemoryXFile"></A>
+<A NAME="DOC.37.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> MemoryXFile(void* memory_, int size_, int buffer_format_size_=256)</B></TT>
+<DD>Give a pointer for the memory. (No copy is done!)
+<DL><DT><DD></DL><P>
+<A NAME="concat"></A>
+<A NAME="DOC.37.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void concat()</B></TT>
+<DD>Concat all the memory in one node. Add a null character at the end.
+This null character is useful for <TT>sscanf</TT> in the <TT>scanf</TT> method. 
+<DL><DT><DD></DL><P>
+<A NAME="scanf"></A>
+<A NAME="DOC.37.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   int scanf(const char* format, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)</B></TT>
+<DD>Warning: this method call the concat function,
+and therefore could take time if you do intensive read/write. 
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

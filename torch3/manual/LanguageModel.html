@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  LanguageModel</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">LanguageModel</A></H2></H2><BLOCKQUOTE> This object implements an n-gram language model.</BLOCKQUOTE>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>void <B><A HREF="#DOC.82.5">readARPA</A></B>( FILE* arpa_fd )
+<DD><I>Creates a language model from an ARPA format file.</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Members</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.82.1">Creates the language model.</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.82.2">Calculates the language model probability (with backoff) of the word</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.82.3">Calculates the language model probability (with backoff) of 'next_word'</A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.82.4">given the previous word sequence stored in the hypothesis pointed to </A></B>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.82.6">Creates a language model from an Noway binary LM format file.</A></B>
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>
+This object implements an n-gram language model. The n-gram data structures
+are encapsulated in the ngram member variable (see LMNGram class). Methods
+are provided to read a LM file in ARPA format or in Noway binary format.
+A method is provided to calculate a LM prob (with backoff) for a given 
+sequence of words.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="Creates the language model."></A>
+<A NAME="DOC.82.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates the language model.</B></TT>
+<DD>Creates the language model. 
+<DL><DT><DD></DL><P>
+<A NAME="Calculates the language model probability (with backoff) of the word"></A>
+<A NAME="DOC.82.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Calculates the language model probability (with backoff) of the word</B></TT>
+<DD>Calculates the language model probability (with backoff) of the word
+<DL><DT><DD></DL><P>
+<A NAME="Calculates the language model probability (with backoff) of 'next_word'"></A>
+<A NAME="DOC.82.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Calculates the language model probability (with backoff) of 'next_word'</B></TT>
+<DD>Calculates the language model probability (with backoff) of 'next_word'
+<DL><DT><DD></DL><P>
+<A NAME="given the previous word sequence stored in the hypothesis pointed to "></A>
+<A NAME="DOC.82.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> given the previous word sequence stored in the hypothesis pointed to </B></TT>
+<DD>given the previous word sequence stored in the hypothesis pointed to 
+<DL><DT><DD></DL><P>
+<A NAME="readARPA"></A>
+<A NAME="DOC.82.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>void readARPA( FILE* arpa_fd )</B></TT>
+<DD>Creates a language model from an ARPA format file. Internal function.
+<DL><DT><DD></DL><P>
+<A NAME="Creates a language model from an Noway binary LM format file."></A>
+<A NAME="DOC.82.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> Creates a language model from an Noway binary LM format file.</B></TT>
+<DD>Creates a language model from an Noway binary LM format file. Internal function.
+<DL><DT><DD></DL><P></DL>
+
+<HR><DL><DT><B>This class has no child classes.</B></DL>
+
+<DL><DT><DT><B>Author:</B><DD>Darren Moore (moore@idiap.ch)
+<DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

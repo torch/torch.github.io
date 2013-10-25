@@ -1,0 +1,36 @@
+DESCRIPTION
+-----------
+This program is written in Qt and can plot curves from data.
+Features:
+  - zooming (right mouse button to zoom, zoom button to reset)
+  - printing
+  - measures (left mouse button)
+
+REQUIREMENTS
+------------
+- Torch (http://www.torch.ch)
+- Qt library version >= 3.0 (http://www.trolltech.com)
+- qwt library version >= 0.4.1 (http://qwt.sourceforge.net)
+- qtplot is based in part on the work of the Qwt project (http://qwt.sf.net).
+
+
+
+INSTALL
+-------
+1) Install torch3 library (seed Torch3 documentation http://www.torch.ch)
+2) Install epc packages
+3) set a new environnement variable TORCHDIR to your Torch3 directory
+  - export TORCHDIR=/home/marietho/src/Torch3 [for sh shells]
+	- setenv TORCHDIR /home/marietho/src/Torch3 [for csh shells]
+4) uncompress the archive in the examples/epc directory
+  - tar zxvf qtplot.tar.gz
+5) go to qtplot directory 
+  - cd qtplot
+6) create the makefile
+  - qmake qtplot
+7) compile the prgram
+  - make
+
+USAGE
+-----
+Run ../Linux_OPT_FLOAT/qtplot.

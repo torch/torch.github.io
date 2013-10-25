@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<HTML>
+<HEAD>
+   <TITLE>class  CmdOption</TITLE>
+   <META NAME="GENERATOR" CONTENT="DOC++ 3.4.8">
+</HEAD>
+<BODY BGCOLOR="#ffffff">
+
+<H2>class  <A HREF="#DOC.DOCU">CmdOption</A></H2></H2><BLOCKQUOTE>This class defines an option for the command line.</BLOCKQUOTE>
+<HR>
+
+<H2>Inheritance:</H2>
+<APPLET CODE="ClassGraph.class" WIDTH=600 HEIGHT=215>
+<param name=classes value="CObject,MObject.html,CCmdOption,MCmdOption.html,CStringCmdOption,MStringCmdOption.html,CRealCmdOption,MRealCmdOption.html,CIntCmdOption,MIntCmdOption.html,CFileListCmdOption,MFileListCmdOption.html,CBoolCmdOption,MBoolCmdOption.html">
+<param name=before value="M,M,M|_,MR_,MR_,MR_,Mr_">
+<param name=after value="Md_,M,M,M,M,M,M">
+<param name=indent value="0,1,1,1,1,1,1">
+<param name=arrowdir value="down">
+</APPLET>
+<HR>
+
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>char* <B><A HREF="#DOC.4.1">name</A></B>
+<DD><I>Name of the option</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>char* <B><A HREF="#DOC.4.2">type_name</A></B>
+<DD><I>Type name of the option</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>char* <B><A HREF="#DOC.4.3">help</A></B>
+<DD><I>An help string.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.4.4">save</A></B>
+<DD><I>True is the option has to be saved when saving the command line</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.4.5">is_setted</A></B>
+<DD><I>True is the option has been setted after reading the command-line</I>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif> <B><A HREF="#DOC.4.6">CmdOption</A></B>(const char* name_, const char* type_name_, const char* help_="", bool save_=false)
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.4.7">initValue</A></B>()
+<DD><I>Initialize the value of the option</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.4.8">printValue</A></B>(<!1><A HREF="XFile.html">XFile</A>* file_)
+<DD><I>If <TT>is_setted</TT> is true, print the current value, else the init value</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>virtual   void <B><A HREF="#DOC.4.9">read</A></B>(int* argc_, char*** argv_)
+<DD><I>Read the option on the command line.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.4.10">isOption</A></B>(bool set_=false)
+<DD><I>Returns true if it's an optional argument.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.4.11">isArgument</A></B>(bool set_=false)
+<DD><I>Returns true if it's a required argument.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.4.12">isText</A></B>(bool set_=false)
+<DD><I>Returns true if it's just text to be displayed in the command line.</I>
+<DT>
+<IMG ALT="[more]" BORDER=0 SRC=icon1.gif>bool <B><A HREF="#DOC.4.13">isMasterSwitch</A></B>(bool set_=false)
+<DD><I>Returns true if it's a master switch.</I>
+</DL></P>
+
+</DL>
+<HR><H3>Inherited from <A HREF="Object.html">Object</A>:</H3>
+<DL>
+<P><DL>
+<DT><H3>Public Fields</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif><!1><A HREF="Allocator.html">Allocator</A>* <B>allocator</B>
+</DL></P>
+
+<P><DL>
+<DT><H3>Public Methods</H3><DD><DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int <!1><A HREF="Parameters.html#DOC.43.3">size</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, int init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, real init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, bool init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>addOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>** <!1><A HREF="Vec.html#DOC.143.2">ptr</A>, <!1><A HREF="Object.html">Object</A>* init_value, const char* <!1><A HREF="CmdOption.html#DOC.4.3">help</A>="")
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setIOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, int option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setROption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, real option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setBOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, bool option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>setOOption</B>(const char* <!1><A HREF="CmdOption.html#DOC.4.1">name</A>, <!1><A HREF="Object.html">Object</A>* option)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>loadXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>virtual   void <B>saveXFile</B>(<!1><A HREF="XFile.html">XFile</A>* <!1><A HREF="Measurer.html#DOC.35.1">file</A>)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>load</B>(const char* filename)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_=NULL)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void* <B>operator new</B>(size_t <!1><A HREF="Parameters.html#DOC.43.3">size</A>, <!1><A HREF="Allocator.html">Allocator</A>* allocator_, void* ptr_)
+<DT>
+<IMG ALT="o" SRC=icon2.gif>void <B>operator delete</B>(void* <!1><A HREF="Vec.html#DOC.143.2">ptr</A>)
+</DL></P>
+
+</DL>
+
+<A NAME="DOC.DOCU"></A>
+<HR>
+<H2>Documentation</H2>
+<BLOCKQUOTE>This class defines an option for the command line.
+If you need special command line arguments/options,
+you have to create a new children of this class.
+
+<P></BLOCKQUOTE>
+<DL>
+
+<A NAME="name"></A>
+<A NAME="DOC.4.1"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>char* name</B></TT>
+<DD>Name of the option
+<DL><DT><DD></DL><P>
+<A NAME="type_name"></A>
+<A NAME="DOC.4.2"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>char* type_name</B></TT>
+<DD>Type name of the option
+<DL><DT><DD></DL><P>
+<A NAME="help"></A>
+<A NAME="DOC.4.3"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>char* help</B></TT>
+<DD>An help string.
+Cannot be NULL.
+<DL><DT><DD></DL><P>
+<A NAME="save"></A>
+<A NAME="DOC.4.4"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool save</B></TT>
+<DD>True is the option has to be saved
+when saving the command line
+<DL><DT><DD></DL><P>
+<A NAME="is_setted"></A>
+<A NAME="DOC.4.5"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool is_setted</B></TT>
+<DD>True is the option has been setted after
+reading the command-line
+<DL><DT><DD></DL><P>
+<A NAME="CmdOption"></A>
+<A NAME="DOC.4.6"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B> CmdOption(const char* name_, const char* type_name_, const char* help_="", bool save_=false)</B></TT>
+<DL><DT><DD></DL><P>
+<A NAME="initValue"></A>
+<A NAME="DOC.4.7"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void initValue()</B></TT>
+<DD>Initialize the value of the option
+<DL><DT><DD></DL><P>
+<A NAME="printValue"></A>
+<A NAME="DOC.4.8"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void printValue(<!1><A HREF="XFile.html">XFile</A>* file_)</B></TT>
+<DD>If <TT>is_setted</TT> is true, print the current value, else the init value
+<DL><DT><DD></DL><P>
+<A NAME="read"></A>
+<A NAME="DOC.4.9"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>virtual   void read(int* argc_, char*** argv_)</B></TT>
+<DD>Read the option on the command line.
+argv_ and argc_ have to point of the next
+option after that.
+<DL><DT><DD></DL><P>
+<A NAME="isOption"></A>
+<A NAME="DOC.4.10"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool isOption(bool set_=false)</B></TT>
+<DD>Returns true if it's an optional argument.
+If <TT>set_</TT> is true, set it to an optional argument.
+<DL><DT><DD></DL><P>
+<A NAME="isArgument"></A>
+<A NAME="DOC.4.11"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool isArgument(bool set_=false)</B></TT>
+<DD>Returns true if it's a required argument.
+If <TT>set_</TT> is true, set it to a required argument.
+<DL><DT><DD></DL><P>
+<A NAME="isText"></A>
+<A NAME="DOC.4.12"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool isText(bool set_=false)</B></TT>
+<DD>Returns true if it's just text to be displayed in the command line.
+If <TT>set_</TT> is true, set it to text mode.
+<DL><DT><DD></DL><P>
+<A NAME="isMasterSwitch"></A>
+<A NAME="DOC.4.13"></A>
+<DT><IMG ALT="o" BORDER=0 SRC=icon2.gif><TT><B>bool isMasterSwitch(bool set_=false)</B></TT>
+<DD>Returns true if it's a master switch.
+If <TT>set_</TT> is true, set it to a master switch.
+<DL><DT><DD></DL><P></DL>
+<HR>
+<DL><DT><B>Direct child classes:
+</B><DD><A HREF="StringCmdOption.html">StringCmdOption</A><BR>
+<A HREF="RealCmdOption.html">RealCmdOption</A><BR>
+<A HREF="IntCmdOption.html">IntCmdOption</A><BR>
+<A HREF="FileListCmdOption.html">FileListCmdOption</A><BR>
+<A HREF="BoolCmdOption.html">BoolCmdOption</A><BR>
+</DL>
+
+<DL><DT><DT><B>Author:</B><DD>Ronan Collobert (collober@idiap.ch)
+
+<DT><B>See Also:</B><DD><!1><A HREF="CmdLine.html">CmdLine</A><BR><DD></DL><P><P><I><A HREF="index.html">Alphabetic index</A></I> <I><A HREF="HIER.html">HTML hierarchy of classes</A> or <A HREF="HIERjava.html">Java</A></I></P><HR>
+<BR>
+This page was generated with the help of <A HREF="http://docpp.sourceforge.net">DOC++</A>.
+</BODY>
+</HTML>

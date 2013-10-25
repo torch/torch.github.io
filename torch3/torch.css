@@ -1,0 +1,152 @@
+body {
+/*  font-size : 14px;*/
+  background-color : #ffffff;
+}
+font , th , td , p {
+  font-family : Verdana, Arial, Helvetica, sans-serif;
+/*  font-size : 12px;*/
+}
+a:link , a:active {
+  color : #006699;
+}
+a:visited {
+  color : #00aa88;
+}
+a:hover {
+  text-decoration : underline;
+  color : #dd6900;
+  background-color : #b1fdfc;
+}
+
+hr {
+ background-color : #d1d7dc;
+ border : 0px;
+/*  height : 0px;*/
+/*  border : 0px solid #d1d7dc;
+  border-top-width : 5px;*/
+}
+.torchArrayTitle {
+ font-weight: bold;
+ color: #006699;
+}
+.lbottom {
+  border-bottom : 1px solid #d1d7dc;
+}
+.lright {
+  border-right : 1px solid #d1d7dc;
+}
+.lleft {
+  border-left : 1px solid #d1d7dc;
+}
+.ltop {
+  border-top : 1px solid #d1d7dc;
+}
+.ocolor {
+  color : #ffa34f;
+}
+.bodyline {
+  background-color : #ffffff;
+  border : 1px solid #98aab1;
+}
+.torchTable {
+  background-color : #ffffff;
+  border : 2px solid #006699;
+}
+td.row1 {
+  background-color : #efefef;
+}
+td.row2 {
+  background-color : #dee3e7;
+}
+td.row3 {
+  background-color : #d1d7dc;
+}
+.torchTitleLeft {
+  background-color : #ffffff;
+  background-image : url(images/title2.jpg);
+  border : 0 none ;
+}
+.torchTitleRight {
+  background-color : #ffffff;
+  height : 71px;
+  background-image : url(images/title_line2.jpg);
+  border : 0 none ;
+}
+td.rowpic {
+  background-color : #ffffff;
+  background-image : url(images/cellpic2.jpg);
+  background-repeat : repeat-y;
+}
+th {
+  color : #ffa34f;
+/*  font-size : 11px;*/
+  font-weight : bold;
+  background-color : #006699;
+  height : 25px;
+  background-image : url(images/cellpic3.gif);
+}
+td.cat , td.catHead , td.catSides , td.catLeft , td.catRight , td.catBottom {
+  background-image : url(images/cellpic1.gif);
+  background-color : #d1d7dc;
+  border : none #ffffff;
+  border-style : solid;
+  height : 28px;
+}
+h1 {
+/*  font-size : 24px;*/
+  color : #006699;
+  font-weight : bold;
+}
+h2 {
+/*  font-size : 20px;*/
+  color : #006699;
+  font-weight : bold;
+}
+td.cat , td.catHead , td.catBottom {
+  height : 29px;
+  border-width : 0;
+}
+th.thHead , th.thSides , th.thTop , th.thLeft , th.thRight , th.thBottom , th.thCornerL , th.thCornerR {
+  font-weight : bold;
+  border : none #ffffff;
+  border-style : solid;
+  height : 28px;
+}
+td.row3Right , td.spaceRow {
+  background-color : #d1d7dc;
+  border : none #ffffff;
+  border-style : solid;
+}
+th.thHead , td.catHead {
+  font-size : 12px;
+  border-width : 1px 1px 0;
+}
+th.thSides , td.catSides , td.spaceRow {
+  border-width : 0 1px;
+}
+th.thRight , td.catRight , td.row3Right {
+  border-width : 0 1px 0 0;
+}
+th.thLeft , td.catLeft {
+  border-width : 0 0 0 1px;
+}
+th.thBottom , td.catBottom {
+  border-width : 0 1px 1px;
+}
+th.thTop {
+  border-width : 1px 0 0;
+}
+th.thCornerL {
+  border-width : 1px 0 0 1px;
+}
+th.thCornerR {
+  border-width : 1px 1px 0 0;
+}
+.maintitle {
+  font-weight : bold;
+  font-size : 22px;
+  font-family : "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  text-decoration : none;
+  line-height : 120%;
+  color : #000000;
+}
