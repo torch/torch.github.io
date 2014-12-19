@@ -64,7 +64,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 10px 0;
   font-weight: 700;
-  color:#222222;
+  color:#179a99;
   font-family: 'Lucida Grande', 'Calibri', Helvetica, Arial, sans-serif;
   letter-spacing: -1px;
 }
@@ -83,11 +83,7 @@ h2 {
 hr {
     border: 0;
     height: 1px;
-    background: #555;
-    background-image: -webkit-linear-gradient(left, #ccc, #555, #ccc); 
-    background-image:    -moz-linear-gradient(left, #ccc, #555, #ccc); 
-    background-image:     -ms-linear-gradient(left, #ccc, #555, #ccc); 
-    background-image:      -o-linear-gradient(left, #ccc, #555, #ccc); 
+    background: #179a99; 
 }
 
 h3 {
@@ -116,7 +112,7 @@ footer p {
 
 a {
   text-decoration: none;
-  color: #007edf;
+  color: #179a99;
   text-shadow: none;
 
   transition: color 0.5s ease;
@@ -286,12 +282,8 @@ Full-Width Styles
 }
 
 #header_wrap {
-  background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
+  background: #2a2a2a;
+  border-top: 10px solid #179a99;
 }
 
 #header_wrap .inner {
@@ -303,13 +295,11 @@ Full-Width Styles
   color: #fff;
   font-size: 42px;
   font-weight: 700;
-  text-shadow: #111 0px 0px 10px;
+}
 
-  text-shadow: 0 0 10px #000;
-  -webkit-text-shadow: 0 0 10px #000;
-  -moz-text-shadow: 0 0 10px #000;
-  -o-text-shadow: 0 0 10px #000;
-  -ms-text-shadow: 0 0 10px #000;
+#project_title img {
+  border: none;
+  box-shadow: none;
 }
 
 #project_tagline {
@@ -367,6 +357,32 @@ Full-Width Styles
 
 #main_content {
   padding-top: 40px;
+}
+
+.maint_contr_list {
+  list-style: none;
+}
+
+.maint_contr_list li {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0;
+  width: 156px;
+}
+
+.maint_contr_list li a img {
+  background: #179a99;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  height: 150px;
+  margin: 6px;
+  padding: 0;
+  width: 150px;
+}
+
+.maint_contr_list li a h4 {
+  text-align: center;
 }
 
 #footer_wrap {
