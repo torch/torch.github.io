@@ -1,0 +1,12 @@
+---
+baseurl: /
+url: http://soumith.ch
+name: Torch
+relative_permalinks: false
+markdown: redcarpet
+description: Scientific Computing for LuaJIT
+timezone: America/Los_Angeles
+
+safe: true
+lsi: false
+highlighter: pygments

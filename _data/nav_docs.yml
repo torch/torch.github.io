@@ -1,0 +1,6 @@
+- title: Quick Start
+  items:
+  - id: getting-started
+    title: Getting started with Torch
+  - id: five-simple-examples
+    title: Five simple examples
