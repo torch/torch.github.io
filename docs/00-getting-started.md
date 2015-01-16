@@ -10,12 +10,13 @@ next: five-simple-examples.html
 
 We provide a simple installation process for Torch on Mac OS X and Ubuntu 12+:
 
-Torch can be installed by running these two commands:
+Torch can be installed to your home folder in ~/torch by running these three commands:
 
 ```bash
 $ curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
-$ curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-luajit+torch | bash
+$ curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-luajit+torch | PREFIX=~/torch bash
 ```
+
 The [first script](https://raw.githubusercontent.com/torch/ezinstall/master/install-deps) 
 installs the basic package dependencies that LuaJIT and Torch require. 
 The [second script](https://raw.githubusercontent.com/torch/ezinstall/master/install-luajit+torch) 
@@ -24,6 +25,19 @@ and then uses LuaRocks (the lua package manager) to install core packages like
 [torch](https://github.com/torch/torch7/blob/master/README.md), 
 [nn](https://github.com/torch/nn/blob/master/README.md) and 
 [paths](https://github.com/torch/paths/blob/master/README.md), as well as a few other packages. 
+
+Then add torch to your PATH for easy access
+```bash
+# On Linux
+echo "export PATH=~/torch-distro/install/bin:\$PATH; export LD_LIBRARY_PATH=~/torch-distro/install/lib:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
+# On OSX
+echo "export PATH=~/torch-distro/install/bin:\$PATH; export LD_LIBRARY_PATH=~/torch-distro/install/lib:\$LD_LIBRARY_PATH; " >>~/.profile && source ~/.profile
+```
+
+If you ever need to uninstall torch, simply run the command:
+```bash
+rm -rf ~/torch
+```
 
 New packages can be installed using Luarocks from the command-line:
 
