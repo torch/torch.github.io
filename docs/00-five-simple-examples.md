@@ -32,10 +32,10 @@ A = torch.rand(N, N)
 A = A*A:t()
 
 -- make it definite
-A:add(0.001, torch.eye(5))
+A:add(0.001, torch.eye(N))
 
 -- add a linear term
-b = torch.rand(5)
+b = torch.rand(N)
 
 -- create the quadratic form
 function J(x)
@@ -81,7 +81,7 @@ And then apply gradient descent (with a given learning rate `lr`) for a while:
 lr = 0.01
 for i=1,20000 do
   x = x - dJ(x)*lr
-  -- we print the value of the objective function at each step
+  -- we print the value of the objective function at each iteration
   print(string.format('at iter %d J(x) = %f', i, J(x)))
 end
 ```
@@ -100,9 +100,11 @@ at iter 20000 J(x) = -3.135666
 
 ## 4. Using the optim package
 
-First, you need to install the `optim` package:
+Want to use more advanced optimization techniques, like conjugate gradient
+or LBFGS? The `optim` package is there for that purpose!  First, we need to
+install it:
 
-```
+```sh
 luarocks install optim
 ```
 
@@ -114,7 +116,7 @@ they can be cut-and-pasted in the interpreter command line.
 Indeed, defining a local like:
 
 ```lua
-local A = torch.rand(5, 5)
+local A = torch.rand(N, N)
 ```
 
 will be only available to the current scope, which, when running the interpreter, is limited
@@ -124,7 +126,7 @@ In lua one can define a scope with the `do...end` directives:
 
 ```lua
 do
-   local A = torch.rand(5, 5)
+   local A = torch.rand(N, N)
    print(A)
 end
 print(A)
@@ -137,24 +139,31 @@ If you cut-and-paste this in the command line, the first print will be a
 #### Defining a closure with an upvalue
 
 We need to define a closure which returns both `J(x)` and `dJ(x)`.  Here we
-define a scope with `do...end`, such that the local variable `iter` is an
+define a scope with `do...end`, such that the local variable `neval` is an
 upvalue to `JdJ(x)`: only `JdJ(x)` will be aware of it.  Note that in a
 script, one would not need to have the `do...end` scope, as the scope of
-`iter` would be until the end of the script file (and not the end of the
+`neval` would be until the end of the script file (and not the end of the
 line like the command line).
 
 ```lua
 do
-   local iter = 0
+   local neval = 0
    function JdJ(x)
-      iter = iter + 1
-      print(string.format('at iter %d J(x) = %f', iter, J(x)))
-      return J(x), dJ(x)
+      local Jx = J(x)
+      neval = neval + 1
+      print(string.format(after %d evaluations J(x) = %f', neval, Jx))
+      return Jx, dJ(x)
    end
 end
 ```
 
 #### Training with optim
+
+The package is not loaded by default, so let's require it:
+
+```lua
+require 'optim'
+```
 
 We first define a state for conjugate gradient:
 
@@ -175,10 +184,117 @@ optim.cg(JdJ, x, state)
 You should see something like:
 
 ```
-at iter 120 J(x) = -3.136835
-at iter 121 J(x) = -3.136836
-at iter 122 J(x) = -3.136837
-at iter 123 J(x) = -3.136838
-at iter 124 J(x) = -3.136840
-at iter 125 J(x) = -3.136838
+after 120 evaluation J(x) = -3.136835
+after 121 evaluation J(x) = -3.136836
+after 122 evaluation J(x) = -3.136837
+after 123 evaluation J(x) = -3.136838
+after 124 evaluation J(x) = -3.136840
+after 125 evaluation J(x) = -3.136838
 ```
+
+## 5. Plot
+
+Plotting can be achieved in various ways. For example, one could use the
+recent [iTorch](https://github.com/facebook/iTorch) package. Here, we are
+going to use `gnuplot`.
+
+```sh
+luarocks install gnuplot
+```
+
+### Store intermediate function evaluations
+
+We modify slightly the closure we had previously, such that it stores
+intermediate function evaluations (as well as the real time it took to
+train so far):
+
+```lua
+evaluations = {}
+time = {}
+timer = torch.Timer()
+neval = 0
+function JdJ(x)
+   local Jx = J(x)
+   neval = neval + 1
+   print(string.format('after %d evaluations, J(x) = %f', neval, Jx))
+   table.insert(evaluations, Jx)
+   table.insert(time, timer:time().real)
+   return Jx, dJ(x)
+end
+```
+
+Now we can train it:
+
+```lua
+state = {
+   verbose = true,
+   maxIter = 100
+}
+
+x0 = torch.rand(N)
+cgx = x0:clone() -- make a copy of x0
+timer:reset()
+optim.cg(JdJ, cgx, state)
+```
+
+We convert the evaluations and time tables to tensors:
+```lua
+cgtime = torch.Tensor(time)
+cgevaluations = torch.Tensor(evaluations)
+```
+
+### Add support for stochastic gradient descent
+
+Let's add the training with stochastic gradient, using `optim`:
+
+```lua
+evaluations = {}
+time = {}
+neval = 0
+state = {
+  lr = 0.1
+}
+
+-- we start from the same starting point than for CG
+x = x0:clone()
+
+-- reset the timer!
+timer:reset()
+
+-- note that SGD optimizer requires us to do the loop
+for i=1,1000 do
+  optim.sgd(JdJ, x, state)
+end
+  
+sgdtime = torch.Tensor(time)
+sgdevaluations = torch.Tensor(evaluations)
+```
+
+### Final plot
+
+We can now plot our graphs. A first simple approach is to use `gnuplot.plot(x, y)`.
+Here we preceed it with `gnuplot.figure()` to make sure plots are on different figures.
+
+```lua
+gnuplot.figure(1)
+gnuplot.plot(cgtime, cgevaluations)
+
+gnuplot.figure(2)
+gnuplot.plot(sgdtime, sgdevaluations)
+```
+
+A more advanced way, which plots everything on the same graph would be the following. Here we save everything
+in a PNG file.
+
+```lua
+gnuplot.pngfigure('plot.png')
+gnuplot.plot(
+   {'CG',  cgtime,  cgevaluations,  '+-'},
+   {'SGD', sgdtime, sgdevaluations, '+-'})
+gnuplot.xlabel('time (s)')
+gnuplot.ylabel('J(x)')
+gnuplot.plotflush()
+```
+
+![CG vs SGD](images/plot.png)
+
