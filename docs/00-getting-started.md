@@ -27,6 +27,7 @@ and then uses LuaRocks (the lua package manager) to install core packages like
 [paths](https://github.com/torch/paths/blob/master/README.md), as well as a few other packages. 
 
 Then add torch to your PATH for easy access
+
 ```bash
 # On Linux
 echo "export PATH=~/torch-distro/install/bin:\$PATH; export LD_LIBRARY_PATH=~/torch-distro/install/lib:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
@@ -35,6 +36,7 @@ echo "export PATH=~/torch-distro/install/bin:\$PATH; export LD_LIBRARY_PATH=~/to
 ```
 
 If you ever need to uninstall torch, simply run the command:
+
 ```bash
 rm -rf ~/torch
 ```
