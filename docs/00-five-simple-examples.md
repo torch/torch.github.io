@@ -15,6 +15,7 @@ We rely on few torch functions here:
 - `*` operator over matrices (which performs a matrix-vector or matrix-matrix multiplication)
 
 We first make sure the random seed is the same for everyone
+
 ```lua
 torch.manualSeed(1234)
 ```
@@ -42,6 +43,7 @@ end
 ```
 
 Printing the function value (here on a random point) can be easily done with:
+
 ```lua
 print(J(torch.rand(N))
 ```
@@ -49,6 +51,7 @@ print(J(torch.rand(N))
 ## 2. Search the minimum by gradient descent
 
 We first define the gradient w.r.t. `x` of `J(x)`:
+
 ```lua
 function dJ(x)
   return A*x-b
@@ -56,11 +59,13 @@ end
 ```
 
 We then define some current solution:
+
 ```lua
 x = torch.rand(N)
 ```
 
 And then apply gradient descent (with a given learning rate `lr`) for a while:
+
 ```
 lr = 0.01
 for i=1,20000 do
@@ -71,6 +76,7 @@ end
 ```
 
 You should see
+
 ```
 ...
 at iter 19995 J(x) = -3.135664
