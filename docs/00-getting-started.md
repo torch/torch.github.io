@@ -26,6 +26,7 @@ and then uses LuaRocks (the lua package manager) to install core packages like
 [paths](https://github.com/torch/paths/blob/master/README.md), as well as a few other packages. 
 
 New packages can be installed using Luarocks from the command-line:
+
 ```bash
 $ luarocks install image
 $ luarocks list
@@ -67,7 +68,7 @@ To run code in a file non-interactively, you can give it as the first
 argument to the `th` command::
 
 ```bash
-$ torch file.lua
+$ th file.lua
 ```
 
 There are various ways to run Lua code and provide options, similar to
