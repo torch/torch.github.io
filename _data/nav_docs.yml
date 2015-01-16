@@ -7,6 +7,6 @@
 - title: Documentation
   items: 
   - id: tutorials-demos
-  - title: Tutorials, Demos, Examples
+    title: Tutorials, Demos, Examples
   - id: package-docs
-  - title: Package Documentation
+    title: Package Documentation
