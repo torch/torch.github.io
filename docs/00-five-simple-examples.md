@@ -1,3 +1,10 @@
+---
+id: five-simple-examples
+title: Five simple examples
+layout: docs
+permalink: /docs/five-simple-examples.html
+prev: getting-started.html
+---
 ## 1. Define a positive definite quadratic form
 
 ```lua
