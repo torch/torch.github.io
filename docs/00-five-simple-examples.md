@@ -5,6 +5,16 @@ layout: docs
 permalink: /docs/five-simple-examples.html
 prev: getting-started.html
 ---
+
+Here are five simple hands-on steps, to get started with Torch!
+This tutorial supposes the package `torch` is already required via
+
+```lua
+require 'torch'
+```
+
+or than you are using the REPL `th` (which requires it automatically).
+
 ## 1. Define a positive definite quadratic form
 
 We rely on few torch functions here:
@@ -289,8 +299,8 @@ in a PNG file.
 ```lua
 gnuplot.pngfigure('plot.png')
 gnuplot.plot(
-   {'CG',  cgtime,  cgevaluations,  '+-'},
-   {'SGD', sgdtime, sgdevaluations, '+-'})
+   {'CG',  cgtime,  cgevaluations,  '-'},
+   {'SGD', sgdtime, sgdevaluations, '-'})
 gnuplot.xlabel('time (s)')
 gnuplot.ylabel('J(x)')
 gnuplot.plotflush()
