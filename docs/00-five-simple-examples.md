@@ -97,3 +97,88 @@ at iter 19998 J(x) = -3.135665
 at iter 19999 J(x) = -3.135665
 at iter 20000 J(x) = -3.135666
 ```
+
+## 4. Using the optim package
+
+First, you need to install the `optim` package:
+
+```
+luarocks install optim
+```
+
+#### A word on local variables
+
+In practice, it is *never* a good idea to use global variables. Use `local` at
+everywhere. In our examples, we have defined everything in global, such that
+they can be cut-and-pasted in the interpreter command line.
+Indeed, defining a local like:
+
+```lua
+local A = torch.rand(5, 5)
+```
+
+will be only available to the current scope, which, when running the interpreter, is limited
+to the current input line. Subsequent lines would not have access to this local.
+
+In lua one can define a scope with the `do...end` directives:
+
+```lua
+do
+   local A = torch.rand(5, 5)
+   print(A)
+end
+print(A)
+```
+
+If you cut-and-paste this in the command line, the first print will be a
+5x5 matrix (because the local `A` is defined for the duration of the scope
+`do...end`), but will be `nil` afterwards.
+
+#### Defining a closure with an upvalue
+
+We need to define a closure which returns both `J(x)` and `dJ(x)`.  Here we
+define a scope with `do...end`, such that the local variable `iter` is an
+upvalue to `JdJ(x)`: only `JdJ(x)` will be aware of it.  Note that in a
+script, one would not need to have the `do...end` scope, as the scope of
+`iter` would be until the end of the script file (and not the end of the
+line like the command line).
+
+```lua
+do
+   local iter = 0
+   function JdJ(x)
+      iter = iter + 1
+      print(string.format('at iter %d J(x) = %f', iter, J(x)))
+      return J(x), dJ(x)
+   end
+end
+```
+
+#### Training with optim
+
+We first define a state for conjugate gradient:
+
+```lua
+state = {
+   verbose = true,
+   maxIter = 100
+}
+```
+
+and now we train:
+
+```lua
+x = torch.rand(N)
+optim.cg(JdJ, x, state)
+```
+
+You should see something like:
+
+```
+at iter 120 J(x) = -3.136835
+at iter 121 J(x) = -3.136836
+at iter 122 J(x) = -3.136837
+at iter 123 J(x) = -3.136838
+at iter 124 J(x) = -3.136840
+at iter 125 J(x) = -3.136838
+```
