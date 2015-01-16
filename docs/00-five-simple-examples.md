@@ -8,6 +8,7 @@ prev: getting-started.html
 ## 1. Define a positive definite quadratic form
 
 We rely on few torch functions here:
+
 - `rand()` which creates tensor drawn from uniform distribution
 - `t()` which transposes a tensor (note it returns a new view)
 - `dot()` which performs a dot product between two tensors
