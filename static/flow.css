@@ -260,6 +260,8 @@ header.topbar nav ul li a:hover {
 
 header.hero {
     padding: 20px 0;
+    background-color: #2CBFBD;
+    color: #ffffff;
 }
 
 header.hero .width {
