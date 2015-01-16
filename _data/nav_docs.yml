@@ -4,3 +4,9 @@
     title: Getting started with Torch
   - id: five-simple-examples
     title: Five simple examples
+- title: Documentation
+  items: 
+  - id: tutorial-demos
+  - title: Tutorials, Demos, Examples
+  - id: package-docs
+  - title: Package Documentation
