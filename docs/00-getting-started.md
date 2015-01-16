@@ -30,9 +30,9 @@ Then add torch to your PATH for easy access
 
 ```bash
 # On Linux
-echo "export PATH=~/torch-distro/install/bin:\$PATH; export LD_LIBRARY_PATH=~/torch-distro/install/lib:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
+echo "export PATH=~/torch/bin:\$PATH; export LD_LIBRARY_PATH=~/torch/lib:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
 # On OSX
-echo "export PATH=~/torch-distro/install/bin:\$PATH; export LD_LIBRARY_PATH=~/torch-distro/install/lib:\$LD_LIBRARY_PATH; " >>~/.profile && source ~/.profile
+echo "export PATH=~/torch/bin:\$PATH; export LD_LIBRARY_PATH=~/torch/lib:\$LD_LIBRARY_PATH; " >>~/.profile && source ~/.profile
 ```
 
 If you ever need to uninstall torch, simply run the command:
