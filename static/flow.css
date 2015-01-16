@@ -165,14 +165,14 @@ ul, ol {
 
 a {
     text-decoration: none;
-    color: #CC2E39;
+    color: #1E423B;
 }
 
 nav.toc a {
     color: #444;
 }
 nav.toc a.active {
-    color: #CC2E39;
+    color: #1E423B;
 }
 
 a.hash-link {
@@ -180,7 +180,7 @@ a.hash-link {
 }
 
 a.hash-link:hover {
-    color: #CC2E39;
+    color: #1E423B;
 }
 
 .width {
@@ -199,7 +199,7 @@ header:after, section.content:after, footer:after {
 }
 
 header.topbar {
-    background: #353331;
+    background: #1E423B;
     color: #EEE;
     position: fixed;
     top: 0;
@@ -282,7 +282,7 @@ header.hero p {
 }
 
 header.hero a.button {
-    background: #CC2E39;
+    background: #1E423B;
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
