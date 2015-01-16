@@ -49,7 +49,17 @@ Printing the function value (here on a random point) can be easily done with:
 print(J(torch.rand(N))
 ```
 
-## 2. Search the minimum by gradient descent
+## 2. Find the exact mimimum
+
+
+We can inverse the matrix (which might not be numerically optimal)
+
+```lua
+xs = torch.inverse(x)*b
+print(string.format('J(x^*) = %g', J(xs)))
+```
+
+## 3. Search the minimum by gradient descent
 
 We first define the gradient w.r.t. `x` of `J(x)`:
 
