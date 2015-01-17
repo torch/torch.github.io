@@ -13,10 +13,10 @@ permalink: /whoweare.html
 [Soumith Chintala - Research Engineer @ Facebook](http://soumith.ch)
 
 ## Major Community Contributors
-[Nicholas Leonard - Research Engineer @ Element Inc](https://github.com/nicholas-leonard)
-[Jonathan Tompson - PhD candidate @ NYU](http://www.cims.nyu.edu/~tompson/)
-[Sergey Zagoruyko - PhD candidate @ IMAGINE](http://imagine.enpc.fr/~zagoruys/)
-[Aysegul Dundar,Jonghoon Jin,Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)
+[Nicholas Leonard - Research Engineer @ Element Inc](https://github.com/nicholas-leonard)  
+[Jonathan Tompson - PhD candidate @ NYU](http://www.cims.nyu.edu/~tompson/)  
+[Sergey Zagoruyko - PhD candidate @ IMAGINE](http://imagine.enpc.fr/~zagoruys/)  
+[Aysegul Dundar,Jonghoon Jin,Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)  
 
 ## Friends
 
