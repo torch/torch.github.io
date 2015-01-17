@@ -20,7 +20,7 @@ permalink: /whoweare.html
 
 ## Friends
 
-## Research Labs and Companies contributing to Torch
+## Research Labs and Companies
 [Facebook Ai Research](research.facebook.com/ai/)  
 [Google + Deepmind](http://deepmind.com/)  
 [Twitter](twitter.com)  
