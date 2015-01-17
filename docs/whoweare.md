@@ -20,4 +20,4 @@ permalink: /whoweare.html
 
 ## Friends
 
-## Companies
+## Research Labs and Companies
