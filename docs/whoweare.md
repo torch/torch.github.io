@@ -29,5 +29,6 @@ permalink: /whoweare.html
 [Element Inc](discoverelement.com)  
 [TeraDeep Inc](http://www.teradeep.com/)  
 [WhetLab](https://www.whetlab.com/)  
+[Canary.is](http://canary.is/)  
 
 
