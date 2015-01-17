@@ -16,8 +16,18 @@ permalink: /whoweare.html
 [Nicholas Leonard - Research Engineer @ Element Inc](https://github.com/nicholas-leonard)  
 [Jonathan Tompson - PhD candidate @ NYU](http://www.cims.nyu.edu/~tompson/)  
 [Sergey Zagoruyko - PhD candidate @ IMAGINE](http://imagine.enpc.fr/~zagoruys/)  
-[Aysegul Dundar,Jonghoon Jin,Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)  
+[Aysegul Dundar, Jonghoon Jin, Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)  
 
 ## Friends
 
-## Research Labs and Companies
+## Research Labs and Companies contributing to Torch
+[Facebook Ai Research](research.facebook.com/ai/)  
+[Google + Deepmind](http://deepmind.com/)  
+[Twitter](twitter.com)  
+[CILVR @ NYU](http://cilvr.nyu.edu/doku.php)  
+[e-Lab @ Purdue](https://engineering.purdue.edu/elab/)  
+[Element Inc](discoverelement.com)  
+[TeraDeep Inc](http://www.teradeep.com/)  
+[WhetLab](https://www.whetlab.com/)  
+
+
