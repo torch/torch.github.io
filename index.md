@@ -24,7 +24,7 @@ A summary of core features:
 
 ##Why Torch?
 
-The goal of Torch is to have maximum flexibility and speed in building your scientific algorithms while making the process extremely simple. Torch comes with a <strong><a href="https://github.com/torch/torch7/wiki/Cheatsheet">large ecosystem of community-driven packages</a></strong> in machine learning, computer vision, signal processing, parallel processing,image, video, audio and networking among others, and builds on top of the Lua community.
+The goal of Torch is to have maximum flexibility and speed in building your scientific algorithms while making the process extremely simple. Torch comes with a <strong><a href="https://github.com/torch/torch7/wiki/Cheatsheet">large ecosystem of community-driven packages</a></strong> in machine learning, computer vision, signal processing, parallel processing, image, video, audio and networking among others, and builds on top of the Lua community.
 
 At the heart of Torch are the popular neural network and optimization libraries which are simple to use, while having maximum flexibility in implementing complex neural network topologies. You can build arbitrary graphs of neural networks, and parallelize them over CPUs and GPUs in an efficient manner.
 
