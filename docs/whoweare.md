@@ -21,15 +21,13 @@ permalink: /whoweare.html
 ## Friends
 
 ## Research Labs and Companies
-[Facebook AI Research](research.facebook.com/ai/)  
+[Facebook AI Research](http://research.facebook.com/ai/)  
 [Google + Deepmind](http://deepmind.com/)  
-[Twitter](twitter.com)  
+[Twitter](http://twitter.com)  
 [CILVR @ NYU](http://cilvr.nyu.edu/doku.php)
 [Idiap Research Institute](http://www.idiap.ch)
 [e-Lab @ Purdue](https://engineering.purdue.edu/elab/)  
-[Element Inc](discoverelement.com)  
+[Element Inc](http://discoverelement.com)  
 [TeraDeep Inc](http://www.teradeep.com/)  
 [WhetLab](https://www.whetlab.com/)  
 [Canary.is](http://canary.is/)  
-
-
