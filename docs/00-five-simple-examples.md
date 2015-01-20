@@ -56,7 +56,7 @@ end
 Printing the function value (here on a random point) can be easily done with:
 
 ```lua
-print(J(torch.rand(N))
+print(J(torch.rand(N)))
 ```
 
 ## 2. Find the exact mimimum
@@ -161,7 +161,7 @@ do
    function JdJ(x)
       local Jx = J(x)
       neval = neval + 1
-      print(string.format(after %d evaluations J(x) = %f', neval, Jx))
+      print(string.format('after %d evaluations J(x) = %f', neval, Jx))
       return Jx, dJ(x)
    end
 end
