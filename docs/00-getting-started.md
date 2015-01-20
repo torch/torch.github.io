@@ -14,25 +14,26 @@ Torch can be installed to your home folder in ~/torch by running these three com
 
 ```bash
 $ curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
-$ curl -sk https://raw.githubusercontent.com/torch/ezinstall/master/install-luajit+torch | PREFIX=~/torch bash
+$ git clone https://github.com/torch/distro.git ~/torch --recursive
+cd ~/torch; ./install.sh
 ```
 
 The [first script](https://raw.githubusercontent.com/torch/ezinstall/master/install-deps) 
 installs the basic package dependencies that LuaJIT and Torch require. 
-The [second script](https://raw.githubusercontent.com/torch/ezinstall/master/install-luajit+torch) 
+The [second script](https://raw.githubusercontent.com/torch/distro/master/install.sh) 
 installs [LuaJIT](http://luajit.org/luajit.html), [LuaRocks](http://luarocks.org/), 
 and then uses LuaRocks (the lua package manager) to install core packages like
 [torch](https://github.com/torch/torch7/blob/master/README.md), 
 [nn](https://github.com/torch/nn/blob/master/README.md) and 
 [paths](https://github.com/torch/paths/blob/master/README.md), as well as a few other packages. 
 
-Then add torch to your PATH for easy access
+The script adds torch to your PATH variable. You just have to source it once to refresh your env variables
 
 ```bash
 # On Linux
-echo "export PATH=~/torch/bin:\$PATH; export LD_LIBRARY_PATH=~/torch/lib:\$LD_LIBRARY_PATH; " >>~/.bashrc && source ~/.bashrc
+source ~/.bashrc
 # On OSX
-echo "export PATH=~/torch/bin:\$PATH; export LD_LIBRARY_PATH=~/torch/lib:\$LD_LIBRARY_PATH; " >>~/.profile && source ~/.profile
+source ~/.profile
 ```
 
 If you ever need to uninstall torch, simply run the command:
