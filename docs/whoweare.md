@@ -31,3 +31,4 @@ permalink: /whoweare.html
 [TeraDeep Inc](http://www.teradeep.com/)  
 [WhetLab](https://www.whetlab.com/)  
 [Canary.is](http://canary.is/)  
+[MoodStocks](https://moodstocks.com)  
