@@ -65,7 +65,7 @@ print(J(torch.rand(N)))
 We can inverse the matrix (which might not be numerically optimal)
 
 ```lua
-xs = torch.inverse(x)*b
+xs = torch.inverse(A)*b
 print(string.format('J(x^*) = %g', J(xs)))
 ```
 
