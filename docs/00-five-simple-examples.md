@@ -286,6 +286,10 @@ We can now plot our graphs. A first simple approach is to use `gnuplot.plot(x, y
 Here we preceed it with `gnuplot.figure()` to make sure plots are on different figures.
 
 ```lua
+require 'gnuplot'
+```
+
+```lua
 gnuplot.figure(1)
 gnuplot.plot(cgtime, cgevaluations)
 
