@@ -20,7 +20,7 @@ The **[GitHub issues](https://github.com/torch/torch7/issues)** page is a good p
 Each package has it's own issue tracker, for example: **[nn issues](https://github.com/torch/nn/issues)**, **[optim issues](https://github.com/torch/optim/issues)**
 
 ## Chat/IM
-Some of us hangout here in this online chatroom: https://gitter.im/torch/torch7  
+Some of us hangout here in this **[online chatroom](https://gitter.im/torch/torch7)**  
 Anything except INSTALLATION problems can be discussed here.
 
 
