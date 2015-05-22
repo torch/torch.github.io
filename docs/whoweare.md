@@ -19,6 +19,7 @@ permalink: /whoweare.html
 [Aysegul Dundar, Jonghoon Jin, Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)  
 
 ## Friends
+[Elad Hoffer - Student at Technion University](http://eladhoffer.github.io/)
 
 ## Research Labs and Companies
 [Facebook AI Research](http://research.facebook.com/ai/)  
