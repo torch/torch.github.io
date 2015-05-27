@@ -13,11 +13,11 @@ This tutorial supposes the package `torch` is already required via
 require 'torch'
 ```
 
-or than you are using the REPL `th` (which requires it automatically).
+or that you are using the REPL `th` (which requires it automatically).
 
 ## 1. Define a positive definite quadratic form
 
-We rely on few torch functions here:
+We rely on a few torch functions here:
 
 - `rand()` which creates tensor drawn from uniform distribution
 - `t()` which transposes a tensor (note it returns a new view)
