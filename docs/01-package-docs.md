@@ -4,6 +4,7 @@ title: Package Documentation
 layout: docs
 permalink: /docs/package-docs.html
 previous: tutorials-demos.html
+next: cvpr15.html
 ---
 
 The links to the documentation for the core packages are listed here. For other community packages, go to the github link of the package, and you will usually find documentation in their respective README files.
