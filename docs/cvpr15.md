@@ -6,8 +6,8 @@ permalink: /docs/cvpr15.html
 prev: getting-started.html
 ---
 
-- Date and Time: Sunday 7th June, 2015. 0830-1230 (Half Day — Morning)
-- Location: Room 200
+- **Date and Time: Sunday 7th June, 2015. 0830-1230 (Half Day — Morning)**
+- **Location:** Room 200
 
 ##Schedule
 
