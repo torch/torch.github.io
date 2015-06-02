@@ -1,7 +1,7 @@
 ---
 id: cvpr15
 title: Applied Deep Learning for Computer Vision with Torch
-layout: docs
+layout: cvpr
 permalink: /docs/cvpr15.html
 prev: getting-started.html
 ---
