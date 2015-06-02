@@ -6,12 +6,13 @@ permalink: /docs/cvpr15.html
 prev: getting-started.html
 ---
 
-Applied Deep Learning for Computer Vision with Torch
+- Date and Time: Sunday 7th June, 2015. 0830-1230 (Half Day — Morning)
+- Location: Room 200
 
 ###Schedule
 
 - A candid introduction to Torch. The philosophy and simplistic design.
-- Neural Networks Package: a gentle introduction.
+- Neural Networks Package: a gentle introduction. Hands-on-tutorial using itorch notebooks.
 - Optimization Package: an introduction
 - Detection using existing pre-trained models (such as googlenet). Fine-tuning on new problems.
 - The future of Torch: An Open Discussion
@@ -27,6 +28,6 @@ Advanced:
 If you are familiar with Torch, join us for an open discussion on the current and future developments of Torch.
 
 ###Organizers
-Soumith Chintala
-Koray Kavuckuoglu
+- Soumith Chintala
+- Koray Kavuckuoglu
 
