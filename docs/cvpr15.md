@@ -29,5 +29,5 @@ If you are familiar with Torch, join us for an open discussion on the current an
 
 ##Organizers
 - Soumith Chintala
-- Koray Kavukcuoglu
+- Koray Kavukcuoglu 
 
