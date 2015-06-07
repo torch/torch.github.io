@@ -6,6 +6,10 @@ permalink: /docs/cvpr15.html
 prev: getting-started.html
 ---
 
+** Slides and Notebooks ** 
+- Slides are here: https://github.com/soumith/cvpr2015/blob/master/cvpr-torch.pdf
+- ITorch Notebooks are here: https://github.com/soumith/cvpr2015
+
 - **Date and Time: Sunday 7th June, 2015. 0830-1230 (Half Day — Morning)**
 - **Location:** Room 200
 
