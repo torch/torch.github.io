@@ -9,6 +9,7 @@ prev: getting-started.html
 ## Slides and Notebooks 
 - Slides are here: [https://github.com/soumith/cvpr2015/blob/master/cvpr-torch.pdf](https://github.com/soumith/cvpr2015/blob/master/cvpr-torch.pdf)
 - ITorch Notebooks are here: [https://github.com/soumith/cvpr2015](https://github.com/soumith/cvpr2015)
+- Amazon EC2 image with torch + itorch + Atari + notebooks can be launched from [this link](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-b36981d8) and the AMI ID is: ami-b36981d8
 
 ## Location 
 - **Date and Time: Sunday 7th June, 2015. 0830-1230 (Half Day — Morning)**
