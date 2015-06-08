@@ -6,11 +6,12 @@ permalink: /docs/cvpr15.html
 prev: getting-started.html
 ---
 
-###Slides and Notebooks
+###Slides and EC2 Image
 - [Slides](cvpr-torch.pdf)
 - Amazon EC2 image with torch + itorch + Atari + notebooks can be launched [from this link](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-b36981d8) and the AMI ID is: ami-b36981d8
 
-Notebooks:
+###Notebooks
+
 - [Deep Learning with Torch - A 60-minute blitz](https://github.com/soumith/cvpr2015/blob/master/Deep Learning with Torch.ipynb)
 - [NNGraph - graph style neural networks](https://github.com/soumith/cvpr2015/blob/master/NNGraph Tutorial.ipynb)
 - [Character-level Recurrent networks. An introduction to real-world nngraph RNN training](https://github.com/soumith/cvpr2015/blob/master/Char-RNN.ipynb). Original code by @karpathy
