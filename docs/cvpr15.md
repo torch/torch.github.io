@@ -7,7 +7,7 @@ prev: getting-started.html
 ---
 
 ###Slides and EC2 Image
-- [Slides](cvpr-torch.pdf)
+- [Slides](https://github.com/soumith/cvpr2015/blob/master/cvpr-torch.pdf)
 - Amazon EC2 image with torch + itorch + Atari + notebooks can be launched [from this link](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:ami=ami-b36981d8) and the AMI ID is: ami-b36981d8
 
 ###Notebooks
