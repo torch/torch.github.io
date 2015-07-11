@@ -1,0 +1,21 @@
+
+<article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div class="content">
+            <div class="bd">
+                <div class="entry-content">
+                    {{ post.content }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Look the author details up from the site config. -->
+    {% assign author = site.data.authors[post.author] %}
+
+    <p class="meta">{{post.date | date: "%B %e, %Y" }}
+    <!-- Output author details if some exist. -->
+    {% if author %}
+	    <!-- Personal Info. -->
+	    by <a href="{{ author.web }}" target="_blank">{{ author.name }}</a></p>
+    {% endif %}
+</article>
