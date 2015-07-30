@@ -478,11 +478,11 @@ div.CodeMirror-lines {
 @media (min-width: 481px) {
 
     .width {
-        max-width: 960px;
+        max-width: 1060px;
         /* make columns add to <880 for 60 gutter */
     }
     .content .width {
-        width: 960px;
+        width: 1060px;
     }
 
     .panel3 {
@@ -495,7 +495,7 @@ div.CodeMirror-lines {
 
     section.content article {
         margin: 0 auto;
-        width: 660px;
+        width: 860px;
     }
 
     section.content nav.toc {
