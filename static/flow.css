@@ -84,6 +84,7 @@ code {
     padding-right: 2px;
     padding-left: 4px;
     border-radius: 3px;
+    background: #EBEEED;
 }
 
 .highlight pre {
@@ -299,6 +300,11 @@ header.subhero {
 
 section.content {
     padding: 20px 0;
+}
+
+section.content article a {
+    font-weight: bold;
+    color: #34554F;
 }
 
 section.content article ul li,
