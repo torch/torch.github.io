@@ -4,6 +4,8 @@ url: http://soumith.ch
 name: Torch
 relative_permalinks: false
 markdown: redcarpet
+redcarpet:
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 description: Scientific Computing for LuaJIT
 timezone: America/Los_Angeles
 
