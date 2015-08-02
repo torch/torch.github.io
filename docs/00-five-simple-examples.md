@@ -87,7 +87,7 @@ x = torch.rand(N)
 
 And then apply gradient descent (with a given learning rate `lr`) for a while:
 
-```
+```lua
 lr = 0.01
 for i=1,20000 do
   x = x - dJ(x)*lr
