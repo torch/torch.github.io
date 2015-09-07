@@ -7,6 +7,7 @@
 	  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 	  <br>
 	  {{ post.excerpt }}
+	  <img src="{{post.picture}}"></img>
 	</li>
       {% endfor %}
     </ul>
