@@ -19,7 +19,7 @@ body {
     color: #444;
     margin: 0;
     padding-top: 50px;
-    line-height: 22px;
+    line-height: 1.6;
 
 }
 
@@ -44,7 +44,10 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    padding-bottom: 0.3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
 }
 
 h3 {
