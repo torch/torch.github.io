@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The power of Spatial Transformer Networks; 99.61% on Traffic Signs with a small network.
+title: The power of Spatial Transformer Networks
 comments: True
 author: alband
 excerpt: Spatial Transformers are an exciting new learnable layer that can be plugged into ConvNets. We show that using these layers in a ConvNet gets us to state of the art accuracy with a significantly smaller network. We also exlplore and visualize the learning that happens in the transform layers.
