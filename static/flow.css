@@ -14,9 +14,8 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+    font-size: 16px;
     color: #444;
     margin: 0;
     padding-top: 50px;
@@ -346,6 +345,10 @@ section.content article blockquote small:before {
 
 section.content article.withtoc {
     position: relative;
+}
+
+section.content article.blogpost {
+    
 }
 
 section.content aside .fb-like {
