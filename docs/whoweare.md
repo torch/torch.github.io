@@ -14,7 +14,7 @@ permalink: /whoweare.html
 
 ## Major Community Contributors
 [Nicholas Leonard - Research Engineer @ Element Inc](https://github.com/nicholas-leonard)  
-[Jonathan Tompson - Research Scientiest @ Google](http://www.cims.nyu.edu/~tompson/)  
+[Jonathan Tompson - Research Scientist @ Google](http://www.cims.nyu.edu/~tompson/)  
 [Sergey Zagoruyko - PhD candidate @ IMAGINE](http://imagine.enpc.fr/~zagoruys/)  
 [Aysegul Dundar, Jonghoon Jin, Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)  
 
