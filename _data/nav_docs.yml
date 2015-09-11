@@ -10,3 +10,5 @@
     title: Tutorials, Demos, Examples
   - id: package-docs
     title: Package Documentation
+  - id: developer-docs
+    title: Developer Documentation
