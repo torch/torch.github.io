@@ -7,9 +7,6 @@ previous: package-docs.html
 next: cvpr15.html
 ---
 
-Developer Documentation
-=======================
-
 Writing your own nn modules
 ===========================
 
@@ -23,32 +20,35 @@ If the module is heavier in computation, or you want to create
 specialized and optimized code for CPU or GPU, you might want to
 create the modules at the C / CUDA level (Section 2).
 
-Modules are bricks to build neural networks. A Module is a neural network by itself,
-but it can be combined with other networks using container classes to create
-complex neural networks. Module is an abstract class which defines fundamental
-methods necessary for a training a neural network.
-All modules are serializable.
+> **Modules** are bricks to build neural networks. A Module is a neural network by itself, but it can be combined with other networks using container classes to create complex neural networks. Module is an abstract class which defines fundamental methods necessary for a training a neural network. **All modules are serializable.**
 
-Modules contain two states variables: output and gradInput.
-Here we review the set of basic functions that a Module has to implement:
+Modules contain two states variables: `output` and `gradInput`.
+Here we review the set of basic functions that a `Module` has to implement:
 
+```lua
 [output] forward(input)
+```
+
 Takes an input object, and computes the corresponding output of the module.
 In general input and output are Tensors. However, some special
 sub-classes like table layers might expect something else.
 Please, refer to each module specification for further information.
 
-After a forward(), the output state variable should have been updated to the new value.
+After a `forward()`, the `output` state variable should have been updated to the new value.
 
 It is not advised to override this function. Instead, one should
-implement updateOutput(input) function.
-The forward(input) function in the abstract parent class Module will call updateOutput(input).
+implement `updateOutput(input)` function.
+The `forward(input)` function in the abstract parent class `Module` will call `updateOutput(input)`.
 
+```lua
 [gradInput] backward(input, gradOutput)
+```
+
 Performs a back-propagation step through the module, with respect to the given input.
-In general this method makes the assumption forward(input) has been called before, with the same input.
+In general this method makes the assumption `forward(input)` has been called before, with the same input.
 This is necessary for optimization reasons.
-If you do not respect this rule, backward() will compute incorrect gradients.
+
+> If you do not respect this rule, `backward()` will compute incorrect gradients.
 
 In general input and gradOutput and gradInput are Tensors.
 However, some special sub-classes like table layers might expect something else.
