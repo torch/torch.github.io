@@ -137,3 +137,73 @@ Let's see some practical examples now.
 
 2. Writing modules at the C or CUDA level
 =========================================
+
+## C macro based templates
+
+Before writing Torch C code, one has to first get familiar with the C macro syntax that is sprinkled all over Torch and nn.
+
+For example, look at this code that appears in [THTensorMath.c](https://github.com/torch/torch7/blob/c55a0621ae5f306fcd4edf03bd382dd3729972d9/lib/TH/generic/THTensorMath.c#L374-L388)
+
+```C
+void THTensor_(add)(THTensor *r_, THTensor *t, real value)
+{
+  THTensor_(resizeAs)(r_, t);
+  if (THTensor_(isContiguous)(r_) && THTensor_(isContiguous)(t) && THTensor_(nElement)(r_) == THTensor_(nElement)(t)) {
+      real *tp = THTensor_(data)(t);
+      real *rp = THTensor_(data)(r_);
+      long sz = THTensor_(nElement)(t);
+      long i;
+      #pragma omp parallel for if(sz > TH_OMP_OVERHEAD_THRESHOLD) private(i)
+      for (i=0; i<sz; i++)
+          rp[i] = tp[i] + value;
+  } else {
+      TH_TENSOR_APPLY2(real, r_, real, t, *r__data = *t_data + value;);
+  }
+}
+```
+
+The strange `_(add)(THTensor *r_ ....)` syntax that you see is a preprocessor macro.
+
+```C
+lib/TH/THTensor.h:
+#define THTensor_(NAME)   TH_CONCAT_4(TH,Real,Tensor_,NAME)
+```
+which leads to...
+
+```C
+lib/TH/THGeneral.h.in:
+#define TH_CONCAT_4(x,y,z,w) TH_CONCAT_4_EXPAND(x,y,z,w)
+```
+and finally...
+
+```C
+lib/TH/THGeneral.h.in:
+#define TH_CONCAT_4_EXPAND(x,y,z,w) x ## y ## z ## w
+```
+
+Therefore, (and after preprocessing with a few more macros),
+
+```C
+void THTensor_(add)(THTensor *r_, THTensor *t, real value)
+```
+
+ultimately becomes this:
+
+```C
+long THRealTensor_add(const THRealTensor *r_, THRealTensor *t, real value)
+```
+
+Real and real are defined to be of a specific type, for example, for float precision:
+```C
+#define Real Float
+#define real float
+```
+
+finally makes that function prototype:
+```C
+long THFloatTensor_add(const THFloatTensor *r_, THFloatTensor *t, float value)
+```
+
+[Aren't preprocessors just grand ?](http://stackoverflow.com/questions/30420807/strange-c-syntax-in-lua-library)
+
+You will see similar syntax in the nn library as well, so brace yourself well for this syntax.
