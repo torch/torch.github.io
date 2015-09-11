@@ -194,12 +194,14 @@ long THRealTensor_add(const THRealTensor *r_, THRealTensor *t, real value)
 ```
 
 Real and real are defined to be of a specific type, for example, for float precision:
+
 ```C
 #define Real Float
 #define real float
 ```
 
 finally makes that function prototype:
+
 ```C
 long THFloatTensor_add(const THFloatTensor *r_, THFloatTensor *t, float value)
 ```
