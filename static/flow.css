@@ -14,13 +14,12 @@ html {
 }
 
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
+    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+    font-size: 16px;
     color: #444;
     margin: 0;
     padding-top: 50px;
-    line-height: 22px;
+    line-height: 1.6;
 
 }
 
@@ -45,7 +44,10 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
+    padding-bottom: 0.3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
 }
 
 h3 {
@@ -348,6 +350,10 @@ section.content article.withtoc {
     position: relative;
 }
 
+section.content article.blogpost {
+    
+}
+
 section.content aside .fb-like {
     top: 4px;
     left: 4px;
@@ -501,7 +507,7 @@ div.CodeMirror-lines {
 
     section.content article {
         margin: 0 auto;
-        width: 860px;
+        width: 800px;
     }
 
     section.content nav.toc {
