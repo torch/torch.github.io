@@ -67,7 +67,7 @@ It is not advised to override this function call in custom classes.
 It is better to override `updateGradInput(input, gradOutput)` and `accGradParameters(input, gradOutput)` functions.
 
 ```lua
-[output] updateOutput(input, gradOutput)
+[output] updateOutput(input)
 ```
 
 When defining a new module, this method should be overloaded.
