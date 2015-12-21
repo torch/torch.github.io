@@ -15,11 +15,13 @@ permalink: /whoweare.html
 ## Major Community Contributors
 [Nicholas Leonard - Research Engineer @ Element Inc](https://github.com/nicholas-leonard)  
 [Jonathan Tompson - Research Scientist @ Google](http://www.cims.nyu.edu/~tompson/)  
-[Sergey Zagoruyko - PhD candidate @ IMAGINE](http://imagine.enpc.fr/~zagoruys/)  
+[Sergey Zagoruyko, Francisco Massa - PhD candidates @ IMAGINE](http://imagine.enpc.fr/~zagoruys/)  
 [Aysegul Dundar, Jonghoon Jin, Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)  
+[Alban Desmaison, Cedric Deltheil - Moodstocks Paris](https://moodstocks.com/)
+[Hugh Perkins](https://github.com/hughperkins)
 
 ## Friends
-[Elad Hoffer - Student at Technion University](http://eladhoffer.github.io/)
+[Elad Hoffer - Intel Inc.](http://eladhoffer.github.io/)
 
 ## Research Labs and Companies
 [Facebook AI Research](http://research.facebook.com/ai/)  
@@ -33,3 +35,5 @@ permalink: /whoweare.html
 [WhetLab](https://www.whetlab.com/)  
 [Canary.is](http://canary.is/)  
 [MoodStocks](https://moodstocks.com)  
+[Yandex](https://www.yandex.com/)
+[NVIDIA](http://nvidia.com)
