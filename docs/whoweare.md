@@ -17,8 +17,8 @@ permalink: /whoweare.html
 [Jonathan Tompson - Research Scientist @ Google](http://www.cims.nyu.edu/~tompson/)  
 [Sergey Zagoruyko, Francisco Massa - PhD candidates @ IMAGINE](http://imagine.enpc.fr/~zagoruys/)  
 [Aysegul Dundar, Jonghoon Jin, Alfredo Canziani - e-Lab Purdue and TeraDeep Inc.](https://engineering.purdue.edu/elab/)  
-[Alban Desmaison, Cedric Deltheil - Moodstocks Paris](https://moodstocks.com/)
-[Hugh Perkins](https://github.com/hughperkins)
+[Alban Desmaison, Cedric Deltheil - Moodstocks Paris](https://moodstocks.com/)  
+[Hugh Perkins](https://github.com/hughperkins)  
 
 ## Friends
 [Elad Hoffer - Intel Inc.](http://eladhoffer.github.io/)
