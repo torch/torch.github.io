@@ -21,8 +21,8 @@ permalink: /whoweare.html
 [Hugh Perkins](https://github.com/hughperkins)  
 
 ## Friends
-[Elad Hoffer](http://eladhoffer.github.io/)
-Natalia Gimelshein - NVIDIA
+[Elad Hoffer](http://eladhoffer.github.io/)  
+Natalia Gimelshein - NVIDIA  
 Boris Fomitchev - NVIDIA
 
 ## Research Labs and Companies
