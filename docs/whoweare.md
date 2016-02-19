@@ -21,7 +21,9 @@ permalink: /whoweare.html
 [Hugh Perkins](https://github.com/hughperkins)  
 
 ## Friends
-[Elad Hoffer - Intel Inc.](http://eladhoffer.github.io/)
+[Elad Hoffer](http://eladhoffer.github.io/)
+Natalia Gimelshein - NVIDIA
+Boris Fomitchev - NVIDIA
 
 ## Research Labs and Companies
 [Facebook AI Research](http://research.facebook.com/ai/)  
