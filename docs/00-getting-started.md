@@ -28,12 +28,14 @@ and then uses LuaRocks (the lua package manager) to install core packages like
 [nn](https://github.com/torch/nn/blob/master/README.md) and 
 [paths](https://github.com/torch/paths/blob/master/README.md), as well as a few other packages. 
 
-The script adds torch to your PATH variable. You just have to source it once to refresh your env variables
-
+The script adds torch to your PATH variable. You just have to source it once to refresh your env variables. The installation script will detect what is your current shell and modify the path in the correct configuration file.
+ 
 ```bash
-# On Linux
+# On Linux with bash
 source ~/.bashrc
-# On OSX or if you don't use bash
+# On Linux with zsh
+source ~/.zshrc
+# On OSX or in Linux with none of the above.
 source ~/.profile
 ```
 
@@ -50,7 +52,7 @@ $ luarocks install image
 $ luarocks list
 ```
 
-Once installed you can run torch with the command "th" from you prompt!
+Once installed you can run torch with the command `th` from you prompt!
 
 The easiest way to learn and experiment with Torch is by starting an
 interactive session (also known as the torch read-eval-print loop or [TREPL](https://github.com/torch/trepl/blob/master/README.md)):
