@@ -33,7 +33,7 @@ The script adds torch to your PATH variable. You just have to source it once to 
 ```bash
 # On Linux
 source ~/.bashrc
-# On OSX
+# On OSX or if you don't use bash
 source ~/.profile
 ```
 
