@@ -4,7 +4,7 @@ title: Developer Documentation
 layout: docs
 permalink: /docs/developer-docs.html
 previous: package-docs.html
-next: cvpr15.html
+next: tutorials.html
 ---
 
 Writing your own nn modules

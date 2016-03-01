@@ -7,7 +7,7 @@ hero: true
 
 ##What is Torch?
 
-Torch is a scientific computing framework with wide support for machine learning algorithms. 
+Torch is a scientific computing framework with wide support for machine learning algorithms that puts GPUs first. 
 It is easy to use and efficient, thanks to an easy and fast scripting language, LuaJIT, and an underlying C/CUDA implementation.
 
 A summary of core features:  
