@@ -14,9 +14,9 @@ Torch can be installed to your home folder in ~/torch by running these three com
 
 ```bash
 # in a terminal, run the commands
-curl -s https://raw.githubusercontent.com/torch/ezinstall/master/install-deps | bash
 git clone https://github.com/torch/distro.git ~/torch --recursive
-cd ~/torch; ./install.sh
+cd ~/torch; bash install-deps;
+./install.sh
 ```
 
 The [first script](https://raw.githubusercontent.com/torch/ezinstall/master/install-deps) 
