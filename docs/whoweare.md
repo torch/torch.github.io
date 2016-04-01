@@ -37,5 +37,6 @@ Boris Fomitchev - NVIDIA
 [WhetLab](https://www.whetlab.com/)  
 [Canary.is](http://canary.is/)  
 [MoodStocks](https://moodstocks.com)  
-[Yandex](https://www.yandex.com/)
-[NVIDIA](http://nvidia.com)
+[Yandex](https://www.yandex.com/)  
+[NVIDIA](http://nvidia.com)  
+[VisionLabs](http://www.visionlabs.ru)
