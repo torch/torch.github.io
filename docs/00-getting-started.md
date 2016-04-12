@@ -13,7 +13,7 @@ We provide a simple installation process for Torch on Mac OS X and Ubuntu 12+:
 Torch can be installed to your home folder in ~/torch by running these three commands:
 
 ```bash
-# in a terminal, run the commands
+# in a terminal, run the commands WITHOUT sudo
 git clone https://github.com/torch/distro.git ~/torch --recursive
 cd ~/torch; bash install-deps;
 ./install.sh
