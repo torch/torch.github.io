@@ -17,7 +17,7 @@ Torch can be installed to your home folder in ~/torch by running these three com
 git clone https://github.com/torch/distro.git ~/torch --recursive
 cd ~/torch; bash install-deps;
 ./install.sh
-```
+``` 
 
 The [first script](https://raw.githubusercontent.com/torch/ezinstall/master/install-deps) 
 installs the basic package dependencies that LuaJIT and Torch require. 
@@ -37,12 +37,27 @@ source ~/.bashrc
 source ~/.zshrc
 # On OSX or in Linux with none of the above.
 source ~/.profile
-```
+``` 
 
 If you ever need to uninstall torch, simply run the command:
 
 ```bash
 rm -rf ~/torch
+```
+
+If you want to install torch with Lua 5.2 instead of LuaJIT, simply run:
+
+```bash
+git clone https://github.com/torch/distro.git ~/torch --recursive
+cd ~/torch
+
+# clean old torch installation
+./clean.sh
+# optional clean command (for older torch versions)
+# curl -s https://raw.githubusercontent.com/torch/ezinstall/master/clean-old.sh | bash
+
+# https://github.com/torch/distro : set env to use lua
+TORCH_LUA_VERSION=LUA52 ./install.sh
 ```
 
 New packages can be installed using Luarocks from the command-line:
