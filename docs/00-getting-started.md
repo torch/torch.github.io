@@ -63,6 +63,7 @@ TORCH_LUA_VERSION=LUA52 ./install.sh
 New packages can be installed using Luarocks from the command-line:
 
 ```bash
+# run luarocks WITHOUT sudo
 $ luarocks install image
 $ luarocks list
 ```
