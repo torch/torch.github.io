@@ -4,6 +4,7 @@ title: Deep Fun with OpenCV and Torch
 comments: True
 author: egor-burkov
 excerpt: In this post, we'll have some fun with OpenCV 3.0 + Torch to build live demos of Age & Gender Classification, NeuralStyle, NeuralTalk and live Image classification.
+picture: https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_age.png
 ---
 
 <!---# Deep Fun with OpenCV and Torch-->
@@ -111,7 +112,7 @@ Of course, this is quite an inefficient way of face detection provided just to b
 
 The entire code is [available on GitHub](https://github.com/szagoruyko/torch-opencv-demos/blob/master/age_gender/demo.lua). Here's a sample from IMAGINE Lab by Sergey Zagoruyko:
 
-![Age & Gender Demo](https://cloud.githubusercontent.com/assets/4953728/12299217/fc819f80-ba15-11e5-95de-653c9fda9b83.png)
+![Age & Gender Demo](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_age.png)
 
 [And here is is a heavy just-for-fun GIF](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_age.gif).
 
@@ -133,10 +134,10 @@ Here is another code sample demonstrating some of the above features. This is an
 
 For speed, the face descriptor we use is the most lightweight (~3.7 millions of parameters) of [OpenFace](http://cmusatyalab.github.io/openface/) models, which are based on the CVPR 2015 paper [FaceNet: A Unified Embedding for Face Recognition](http://www.cv-foundation.org/openaccess/content_cvpr_2015/app/1A_089.pdf). It was pre-trained with a combination of [FaceScrub](http://vintage.winklerbros.net/facescrub.html) and [CASIA-WebFace](http://arxiv.org/abs/1411.7923) face recognition datasets.
 
-![screenshot](https://cloud.githubusercontent.com/assets/9570420/13470424/2c5d3106-e0bd-11e5-9319-9f1dbf8c86ab.png)  
-![screenshot 1](https://cloud.githubusercontent.com/assets/9570420/13470423/2c5d5064-e0bd-11e5-842c-d99157e22d6c.png)  
-![screenshot 2](https://cloud.githubusercontent.com/assets/9570420/13530688/b1f694ac-e233-11e5-955c-df71688f472b.png)  
-![screenshot 3](https://cloud.githubusercontent.com/assets/9570420/13530687/b1ceebd2-e233-11e5-8947-06684910aeff.png) 
+![screenshot](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face1.png)  
+![screenshot 1](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face2.png)  
+![screenshot 2](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face3.png)  
+![screenshot 3](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face4.png) 
 
 Let us introduce how OpenCV interface for Lua looks like in this case. As usual, there's a single `require` for every separate OpenCV package:
 
