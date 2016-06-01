@@ -4,7 +4,7 @@ title: Deep Fun with OpenCV and Torch
 comments: True
 author: egor-burkov
 excerpt: In this post, we'll have some fun with OpenCV 3.0 + Torch to build live demos of Age & Gender Classification, NeuralStyle, NeuralTalk and live Image classification.
-picture: https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_age.png
+picture: https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_age_small.png
 ---
 
 <!---# Deep Fun with OpenCV and Torch-->
