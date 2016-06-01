@@ -20,7 +20,7 @@ Usage Examples
 
 A basic example may be live CNN-based image classification. In the following demo, we grab a frame from the webcam, then take a central crop from it and use a small ImageNet classification pretrained network to predict what's in the picture. Afterwards, the image itself and the 5 most probable class names are displayed. 
 
-![ImageNet classification demo](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_imagenet.gif)
+[![ImageNet classification demo](https://cloud.githubusercontent.com/assets/9570420/14849851/6982c4de-0c86-11e6-80c5-d7c4cc8a0f3d.png)](http://cdn.makeagif.com/media/2-28-2016/p4xoRF.gif)
 
 The comments should explain the code well. *Note: this sample assumes you already have the trained CNN; see the [original code on GitHub](https://github.com/szagoruyko/torch-opencv-demos/blob/master/imagenet_classification/demo.lua) by Sergey Zagoruyko that automatically downloads it.*
 
@@ -112,15 +112,21 @@ Of course, this is quite an inefficient way of face detection provided just to b
 
 The entire code is [available on GitHub](https://github.com/szagoruyko/torch-opencv-demos/blob/master/age_gender/demo.lua). Here's a sample from IMAGINE Lab by Sergey Zagoruyko:
 
-![Age & Gender Demo](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_age.png)
+![Age & Gender Demo](https://cloud.githubusercontent.com/assets/4953728/12299217/fc819f80-ba15-11e5-95de-653c9fda9b83.png)
 
-[And here is is a heavy just-for-fun GIF](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_age.gif).
+And here is a heavy just-for-fun GIF:
+
+[![And here is is a heavy just-for-fun GIF](https://cloud.githubusercontent.com/assets/9570420/14849849/698022b0-0c86-11e6-82f2-452b343c786c.png)](http://cdn.makeagif.com/media/3-11-2016/afVDJO.gif)
 
 ### NeuralTalk2
 
 A good image captioning example is [NeuralTalk2](https://github.com/karpathy/neuraltalk2) by Andrej Karpathy. With OpenCV, it's easy to make this model caption live video or camera stream:
 
-![NeuralTalk2 Demo 1](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_neuraltalk_demo1.gif)
+[![NeuralTalk2 Demo 1](https://cloud.githubusercontent.com/assets/9570420/14849852/69832384-0c86-11e6-9ef8-adfa0e7eba32.png)](http://cdn.makeagif.com/media/4-04-2016/eLgBBZ.gif)
+
+[![NeuralTalk2 Demo 2](https://cloud.githubusercontent.com/assets/9570420/14849853/698439d6-0c86-11e6-9b75-fd9e5d8d17e1.png)](http://cdn.makeagif.com/media/4-04-2016/92PJ5o.gif)
+
+[![NeuralTalk2 Demo 3](https://cloud.githubusercontent.com/assets/9570420/14849855/69963a96-0c86-11e6-92ff-723b143e99c7.png)](http://cdn.makeagif.com/media/4-04-2016/7ysYNO.gif)
 
 Here are a couple more demos: [one](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_neuraltalk_demo2.gif) and [another](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_neuraltalk_demo3.gif).
 
@@ -218,9 +224,9 @@ The whole runnable script is [available here](https://github.com/shrubb/torch-op
 
 The [Texture Networks: Feed-forward Synthesis of Textures and Stylized Images](http://arxiv.org/abs/1603.03417) paper proposes an architecture to stylize images straightforwardly, shipping with an [open source implementation in Torch](https://github.com/DmitryUlyanov/texture_nets/). It takes ~20 ms to process a single image with Tesla K40 GPU, and ~1000 ms with CPU. Having this, a tiny modification allows us to render any scene in a particular style in real time:
 
-![Demo 1](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_stylization_demo1.gif)
+[![Demo 1](https://cloud.githubusercontent.com/assets/9570420/14849854/698c3b22-0c86-11e6-94ff-381a5cae1785.png)](http://i.makeagif.com/media/4-24-2016/0zb-UY.gif)
 
-![Demo 2](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_stylization_demo2.gif)
+[![Demo 2](https://cloud.githubusercontent.com/assets/9570420/14849850/69828ec4-0c86-11e6-8609-bf3553450d9b.png)](http://i.makeagif.com/media/4-23-2016/Pk4ZAL.gif)
 
 By the way, these very GIFs (originally in form of encoded videos) were rendered using OpenCV as well. There is a `VideoWriter` class that serves as a simple interface to video codecs. Here is a sketch of a program that encodes similar sequence of frames as a video file and saves it to disk:
 
