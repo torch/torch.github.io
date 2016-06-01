@@ -9,16 +9,16 @@ picture: https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_po
 
 <!---# Deep Fun with OpenCV and Torch-->
 
-The [OpenCV](http://opencv.org/) library implements tons of useful image processing and computer vision algorithms, as well as the high-level GUI API. Written in C++, it has bindings in Python, Java, MATLAB/Octave, C#, Perl and Ruby. We present the Lua bindings that are based on Torch.
+The [OpenCV](http://opencv.org/) library implements tons of useful image processing and computer vision algorithms, as well as the high-level GUI API. Written in C++, it has bindings in Python, Java, MATLAB/Octave, C#, Perl and Ruby. We present the Lua bindings that are based on Torch, made by [VisionLabs](http://visionlabs.ru).
 
-By combining OpenCV with Torch's scientific computation abilities, one gets an even more powerful framework capable of handling computer vision routines (e.g. face detection), interfacing video streams (including cameras), easier data visualization, GUI interaction and many more. In addition, most of the computationally intensive algorithms are available on GPU via Cutorch. All these features may be essentially useful for those dealing with deep learning applied to images.
+By combining OpenCV with scientific computation abilities of Torch, one gets an even more powerful framework capable of handling computer vision routines (e.g. face detection), interfacing video streams (including cameras), easier data visualization, GUI interaction and many more. In addition, most of the computationally intensive algorithms are available on GPU via [cutorch](https://github.com/torch/cutorch). All these features may be essentially useful for those dealing with deep learning applied to images.
 
 Usage Examples
 ===
 
 ### Live Image Classification
 
-A basic example may be live CNN-based image classification. In the following demo, we grab a frame from the webcam, then take a central crop from it and use a small ImageNet classification pretrained network to predict what's in the picture. Afterwards, the image itself and the 5 most probable class names are displayed. 
+A basic example may be live CNN-based image classification. In the following demo, we grab a frame from the webcam, then take a central crop from it and use a small ImageNet classification pretrained network to predict what's in the picture. Afterwards, the image itself and the 5 most probable class names are displayed.
 
 [![ImageNet classification demo](https://cloud.githubusercontent.com/assets/9570420/14849851/6982c4de-0c86-11e6-80c5-d7c4cc8a0f3d.png)](http://cdn.makeagif.com/media/2-28-2016/p4xoRF.gif)
 
@@ -58,7 +58,7 @@ while true do
    -- Resize it to 256 x 256
    local im = cv.resize{crop, {256,256}}:float():div(255)
    -- Subtract channel-wise mean
-   for i=1,3 do 
+   for i=1,3 do
       im:select(3,i):add(-net.transform.mean[i]):div(net.transform.std[i])
    end
    -- Resize again to CNN input size and swap dimensions
@@ -72,8 +72,8 @@ while true do
    -- Caption the image
    for i=1,5 do
       cv.putText{
-         crop, 
-         synset_words[classes[i]], 
+         crop,
+         synset_words[classes[i]],
          {10, 10 + i * 25},
          fontFace=cv.FONT_HERSHEY_DUPLEX,
          fontScale=1,
@@ -85,7 +85,7 @@ while true do
    -- Show it to the user
    cv.imshow{"Torch-OpenCV ImageNet classification demo", crop}
    if cv.waitKey{30} >= 0 then break end
-   
+
    -- Grab the next frame
    capture:read{frame}
 end
@@ -128,8 +128,6 @@ A good image captioning example is [NeuralTalk2](https://github.com/karpathy/neu
 
 [![NeuralTalk2 Demo 3](https://cloud.githubusercontent.com/assets/9570420/14849855/69963a96-0c86-11e6-92ff-723b143e99c7.png)](http://cdn.makeagif.com/media/4-04-2016/7ysYNO.gif)
 
-Here are a couple more demos: [one](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_neuraltalk_demo2.gif) and [another](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_neuraltalk_demo3.gif).
-
 The script [can be found](https://github.com/karpathy/neuraltalk2/blob/master/videocaptioning.lua) inside the NeuralTalk2 repository itself.
 
 ### Interactive Face Recognition with GPU
@@ -140,10 +138,10 @@ Here is another code sample demonstrating some of the above features. This is an
 
 For speed, the face descriptor we use is the most lightweight (~3.7 millions of parameters) of [OpenFace](http://cmusatyalab.github.io/openface/) models, which are based on the CVPR 2015 paper [FaceNet: A Unified Embedding for Face Recognition](http://www.cv-foundation.org/openaccess/content_cvpr_2015/app/1A_089.pdf). It was pre-trained with a combination of [FaceScrub](http://vintage.winklerbros.net/facescrub.html) and [CASIA-WebFace](http://arxiv.org/abs/1411.7923) face recognition datasets.
 
-![screenshot](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face1.png)  
-![screenshot 1](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face2.png)  
-![screenshot 2](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face3.png)  
-![screenshot 3](https://raw.githubusercontent.com/torch/torch.github.io/master/blog/_posts/images/opencv_face4.png) 
+![screenshot](https://cloud.githubusercontent.com/assets/9570420/13470424/2c5d3106-e0bd-11e5-9319-9f1dbf8c86ab.png)  
+![screenshot 1](https://cloud.githubusercontent.com/assets/9570420/13470423/2c5d5064-e0bd-11e5-842c-d99157e22d6c.png)  
+![screenshot 2](https://cloud.githubusercontent.com/assets/9570420/13530688/b1f694ac-e233-11e5-955c-df71688f472b.png)  
+![screenshot 3](https://cloud.githubusercontent.com/assets/9570420/13530687/b1ceebd2-e233-11e5-8947-06684910aeff.png)
 
 Let us introduce how OpenCV interface for Lua looks like in this case. As usual, there's a single `require` for every separate OpenCV package:
 
@@ -222,7 +220,7 @@ The whole runnable script is [available here](https://github.com/shrubb/torch-op
 
 ### Live Image Stylization
 
-The [Texture Networks: Feed-forward Synthesis of Textures and Stylized Images](http://arxiv.org/abs/1603.03417) paper proposes an architecture to stylize images straightforwardly, shipping with an [open source implementation in Torch](https://github.com/DmitryUlyanov/texture_nets/). It takes ~20 ms to process a single image with Tesla K40 GPU, and ~1000 ms with CPU. Having this, a tiny modification allows us to render any scene in a particular style in real time:
+The [Texture Networks: Feed-forward Synthesis of Textures and Stylized Images](http://arxiv.org/abs/1603.03417) paper proposes an architecture to stylize images with a feed-forward network, shipping with an [open source implementation in Torch](https://github.com/DmitryUlyanov/texture_nets/). It takes ~20 ms to process a single image with Tesla K40 GPU, and ~1000 ms with CPU. Having this, a tiny modification allows us to render any scene in a particular style in real time:
 
 [![Demo 1](https://cloud.githubusercontent.com/assets/9570420/14849854/698c3b22-0c86-11e6-94ff-381a5cae1785.png)](http://i.makeagif.com/media/4-24-2016/0zb-UY.gif)
 
@@ -253,29 +251,30 @@ end
 for i = 1,numFrames do
    -- get next image; for example, read it from camera
    local frame = cv.resize{retrieveNextFrame(), {sz, sz}}
-   
+
    -- the next frame in the resulting video
    local frameToSave = torch.Tensor(frameToSaveSize[2], frameToSaveSize[1], 3)
-   
+
    -- first, copy the original frame into the left half of frameToSave:
    frameToSave:narrow(2, 1, sz):copy(frame)
-   
+
    -- second, copy the processed (for example, rendered in painter style)
    -- frame into the other half:
    frameToSave:narrow(2, sz+1, sz):copy(someCoolProcessingFunction(frame))
-   
+
    -- finally, tell videoWriter to push frameToSave into the video
    videoWriter:write{frameToSave}
 end
 ```
 
-[Here](https://github.com/szagoruyko/torch-opencv-demos/tree/master/texture_nets) goes the full code, including a model trained on *The Starry Night*.
+[Here](https://github.com/szagoruyko/torch-opencv-demos/tree/master/texture_nets) goes the full code, including a model trained on *The Starry Night*. A version of this code is running at http://likemo.net
+
+With these demos we just covered a little bit of what's possible to do with OpenCV+Torch7 and expect more awesome computer vision and deep learning applications and research tools to come from the community.
 
 Acknowledgements
 ===
+[Sergey Zagoruyko](https://github.com/szagoruyko) for putting up most of the demo code and creating sample screenshots.  
+[Soumith Chintala](https://github.com/soumith) for support from the Torch side.<br>
+[Dmitry Ulyanov](https://github.com/DmitryUlyanov) for providing demo and code for texture networks
 
-Sergey Zagoruyko for putting up most of the demo code and creating sample screenshots.  
-Soumith Chintala for the support from Torch side.  
-Everyone who contributed and contributes to the project by making PRs and helping catch bugs.  
-
-This project was created and is maintained in [VisionLabs](http://visionlabs.ru/) by [Egor Burkov](https://github.com/shrubb).
+The project is created and maintained by a [VisionLabs](http://visionlabs.ru/) team. We thank everyone who contributes to the project by making PRs and helping catch bugs.
