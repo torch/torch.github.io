@@ -330,7 +330,7 @@ The files are included into the package at these lines:
 
 To add CUDA support to the nn.Threshold module, similar to writing a Threshold.c, we will write a Threshold.cu
 
-- https://github.com/torch/cunn/blob/master/Threshold.cu
+- https://github.com/torch/cunn/blob/master/lib/THCUNN/Threshold.cu
 
 and include it here:
 
