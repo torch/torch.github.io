@@ -117,7 +117,7 @@ Here is an empty holder for a typical new class:
 local NewClass, Parent = torch.class('nn.NewClass', 'nn.Module')
 
 function NewClass:__init()
-   parent.__init(self)
+   Parent.__init(self)
    end
 
 function NewClass:updateOutput(input)
