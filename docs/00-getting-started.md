@@ -98,7 +98,7 @@ hits enter, the interactive session evaluates the expression and shows
 its value. 
 
 To evaluate expressions written in a source file `file.lua`, write
-`th> dofile "file.lua"`.
+`dofile "file.lua"`.
 
 To run code in a file non-interactively, you can give it as the first
 argument to the `th` command::
