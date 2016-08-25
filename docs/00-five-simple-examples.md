@@ -59,7 +59,7 @@ Printing the function value (here on a random point) can be easily done with:
 print(J(torch.rand(N)))
 ```
 
-## 2. Find the exact mimimum
+## 2. Find the exact minimum
 
 
 We can inverse the matrix (which might not be numerically optimal)
