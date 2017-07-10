@@ -19,7 +19,7 @@ A summary of core features:
 * neural network, and energy-based models
 * numeric optimization routines
 * Fast and efficient GPU support
-* Embeddable, with ports to iOS, Android and FPGA backends
+* Embeddable, with ports to iOS and Android backends
 
 
 ##Why Torch?
